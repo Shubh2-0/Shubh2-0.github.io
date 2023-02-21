@@ -67,7 +67,7 @@ section {
   text-align: center;
 }
 .heading span {
-  color: rgb(255, 255, 255);
+  color: yellow;
 }
 header .logo {
   font-size: 1.9rem;
@@ -167,7 +167,7 @@ header .navbar ul li a:hover {
 /* hero section starts*/
 .home2 {
   position: relative;
-  background-color: #0000005b;
+  /* background-color: #0000005b; */
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
@@ -339,7 +339,7 @@ header .navbar ul li a:hover {
 
 /* about section starts */
 .about2 {
-  background: rgba(255, 255, 255, 0);
+  /* background: rgba(255, 255, 255, 0); */
 }
 .about2 .row {
   display: flex;
@@ -458,7 +458,7 @@ header .navbar ul li a:hover {
 /* skills section starts */
 .skills2 {
   min-height: 90vh;
-  background: linear-gradient(to bottom, #57059e33, #07070732);
+  /* background: linear-gradient(to bottom, #57059e33, #07070732); */
 }
 .skills2 h2 {
   color: #fff;
@@ -486,7 +486,7 @@ header .navbar ul li a:hover {
   padding: 10px;
   border-radius: 1rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  background: rgba(0, 0, 22, 0.9);
+  /* background: rgba(0, 0, 22, 0.9); */
   transition: 0.2s;
 }
 .skills2 .container .bar:hover {
@@ -680,7 +680,7 @@ header .navbar ul li a:hover {
 
 /* contact section starts */
 .contact2 {
-  background: #19191a60;
+  /* background: #19191aa9; */
   min-height: 60vh;
 }
 .contact2 .container {
@@ -840,6 +840,7 @@ form .button-area {
   min-height: auto;
   padding-top: 0;
   /* background: rgb(0, 1, 43); */
+  background: #000000a5;
 }
 .footer .box-container {
   display: flex;
