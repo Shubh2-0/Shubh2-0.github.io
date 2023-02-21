@@ -183,13 +183,7 @@ header .navbar ul li a:hover {
   margin: auto;
   width: fit-content;
 }
-.home2 #particles-js {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-}
+
 .home2::before {
   content: "";
   position: absolute;
