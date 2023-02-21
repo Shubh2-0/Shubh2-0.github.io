@@ -964,19 +964,19 @@ form .button-area {
   top: calc(100% - 12rem);
 }
 /* scroll top ends */
+#gitSection{
+  margin-top: -40px !important;
+}
   #heading-git{
     font-size: 25px;
-    display: flex;
     color: rgb(255, 255, 255);
     margin: auto;
-    width: 60%;
+    width: 100%;
     padding: 10px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
   }
-
-  #ddd{
-  padding-left: 70px !important;
-  }
-
   #calendwer{
     background-color :white;
     padding: 30px 10px;
@@ -989,35 +989,46 @@ form .button-area {
   }
 
   #contri{
-  width: fit-content;
-  margin: auto;
-  }
-#contri img{
   width: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+
+  }
+
+#contri2 img{
+  width: 35%;
+  margin-top: 20px;
 }
+
 
 
   @media only screen and ( max-width : 620px) and ( min-width : 10px) {
-#calendwer{
+
+#calendwer {
   display: none;
+}
+
+#contri{
+  grid-template-columns: 1fr;
+}
+
+#contri img{
+  width: auto;
 
 }
-#contri img{
-  grid-template-columns: 1fr;
-  width: 100%;
-
+#contri2 img{
+  width: auto;
+  
 }
 
   #heading-git{
     font-size: 15px;
-    display: flex;
-    color: rgb(255, 255, 255);
-    margin: auto;
-    width: 60%;
-    padding-right: 350px;
   }
-#ddd{
-  padding-left: 0px;
+
+  #gitSection{
+    height: fit-content;
+    padding: 0;
   }
 
 }
@@ -1031,19 +1042,18 @@ form .button-area {
 }
   #heading-git{
     font-size: 15px;
-    display: flex;
-    color: rgb(255, 255, 255);
-    margin: auto;
-    width: 60%;
-    padding-right: 350px;
   }
 #ddd{
   padding-left: 0px;
   }
 #contri img{
   grid-template-columns: 1fr;
-
 }
+#contri2 img{
+  width: auto;
+  
+}
+
 
 }
    @media only screen and ( max-width : 1300px) and ( min-width : 800px){
@@ -1057,15 +1067,16 @@ form .button-area {
 }
   #heading-git{
     font-size: 15px;
-    display: flex;
-    color: rgb(255, 255, 255);
-    margin: auto;
-    width: 60%;
-    padding-right: 200px;
   }
-#ddd{
-  padding-left: 0px;
+  #contri2 img{
+  width: auto;
+  
+}
+
+  #heading-git{
+    font-size: 15px;
   }
+
 
 
    }
