@@ -1,6 +1,6 @@
  # Shubham Bhati Portfolio
 
-<a href="https://ShubhamBhati.github.io/" target="_blank">**Visit Now** 🌐🖇️</a>
+<a href="https://shubh2-0.github.io/ShubhamBhati.github.io/" target="_blank">**Visit Now** 🌐🖇️</a>
 
 <!-- # Overview
 
@@ -76,7 +76,7 @@
 
 
 
-<a href="https://ShubhamBhati.github.io/" target="_blank">**Visit Now** 🚀</a>
+<a href="https://shubh2-0.github.io/ShubhamBhati.github.io/" target="_blank">**Visit Now** 🚀</a>
 
 <h2>📬 Contact</h2>
 
