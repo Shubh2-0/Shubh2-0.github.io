@@ -39,7 +39,7 @@
     "image": "youtube",
      "stacks":"js,html,css,git,netlify,vscode",
     "links": {
-      "view": "#",
+      "view": "https://genuine-sable-69c1a0.netlify.app/",
       "code": "https://github.com/Shubh2-0/Youtube-Clone"
     },
         "highlights" : ["Used YouTube-API's.","User can easilyy see the video in full screen also."]
