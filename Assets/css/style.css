@@ -17,9 +17,10 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  /* background: #f7f7f7; */
+  
   font-family: "Poppins", sans-serif;
-  /* background-image: url(/Video/space.png); */
+  background-image: url(/Video/space.png);
+  background-color: #090018;
   background-size: contain;
 }
 
