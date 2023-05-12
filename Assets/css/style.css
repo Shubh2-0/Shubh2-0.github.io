@@ -17,8 +17,10 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  background: #f7f7f7;
+  /* background: #f7f7f7; */
   font-family: "Poppins", sans-serif;
+  /* background-image: url(/Video/space.png); */
+  background-size: contain;
 }
 
 *::selection {
@@ -168,6 +170,7 @@ header .navbar ul li a:hover {
 .home2 {
   position: relative;
   /* background-color: #0000005b; */
+  background-image: url("/Video/space.gif") !important;
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
@@ -332,6 +335,10 @@ header .navbar ul li a:hover {
 /* about section starts */
 .about2 {
   /* background: rgba(255, 255, 255, 0); */
+  background-image: url("/Video/space.gif") !important;
+    background-size:cover ;
+  background-repeat: no-repeat;
+ background-attachment: fixed;
 }
 .about2 .row {
   display: flex;
@@ -451,6 +458,10 @@ header .navbar ul li a:hover {
 .skills2 {
   min-height: 90vh;
   /* background: linear-gradient(to bottom, #57059e33, #07070732); */
+  background-image: url("/Video/space.gif") !important;
+    background-size:cover ;
+  background-repeat: no-repeat;
+ background-attachment: fixed;
 }
 .skills2 h2 {
   color: #fff;
@@ -560,6 +571,10 @@ header .navbar ul li a:hover {
   /* background: #010124; */
   /* background: linear-gradient(to bottom, #000031, #00002c); */
   color: white !important;
+  background-image: url("/Video/space.gif") !important;
+    background-size:cover ;
+  background-repeat: no-repeat;
+ background-attachment: fixed;
 }
 .work h2 {
   color: #fff;
@@ -671,12 +686,22 @@ header .navbar ul li a:hover {
 
 /* work section ends */
 
+#gitSection{
+  background-image: url("/Video/space.gif") !important;
+    background-size:cover ;
+  background-repeat: no-repeat;
+ background-attachment: fixed;
+}
 
 
 
 /* contact section starts */
 .contact2 {
   background: #19191aa9;
+  background-image: url("/Video/space.gif") !important;
+    background-size:cover ;
+  background-repeat: no-repeat;
+ background-attachment: fixed;
   min-height: 60vh;
 }
 .contact2 .container {
@@ -836,6 +861,10 @@ form .button-area {
   padding-top: 0;
   /* background: rgb(0, 1, 43); */
   background: #000000a5;
+  background-image: url("/Video/space.gif") !important;
+    background-size:cover ;
+  background-repeat: no-repeat;
+ background-attachment: fixed;
 }
 .footer .box-container {
   display: flex;
