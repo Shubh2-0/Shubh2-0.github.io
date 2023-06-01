@@ -592,12 +592,14 @@ header .navbar ul li a:hover {
   border-radius: 50px;
 }
 .work .box-container .box {
-  flex: 100rem;;
+  flex: 100rem;
   border-radius: 0.5rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
   height: 40rem;
+ display: grid;
+ grid-template-columns: repeat(2,1fr);
 }
 .work .box-container .box img {
   height: 100%;
@@ -615,7 +617,7 @@ header .navbar ul li a:hover {
   flex-direction: column;
 }
 
-.work .box-container .box .content .tag {
+.work .box-container .box .tag {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -626,12 +628,11 @@ header .navbar ul li a:hover {
   background: #ffffff;
   color:rgb(0, 0, 0)!important;
 }
-.work .box-container .box .content .tag h3 {
+.work .box-container .box  .tag h3 {
   font-size: 2rem;
+  text-align: center;
 }
-.work .box-container .box:hover .content {
-  top: 25%;
-}
+
 .work .desc {
   margin: 2rem;
   display: flex;
@@ -650,7 +651,7 @@ header .navbar ul li a:hover {
 .work .desc .btns .btn {
   line-height: 0;
   display: inline;
-  padding: 1.5rem 2.5rem;
+  padding: 1.5rem 3rem;
   border-radius: 0.5rem;
   font-size: 1.5rem;
   color: #fff;
@@ -660,7 +661,11 @@ header .navbar ul li a:hover {
 .work .desc .btns .btn:hover {
   background: #310ae0f5;
 }
-
+#tech2{
+  width: 50% !important;
+  margin: auto;
+  margin-top: 30px;
+}
 /* *********************** */
 
 
@@ -674,10 +679,20 @@ header .navbar ul li a:hover {
 .desc{
   font-size: 12px !important;
 }
+.work .box-container .box {
+ display: grid;
+ grid-template-columns: repeat(1,1fr);
+}
+
 }
    @media only screen and ( max-width : 800px) and ( min-width : 620px){
     #tech2{
   display: none;
+}
+
+.work .box-container .box {
+ display: grid;
+ grid-template-columns: repeat(1,1fr);
 }
 
 }

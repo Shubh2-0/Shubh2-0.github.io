@@ -113,8 +113,10 @@ function showProjects(projects) {
     projects.forEach(project => {
         projectHTML += `
         <div class="box project-card">
-      <img draggable="false" src="/Assets/images/projects/${project.image}.png" alt="project" />
-      <div class="content">
+
+      <img draggable="false" src="Assets/images/projects/${project.image}.png" alt="project" />
+
+      <div>
         <div class="tag">
         <h3 class="project-title">${project.name}</h3>
         </div>
@@ -126,9 +128,11 @@ function showProjects(projects) {
             <p class="pp">➡️ ${project.highlights[1]}</p>
           <div class="btns">
             <a href="${project.links.view}" class="btn project-deployed-link" target="_blank"><i class="fas fa-eye"></i> View</a>
-            <div id="tech2" class="project-tech-stack"><img id="tech" src="https://skillicons.dev/icons?i=${project.stacks}" alt=""></div>
             <a href="${project.links.code}" class="btn project-github-link" target="_blank">Code <i class="fas fa-code"></i></a>
             </div>
+
+             <div id="tech2" class="project-tech-stack"><img id="tech" src="https://skillicons.dev/icons?i=${project.stacks}" alt=""></div>
+
         </div>
       </div>
     </div>`
