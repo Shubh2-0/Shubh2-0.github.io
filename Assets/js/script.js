@@ -89,7 +89,7 @@ async function fetchData(type = "skills") {
     return data;
 }
 
-
+ 
 
 function showSkills(skills) {
     let skillsContainer = document.getElementById("skillsContainer");
