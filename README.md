@@ -62,15 +62,24 @@
 <br>
 
 
+To contribute to the project, follow these steps:
 
-## Contributing 💡
-#### Step 1️⃣    -> Clone this repo to your local machine 🖥️.
+1. 🍴 Fork the repository on GitHub by visiting the following link: [https://github.com/Shubh2-0/Shubh2-0.github.io.git](https://github.com/Shubh2-0/Shubh2-0.github.io.git).
 
-#### Step 2️⃣    -> **Build your code** ⚒️
+2. 🔽 Clone the forked repository to your local machine using the following command:
+```
+git clone https://github.com/Shubh2-0/Shubh2-0.github.io.git
+```
 
-#### Step 3️⃣    -> 🔃 Create a new pull request.
+3. 🛠️ Make your desired changes and enhancements to the project.
 
+4. ✅ Commit and push your changes to your forked repository.
 
+5. 🔄 Create a new pull request from your forked repository to the main repository.
+
+6. ⏳ Be patient and wait for the maintainers to review and merge your pull request.
+
+Thank you for your valuable contribution! 🙌
 
 <a href="https://shubh2-0.github.io/" target="_blank">**Visit Now** 🚀</a>
 
