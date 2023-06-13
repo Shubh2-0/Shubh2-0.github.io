@@ -1,70 +1,85 @@
 [
-    {
-        "name": "HTML",
-        "icon": "html.png"
-    },
-    {
-        "name": "CSS",
-        "icon": "css.png"
-    },
-    {
-        "name": "JavaScipt",
-        "icon": "js.png"
-    },
-    {
-        "name": "Java",
-        "icon": "java.png"
-    },
-    {
-        "name": "Spring Boot",
-        "icon": "springboot.png"
-    },
-        {
-        "name": "Node JS",
-        "icon": "nodejs.png"
-    },
-         {
-        "name": "My SQL",
-        "icon": "mysql.png"
-    },
-         {
-        "name": "DSA",
-        "icon": "dsa.png"
-    },
-    {
-        "name": "Git",
-        "icon": "git.png"
-    },
-    {
-        "name": "Netlify",
-        "icon": "netlify.png"
-    },
-    {
-        "name": "VS Code",
-        "icon": "vscode.png"
-    },
-    {
-        "name": "Intellij IDEA",
-        "icon": "intellij.png"
-    },
+  {
+    "name": "Java",
+    "icon": "java.png"
+  },
+  {
+    "name": "Spring Boot",
+    "icon": "springboot.png"
+  },
+  {
+    "name": "Maven",
+    "icon": "maven.png"
+  },
+  {
+    "name": "Hibernate",
+    "icon": "hibernate.png"
+  },
+  {
+    "name": "MySQL",
+    "icon": "mysql.png"
+  },
+  {
+    "name": "DSA",
+    "icon": "dsa.png"
+  },
+  {
+    "name": "Restful - API",
+    "icon": "restful.png"
+  },
+  {
+    "name": "Spring",
+    "icon": "spring.png"
+  },
+  {
+    "name": "JDBC",
+    "icon": "jdbc.png"
+  },
+  {
+    "name": "Swagger",
+    "icon": "Swagger.png"
+  },
+  {
+    "name": "Java Swing",
+    "icon": "Swing2.png"
+  },
+  {
+    "name": "JavaScript",
+    "icon": "js.png"
+  },
+  {
+    "name": "HTML",
+    "icon": "html.png"
+  },
 
-      {
-        "name": "GitHub",
-        "icon": "github.png"
-    },
-      {
-        "name": "Replit",
-        "icon": "replit.png"
-    },
-  
-  
-     {
-        "name": "Eclipse",
-        "icon": "eclipse.png"
-    }
-    
+  {
+    "name": "CSS",
+    "icon": "css.png"
+  },
+  {
+    "name": "Lombok",
+    "icon": "lombok.png"
+  },
 
-    
+  {
+    "name": "Postman",
+    "icon": "postman.png"
+  },
 
-   
+  {
+    "name": "JavaFX",
+    "icon": "javafx2.png"
+  },
+  {
+    "name": "Github",
+    "icon": "github.png"
+  },
+  {
+    "name": "Eclipse",
+    "icon": "eclipse.png"
+  },
+  {
+    "name": "VS Code",
+    "icon": "vscode.png"
+  }
 ]
