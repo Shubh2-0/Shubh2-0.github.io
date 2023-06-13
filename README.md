@@ -47,13 +47,25 @@
 - To deploy your website, first you need to create github repository with name `<your-github-username>.github.io` and push the generated code to the `master` branch.
 
 ## Sections 📚
-✔️ About\
-✔️ Projects \
-✔️ Skills \
-✔️ Resume\
-✔️ Contact Info
 
+The portfolio is divided into the following sections:
 
+👤 **About**
+Introduce yourself and share your background, skills, and interests.
+
+🚀 **Projects**
+Showcase your projects, providing details and showcasing your work.
+
+🔧 **Skills**
+Highlight your technical skills and competencies.
+
+📄 **Resume**
+Allow visitors to download your resume in a convenient format.
+
+📞 **Contact Info**
+Provide various ways for visitors to get in touch with you, such as social media profiles or email.
+
+Feel free to customize and add more information to each section based on your specific portfolio and preferences. 😄
 
 ## Tools Used 🛠️
 <img src="Assets/images/Skills/html.png" alt="skill" width="50" /> <img src="Assets/images/Skills/css.png" alt="skill" width="50" /> <img src="Assets/images/Skills/js.png" alt="skill" width="50" /> <img src="Assets/images/Skills/github.png" alt="skill" width="50" /> <img src="Assets/images/Skills/vscode.png" alt="skill" width="50" />
