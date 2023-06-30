@@ -95,31 +95,36 @@ function showSkills(skills) {
 /* JavaScript code for generating project cards */
 
 function showProjects(projects) {
-  let projectsContainer = document.querySelector("#projects .box-container");
-  let projectHTML = "";
-  projects.forEach(project => {
-    projectHTML += `
-    <div class="box project-card">
+    let projectsContainer = document.querySelector("#projects .box-container");
+    let projectHTML = "";
+    projects.forEach(project => {
+        projectHTML += `
+        <div class="box project-card">
+
       <img draggable="false" src="Assets/images/projects/${project.image}.png" alt="project" />
+
       <div>
         <div class="tag">
-          <h3 class="project-title">${project.name}</h3>
+        <h3 class="project-title">${project.name}</h3>
         </div>
         <div class="desc">
           <p class="project-description">${project.desc}</p>
           <br>
+       
           <div class="btns">
             <a href="${project.links.view}" class="btn project-deployed-link" target="_blank"><i class="fas fa-eye"></i> View</a>
             <a href="${project.links.code}" class="btn project-github-link" target="_blank">Code <i class="fas fa-code"></i></a>
-          </div>
-          <div id="tech2" class="project-tech-stack"><img id="tech" src="https://skillicons.dev/icons?i=${project.stacks}" alt=""></div>
+            </div>
+
+             <div id="tech2" class="project-tech-stack"><img id="tech" src="https://skillicons.dev/icons?i=${project.stacks}" alt=""></div>
+
         </div>
       </div>
     </div>`
-  });
-}
+    });
 
 
+  
     
     projectsContainer.innerHTML = projectHTML;
 
