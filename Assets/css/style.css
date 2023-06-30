@@ -570,25 +570,22 @@ header .navbar ul li a:hover {
 
 /* work section starts */
 
-/* CSS styles with media queries */
-
 .work {
+  /* background: #010124; */
+  /* background: linear-gradient(to bottom, #000031, #00002c); */
   color: white !important;
   background-image: url("/Video/space.gif") !important;
-  background-size: cover;
+    background-size:cover ;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+ background-attachment: fixed;
 }
-
 .work h2 {
   color: #fff;
   padding: 1rem;
 }
-
 .work .heading span {
   color: rgb(255, 230, 0);
 }
-
 .work .box-container {
   display: flex;
   flex-wrap: wrap;
@@ -596,7 +593,6 @@ header .navbar ul li a:hover {
   margin: 2rem;
   border-radius: 50px;
 }
-
 .work .box-container .box {
   flex: 100rem;
   border-radius: 0.5rem;
@@ -604,20 +600,18 @@ header .navbar ul li a:hover {
   position: relative;
   overflow: hidden;
   height: 40rem;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  background-color: #00000091;
-  border-radius: 50px;
-  padding: 30px;
+ display: grid;
+ grid-template-columns: repeat(2,1fr);
+ background-color: #00000091;
+ border-radius: 50px;
+ padding: 30px;
 }
-
 .work .box-container .box img {
   padding: 20px;
   height: 100%;
   width: 100%;
   object-fit: cover;
 }
-
 .work .box-container .box .content {
   height: 100%;
   width: 100%;
@@ -638,10 +632,9 @@ header .navbar ul li a:hover {
   width: 100%;
   padding-left: 1rem;
   background: #ffffff;
-  color: rgb(0, 0, 0) !important;
+  color:rgb(0, 0, 0)!important;
 }
-
-.work .box-container .box .tag h3 {
+.work .box-container .box  .tag h3 {
   font-size: 2rem;
   text-align: center;
 }
@@ -652,18 +645,15 @@ header .navbar ul li a:hover {
   flex-direction: column;
   justify-content: center;
 }
-
 .work .desc p {
   font-size: 1.5rem;
 }
-
 .work .desc .btns {
   display: flex;
   justify-content: space-between;
   width: 100%;
   margin-top: 2rem;
 }
-
 .work .desc .btns .btn {
   line-height: 0;
   display: inline;
@@ -674,46 +664,48 @@ header .navbar ul li a:hover {
   background: rgb(12, 12, 12);
   margin-right: 2rem;
 }
-
 .work .desc .btns .btn:hover {
   background: #310ae0f5;
 }
-
-#tech2 {
+#tech2{
   width: 70% !important;
   margin: auto;
   margin-top: 30px;
 }
+/* *********************** */
 
-/* Media queries */
 
-@media only screen and (max-width: 620px) {
-  #tech2 {
-    display: none;
-  }
-  .desc .pp {
-    display: none !important;
-  }
-  .desc {
-    font-size: 12px !important;
-  }
-  .work .box-container .box {
-    grid-template-columns: repeat(1, 1fr);
-  }
+@media only screen and ( max-width : 620px) and ( min-width : 10px) {
+#tech2{
+  display: none;
+}
+.desc .pp{
+  display: none !important;
+}
+.desc{
+  font-size: 12px !important;
+}
+.work .box-container .box {
+ display: grid;
+ grid-template-columns: repeat(1,1fr);
 }
 
-@media only screen and (max-width: 800px) and (min-width: 621px) {
-  #tech2 {
-    display: none;
-  }
-  .work .box-container .box {
-    grid-template-columns: repeat(1, 1fr);
-  }
+}
+   @media only screen and ( max-width : 800px) and ( min-width : 620px){
+    #tech2{
+  display: none;
 }
 
-@media only screen and (max-width: 1000px) and (min-width: 801px) {
-  /* Additional styles for the required screen size range */
+.work .box-container .box {
+ display: grid;
+ grid-template-columns: repeat(1,1fr);
 }
+
+}
+   @media only screen and ( max-width : 1000px) and ( min-width : 800px){
+
+}
+
 
 /* work section ends */
 
