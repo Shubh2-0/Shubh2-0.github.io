@@ -675,7 +675,28 @@ header .navbar ul li a:hover {
 /* *********************** */
 
 
-@media only screen and ( max-width : 620px) and ( min-width : 10px) {
+/* Media query for screen width up to 620px */
+@media only screen and (max-width: 620px) {
+  #tech2 {
+    width: 50% !important; /* Adjust the width value as per your preference */
+    margin-top: 15px; /* Adjust the margin-top value as per your preference */
+  }
+  
+  .desc .pp {
+    display: none !important;
+  }
+  
+  .desc {
+    font-size: 12px !important;
+  }
+  
+  .work .box-container .box {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+
+/* @media only screen and ( max-width : 620px) and ( min-width : 10px) {
 #tech2{
   display: none;
 }
@@ -704,7 +725,7 @@ header .navbar ul li a:hover {
 }
    @media only screen and ( max-width : 1000px) and ( min-width : 800px){
 
-}
+} */
 
 
 /* work section ends */
