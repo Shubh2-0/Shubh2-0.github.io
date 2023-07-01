@@ -686,9 +686,7 @@ display: flex;
 
 @media only screen and (max-width: 480px) {
 
-#gitSection{
-  margin-bottom: -100%;
-}
+
 .work h3{
 font-size: 12px !important;
 }  
@@ -729,9 +727,7 @@ font-size: 12px !important;
 
 @media only screen and (min-width: 481px) and (max-width: 767px){
 
-#gitSection{
-  margin-bottom: -100%;
-}
+
 .work h3{
 font-size: 12px !important;
 }  
@@ -783,6 +779,7 @@ font-size: 12px !important;
     background-size:cover ;
   background-repeat: no-repeat;
  background-attachment: fixed;
+ height: fit-content;
 }
 
 
@@ -1136,7 +1133,8 @@ form .button-area {
   @media only screen and ( max-width : 620px) and ( min-width : 10px) {
 
 #calendwer {
-  display: none;
+    display: none;
+  visibility: hidden;
 }
 
 #contri{
@@ -1166,6 +1164,7 @@ form .button-area {
    @media only screen and ( max-width : 800px) and ( min-width : 620px){
     #calendwer{
   display: none;
+  visibility: hidden;
 
 }
 #contri{
