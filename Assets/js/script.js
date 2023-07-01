@@ -45,11 +45,11 @@ document.addEventListener('visibilitychange',
     function () {
         if (document.visibilityState === "visible") {
             document.title = "Portfolio | Shubham Bhati";
-            $("#favicon").attr("href", "https://th.bing.com/th/id/R.cda3b7d73ea9d27ebc57e69796622b87?rik=RBze9cBJjorqcA&riu=http%3a%2f%2fwww.icons101.com%2ficon_png%2fsize_512%2fid_32956%2fSb.png&ehk=8RXWPvUn08MryrnrIUwVTerw1MK%2fLsSOn6T2Qy7ED4E%3d&risl=&pid=ImgRaw&r=0");
+            $("#favicon").attr("href", "Assets/images/R.png");
         }
         else {
             document.title = "Come Back To Portfolio";
-            $("#favicon").attr("href", "https://cdn.onlinewebfonts.com/svg/img_370956.png");
+            $("#favicon").attr("href", "Assets/images/back.png");
         }
     });
 
@@ -101,7 +101,7 @@ function showProjects(projects) {
         projectHTML += `
         <div class="box project-card">
 
-      <img draggable="false" src="Assets/images/projects/${project.image}.png" alt="project" />
+      <img id="projectimage" draggable="false" src="Assets/images/projects/${project.image}.png" alt="project" />
 
       <div>
         <div class="tag">
@@ -124,9 +124,69 @@ function showProjects(projects) {
     });
 
 
-  
     
     projectsContainer.innerHTML = projectHTML;
+
+
+    
+  let sendbtn = document.querySelector("#send");
+  sendbtn.addEventListener('click',function(e){
+    e.preventDefault()
+  let name = document.querySelector("input[name='name']").value;
+  let email = document.querySelector("input[name='email']").value;
+  let message = document.querySelector("textarea[name='message']").value;
+  let phone = document.querySelector("input[name='phone']").value;
+
+  if(email.length < 7){
+
+         
+
+
+  if(name.length == 0 || email.length == 0 || message.length == 0  || phone.length  == 0){
+
+     
+Swal.fire({
+  icon: 'error',
+  title: 'Oops...',
+  text: 'Please make sure to fill in all the required fields before submitting the form!',
+})
+return;
+  }
+
+  Swal.fire({
+  icon: 'error',
+  title: 'Oops...',
+  text: 'Invalid Email Address!',
+})
+return;
+
+  }
+
+
+  let bodym =   'name: '+ name + '<br/> email :'+email + '<br/> phone :'+phone + '<br/> message :' + message
+
+  Email.send({
+SecureToken : "a5d79846-ab78-4f9c-a0a8-bf499c8aead5",
+    To : 'shubhambhati226@gmail.com',
+    From : 'shubhambhati226@gmail.com',
+    Subject : "Message send through Portfolio by :" +name,
+    Body : bodym
+}).then(
+  message => 
+  Swal.fire({
+  position: 'top-end',
+  icon: 'success',
+  title: 'Message sent successfully!',
+  showConfirmButton: false,
+  timer: 1500
+})
+);
+  document.querySelector("input[name='name']").value = "";
+  document.querySelector("input[name='email']").value = "";
+  document.querySelector("textarea[name='message']").value = "";
+  document.querySelector("input[name='phone']").value = "";
+
+  })
 
 
 
@@ -136,7 +196,7 @@ function showProjects(projects) {
         origin: 'top',
         distance: '80px',
         duration: 1000,
-        reset: true
+        // reset: true
     });
 
     /* SCROLL PROJECTS */
@@ -152,51 +212,47 @@ fetchData("projects").then(data => {
     showProjects(data);
 });
 
-// <!-- tilt js effect starts -->
-VanillaTilt.init(document.querySelectorAll(".tilt"), {
-    max: 15,
-});
 
 
 
 /* ===== SCROLL REVEAL ANIMATION ===== */
-const srtop = ScrollReveal({
-    origin: 'top',
-    distance: '80px',
-    duration: 1000,
-    reset: true
-});
+// const srtop = ScrollReveal({
+//     origin: 'top',
+//     distance: '80px',
+//     duration: 1000,
+//     reset: true
+// });
 
-/* SCROLL HOME */
-srtop.reveal('.home2 .content h3', { delay: 200 });
-srtop.reveal('.home2 .content p', { delay: 200 });
-srtop.reveal('.home2 .content .btn', { delay: 200 });
+// /* SCROLL HOME */
+// srtop.reveal('.home2 .content h3', { delay: 200 });
+// srtop.reveal('.home2 .content p', { delay: 200 });
+// srtop.reveal('.home2 .content .btn', { delay: 200 });
 
-srtop.reveal('.home2 .image', { delay: 400 });
-srtop.reveal('.home2 .linkedin', { interval: 600 });
-srtop.reveal('.home2 .github', { interval: 800 });
-
-
-
-srtop.reveal('.home2 .dev', { interval: 600 });
-
-/* SCROLL ABOUT */
-srtop.reveal('.about2 .content h3', { delay: 200 });
-srtop.reveal('.about2 .content .tag', { delay: 200 });
-srtop.reveal('.about2 .content p', { delay: 200 });
-srtop.reveal('.about2 .content .box-container', { delay: 200 });
-srtop.reveal('.about2 .content .resumebtn', { delay: 200 });
+// srtop.reveal('.home2 .image', { delay: 400 });
+// srtop.reveal('.home2 .linkedin', { interval: 600 });
+// srtop.reveal('.home2 .github', { interval: 800 });
 
 
-/* SCROLL SKILLS */
-srtop.reveal('.skills2 .container', { interval: 200 });
-srtop.reveal('.skills2 .container .bar', { delay: 400 });
+
+// srtop.reveal('.home2 .dev', { interval: 600 });
+
+// /* SCROLL ABOUT */
+// srtop.reveal('.about2 .content h3', { delay: 200 });
+// srtop.reveal('.about2 .content .tag', { delay: 200 });
+// srtop.reveal('.about2 .content p', { delay: 200 });
+// srtop.reveal('.about2 .content .box-container', { delay: 200 });
+// srtop.reveal('.about2 .content .resumebtn', { delay: 200 });
 
 
-/* SCROLL PROJECTS */
-srtop.reveal('.work .box', { interval: 200 });
+// /* SCROLL SKILLS */
+// srtop.reveal('.skills2 .container', { interval: 200 });
+// srtop.reveal('.skills2 .container .bar', { delay: 400 });
 
 
-/* SCROLL CONTACT */
-srtop.reveal('.contact2 .container', { delay: 400 });
-srtop.reveal('.contact2 .container .form-group', { delay: 400 });
+// /* SCROLL PROJECTS */
+// srtop.reveal('.work .box', { interval: 200 });
+
+
+// /* SCROLL CONTACT */
+// srtop.reveal('.contact2 .container', { delay: 400 });
+// srtop.reveal('.contact2 .container .form-group', { delay: 400 });

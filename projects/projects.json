@@ -8,8 +8,7 @@
     "links": {
       "view": "https://glittery-crostata-94ff7d.netlify.app/",
       "code": "https://github.com/Shubh2-0/Movie_Search_Application"
-    },
-        "highlights" : ["Used the Web Service REST API of the movie DB OMDB (The Movie Database).","User can sort the movies based on their ratings."]
+    }
   },
   {
     "name": "Outlook India",
@@ -19,30 +18,28 @@
     "links": {
       "view": "https://poetic-alfajores-3390b6.netlify.app/",
       "code": "https://github.com/Shubh2-0/Startup.outlookindia-Clone"
-    },
-    "highlights" : ["Login Functionality","Responsive  Design"]
+    }
   },
     {
-    "name": "EngageBay",
-    "desc": "EngageBay is an integrated marketing, sales, support and CRM solution designed to help small to midsize enterprises acquire, engage and convert website visitors into customers.",
-    "image": "engagebay",
-    "stacks":"js,html,css,git,netlify,vscode",
-    "links": {
-      "view": "https://gleeful-praline-8d6d79.netlify.app/",
-      "code": "https://github.com/Shubh2-0/Engagebay_Clone"
-    },
-        "highlights" : ["A Group Project of 4 developers build the website in 5 days","User can maintain thier data by using website module service"]
-  },
-   {
-    "name": "Youtube - Clone",
-    "desc": "YouTube is a free video sharing website that makes it easy to watch online videos. You can even create and upload your own videos to share with others. Originally created in 2005, YouTube is now one of the most popular sites on the Web, with visitors watching around 6 billion hours of video every month.",
+      "name": "Youtube - Clone",
+    "desc": "A YouTube clone project empowering users to search, view, and enjoy videos in full-screen mode, offering a seamless and immersive video browsing experience.",
     "image": "youtube",
      "stacks":"js,html,css,git,netlify,vscode",
     "links": {
       "view": "https://genuine-sable-69c1a0.netlify.app/",
       "code": "https://github.com/Shubh2-0/Youtube-Clone"
-    },
-        "highlights" : ["Used YouTube-API's.","User can easily see the video in full screen also."]
+    }
+     
+  },
+   {
+    "name": "Shopzilla-Online-Shopping-Platform",
+    "desc": " Shopzilla Online Shopping Platform provides a comprehensive solution for both buyers and sellers, offering a range of features and functionalities to ensure a delightful and secure shopping experience.",
+    "image": "Shopzilla",
+     "stacks":"java,mysql,maven,git,eclipse",
+    "links": {
+      "view": "https://drive.google.com/file/d/1tqy_GtrtqsgwKkOZUHJw2idoBV6HBAnW/view",
+      "code": "https://github.com/Shubh2-0/Shopzilla-Online-Shopping-Platform.git"
+    }
   }
 
 ]

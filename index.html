@@ -14,6 +14,8 @@
   rel="stylesheet"
   href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"
 />
+
+
  
     <!-- Favicon -->
 
@@ -120,33 +122,9 @@
 
     <div class="container">
           <div class="row" id="skillsContainer">
-            
-            
-            
-
-
-
-
-
-
-
-
-
-
-
-
 
       </div>
 </div>
-
-
-
-
-
-
-
-
-
 
 </section>
 <!-- skills section ends -->
@@ -157,14 +135,11 @@
 
 <h1 id="ddd">My Github <span style="color: yellow">Contribution</span><span id="git-image"></span> </h1>
        
-
     </div>
       
-      
-   
+    
  <div id="contri">
-
-
+  
       <div>
   <img  id="github-streak-stats" alt="7oSkaaa's Github Stats"  src="https://github-readme-streak-stats.herokuapp.com/?user=shubh2-0&count_private=true&show_icons=true&custom_title=Github&theme=algolia&hide_border=true&bg_color=0,000000,130F40&layout=compact&border_radius=10" />
 
@@ -193,6 +168,7 @@
     
   <h2 class="heading"><i class="fas fa-laptop-code"></i> Projects <span>Made</span></h2>
   <div class="box-container"> </div>
+  
     
 </section>
 <!-- work project section ends -->
@@ -216,20 +192,23 @@
           <i class='fas fa-user'></i>
         </div>
         <div class="field">
-          <input type="text" name="email" placeholder="Email" required>
-          <i class='fas fa-envelope'></i>
+          <input type="email" name="email" placeholder="Email" required autocapitalize="off">
+<i class="fas fa-envelope"></i>
+
         </div>
         <div class="field">
-          <input type="text" name="phone" placeholder="Phone">
+          <input type="number" name="phone" placeholder="Phone">
           <i class='fas fa-phone-alt'></i>
         </div>
+        
         <div class="message">
         <textarea placeholder="Message" name="message" required></textarea>
         <i class="fas fa-comment-dots"></i>
         </div>
+        
         </div>
       <div class="button-area">
-        <button type="submit">
+        <button type="submit" id="send">
           Submit <i class="fa fa-paper-plane"></i></button>
       </div>
     </form>
@@ -291,12 +270,8 @@
 <!-- typed.js cdn -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.5/typed.min.js" integrity="sha512-1KbKusm/hAtkX5FScVR5G36wodIMnVd/aP04af06iyQTkD17szAMGNmxfNH+tEuFp3Og/P5G32L1qEC47CZbUQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<!-- particle.js links -->
-<script src="./Assets/js/particles.min.js"></script>
-<script src="./Assets/js/app.js"></script>
 
-<!-- vanilla tilt.js links -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js" integrity="sha512-SttpKhJqONuBVxbRcuH0wezjuX+BoFoli0yPsnrAADcHsQMW8rkR84ItFHGIkPvhnlRnE2FaifDOUw+EltbuHg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 
 <!-- scroll reveal anim -->
 <script src="https://unpkg.com/scrollreveal"></script>
@@ -337,3 +312,7 @@
     new GitHubCalendar(".calendar", "Shubh2-0");
 </script>
 
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

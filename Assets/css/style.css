@@ -17,11 +17,9 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  
   font-family: "Poppins", sans-serif;
-  background-image: url(/Video/space.png);
-  background-color: #090018;
-  background-size: contain;
+    background-image: url("/Video/space.png") !important;
+
 }
 
 *::selection {
@@ -171,8 +169,7 @@ header .navbar ul li a:hover {
 /* hero section starts*/
 .home2 {
   position: relative;
-  /* background-color: #0000005b; */
-  background-image: url("/Video/space.gif") !important;
+  background-image: url("/Video/space.png") !important;
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
@@ -182,12 +179,7 @@ header .navbar ul li a:hover {
   background-repeat: no-repeat;
  background-attachment: fixed;
 }
-.back-video{
-  position: fixed;
-  z-index: -1;
-  margin: auto;
-  width: fit-content;
-}
+
 
 .home2::before {
   content: "";
@@ -337,7 +329,7 @@ header .navbar ul li a:hover {
 /* about section starts */
 .about2 {
   /* background: rgba(255, 255, 255, 0); */
-  background-image: url("/Video/space.gif") !important;
+  background-image: url("/Video/space.png") !important;
     background-size:cover ;
   background-repeat: no-repeat;
  background-attachment: fixed;
@@ -460,7 +452,7 @@ header .navbar ul li a:hover {
 .skills2 {
   min-height: 90vh;
   /* background: linear-gradient(to bottom, #57059e33, #07070732); */
-  background-image: url("/Video/space.gif") !important;
+  background-image: url("/Video/space.png") !important;
     background-size:cover ;
   background-repeat: no-repeat;
  background-attachment: fixed;
@@ -574,7 +566,7 @@ header .navbar ul li a:hover {
   /* background: #010124; */
   /* background: linear-gradient(to bottom, #000031, #00002c); */
   color: white !important;
-  background-image: url("/Video/space.gif") !important;
+  background-image: url("/Video/space.png") !important;
     background-size:cover ;
   background-repeat: no-repeat;
  background-attachment: fixed;
@@ -590,7 +582,7 @@ header .navbar ul li a:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
-  margin: 2rem;
+  margin: 3rem;
   border-radius: 50px;
 }
 .work .box-container .box {
@@ -599,18 +591,17 @@ header .navbar ul li a:hover {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
-  height: 40rem;
+  height: 35rem;
  display: grid;
- grid-template-columns: repeat(2,1fr);
+  grid-template-columns: 45% 55%;
  background-color: #00000091;
  border-radius: 50px;
- padding: 30px;
+ padding: 2%;
 }
-.work .box-container .box img {
-  padding: 20px;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
+.work .box-container .box #projectimage {
+  width: 97%;
+  height: 97%;
+  border-radius: 20px;
 }
 .work .box-container .box .content {
   height: 100%;
@@ -633,6 +624,7 @@ header .navbar ul li a:hover {
   padding-left: 1rem;
   background: #ffffff;
   color:rgb(0, 0, 0)!important;
+  border-radius: 10px;
 }
 .work .box-container .box  .tag h3 {
   font-size: 2rem;
@@ -646,7 +638,8 @@ header .navbar ul li a:hover {
   justify-content: center;
 }
 .work .desc p {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
+  word-spacing: 5px;
 }
 .work .desc .btns {
   display: flex;
@@ -667,71 +660,126 @@ header .navbar ul li a:hover {
 .work .desc .btns .btn:hover {
   background: #310ae0f5;
 }
+
 #tech2{
-  width: 70% !important;
+  width: 50%;
   margin: auto;
+display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#tech2 img{
+  width: 100% !important;
+  margin: auto;
+  text-align: center;
+  align-items: center;
   margin-top: 30px;
 }
 /* *********************** */
 
 
+
+
+
+
 /* Media query for screen width up to 620px */
-@media only screen and (max-width: 620px) {
-  #tech2 {
-    width: 50% !important; /* Adjust the width value as per your preference */
-    margin-top: 15px; /* Adjust the margin-top value as per your preference */
-  }
-  
-  .desc .pp {
-    display: none !important;
-  }
-  
-  .desc {
-    font-size: 12px !important;
-  }
-  
-  .work .box-container .box {
-    grid-template-columns: repeat(1, 1fr);
-  }
+
+@media only screen and (max-width: 480px) {
+
+#gitSection{
+  margin-bottom: -100%;
 }
+.work h3{
+font-size: 12px !important;
+}  
 
 
-/* @media only screen and ( max-width : 620px) and ( min-width : 10px) {
-#tech2{
-  display: none;
-}
-.desc .pp{
-  display: none !important;
-}
-.desc{
-  font-size: 12px !important;
+.project-description{
+  background-color: rgba(39, 45, 39, 0.313);
+  font-size: 10px !important;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 10px;
 }
 .work .box-container .box {
  display: grid;
  grid-template-columns: repeat(1,1fr);
+ height: fit-content;
+ border-radius: 5%;
+ padding: 5%;
+ overflow: scroll;
 }
 
+.project-deployed-link i{
+ display: none;
 }
-   @media only screen and ( max-width : 800px) and ( min-width : 620px){
-    #tech2{
+
+.project-github-link i{
+
   display: none;
 }
 
+
+}
+
+
+.work .box-container .box::-webkit-scrollbar {
+  display: none !important;  /* Hide the scrollbar */
+}
+
+@media only screen and (min-width: 481px) and (max-width: 767px){
+
+#gitSection{
+  margin-bottom: -100%;
+}
+.work h3{
+font-size: 12px !important;
+}  
+
+
+.project-description{
+  background-color: rgba(39, 45, 39, 0.313);
+  font-size: 10px !important;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 10px;
+}
 .work .box-container .box {
  display: grid;
  grid-template-columns: repeat(1,1fr);
+ height: fit-content;
+ border-radius: 5%;
+ padding: 5%;
+}
+
+.project-deployed-link i{
+ display: none;
+}
+
+.project-github-link i{
+
+  display: none;
 }
 
 }
-   @media only screen and ( max-width : 1000px) and ( min-width : 800px){
 
-} */
+
+   @media (min-width: 768px)  and ( max-width : 1200px){
+.work .box-container .box {
+ display: grid;
+ grid-template-columns: repeat(1,1fr);
+ height: fit-content;
+ border-radius: 5%;
+ padding: 5%;
+}
+
+}
 
 
 /* work section ends */
 
 #gitSection{
-  background-image: url("/Video/space.gif") !important;
+  background-image: url("/Video/space.png") !important;
     background-size:cover ;
   background-repeat: no-repeat;
  background-attachment: fixed;
@@ -742,7 +790,7 @@ header .navbar ul li a:hover {
 /* contact section starts */
 .contact2 {
   /* background: #19191aa9; */
-  background-image: url("/Video/space.gif") !important;
+  background-image: url("/Video/space.png") !important;
     background-size:cover ;
   background-repeat: no-repeat;
  background-attachment: fixed;
@@ -895,6 +943,12 @@ form .button-area {
     width: 100%;
     margin-right: 2rem;
   }
+
+  .form-group{
+    width: 200%;
+
+  }
+
 }
 /* contact section media queries ends */
 /* contact section ends */
@@ -905,7 +959,7 @@ form .button-area {
   padding-top: 0;
   /* background: rgb(0, 1, 43); */
   background: #000000a5;
-  background-image: url("/Video/space.gif") !important;
+  background-image: url("/Video/space.png") !important;
     background-size:cover ;
   background-repeat: no-repeat;
  background-attachment: fixed;
@@ -1087,14 +1141,15 @@ form .button-area {
 
 #contri{
   grid-template-columns: 1fr;
+
 }
 
 #contri img{
-  width: auto;
+  width: 40%;
 
 }
 #contri2 img{
-  width: auto;
+  width: 40%;
   
 }
 
