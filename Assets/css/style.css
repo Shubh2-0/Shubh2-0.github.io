@@ -53,12 +53,13 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 1.7rem 10%;
-  height: 6.5rem;
+  height: auto;
   background-color: #0000006c;
   box-shadow: 0 1px 4px rgba(128, 0, 255, 0.3);
+  margin-bottom: 2%;
 }
 section {
-  min-height: 100vh;
+  min-height: fit-content;
   padding: 2rem 9%;
 }
 .heading {
@@ -451,7 +452,6 @@ header .navbar ul li a:hover {
 /* skills section starts */
 .skills2 {
   min-height: 90vh;
-  /* background: linear-gradient(to bottom, #57059e33, #07070732); */
   background-image: url("/Video/space.png") !important;
     background-size:cover ;
   background-repeat: no-repeat;
@@ -522,6 +522,8 @@ header .navbar ul li a:hover {
     margin-top: 5px;
     width: 100%;
   }
+
+
 }
    @media only screen and ( max-width : 800px) and ( min-width : 620px){
   .skills2 .container {
@@ -544,6 +546,10 @@ header .navbar ul li a:hover {
     padding: 0;
     margin: 0;
   }
+  .skills-card-name{
+
+    font-size: 19px !important;
+  }
   .skills2 .container .row {
     grid-template-columns: repeat(4, 1fr);
     margin: 1rem;
@@ -555,7 +561,14 @@ header .navbar ul li a:hover {
     width: 100%;
   }
 }
+@media only screen and ( max-width : 300px){
 
+    .skills-card-name{
+
+    font-size: 12px !important;
+  }
+
+}
 
 /* skills media queries ends*/
 /* skills section ends */
@@ -1057,6 +1070,11 @@ form .button-area {
   .footer .box-container .box .share a {
     padding: 1.2rem;
   }
+  #contactatlast p{
+    font-size: 11px !important;
+  }
+
+
 }
 /* footer section ends */
 
@@ -1188,10 +1206,6 @@ form .button-area {
 }
    @media only screen and ( max-width : 1300px) and ( min-width : 800px){
 
-    #calendwer{
-  display: none;
-
-}
 #contri{
   grid-template-columns: 1fr;
 }
