@@ -75,7 +75,7 @@ Feel free to customize and add more information to each section based on your sp
 
 ## Tools Used 🛠️
 <img src="Assets/images/Skills/html.png" alt="skill" width="50" /> <img src="Assets/images/Skills/css.png" alt="skill" width="50" /> <img src="Assets/images/Skills/js.png" alt="skill" width="50" /> <img src="Assets/images/Skills/github.png" alt="skill" width="50" /> <img src="Assets/images/Skills/vscode.png" alt="skill" width="50" /> <img src="ReadmeImg/elasticmail.png" alt="skill" width="50" />
-<img src="ReadmeImg/smtp.png" alt="skill" width="50" />
+<img src="ReadmeImg/Smtpsrvr.png" alt="skill" width="50" />
 
 
 <br>
