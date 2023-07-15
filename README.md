@@ -11,7 +11,7 @@ With its clean and professional design, the portfolio website effectively showca
 ### <h1 align="center">Website Preview 💻</h1>
 #### Home Section
 <img src="ReadmeImg/home.png" width="900">
-
+ 
 
 #### About Section
 <img src="ReadmeImg/about.png" width="900">
