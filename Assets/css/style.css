@@ -18,8 +18,9 @@ html {
 }
 body {
   font-family: "Poppins", sans-serif;
-    background-image: url("/Video/space.png") !important;
-
+   background-color: rgb(34, 32, 32);
+   
+   
 }
 
 *::selection {
@@ -69,7 +70,7 @@ section {
   text-align: center;
 }
 .heading span {
-  color: yellow;
+  /* color: yellow; */
 }
 header .logo {
   font-size: 1.9rem;
@@ -170,7 +171,7 @@ header .navbar ul li a:hover {
 /* hero section starts*/
 .home2 {
   position: relative;
-  background-image: url("/Video/space.png") !important;
+ 
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
@@ -330,7 +331,7 @@ header .navbar ul li a:hover {
 /* about section starts */
 .about2 {
   /* background: rgba(255, 255, 255, 0); */
-  background-image: url("/Video/space.png") !important;
+ 
     background-size:cover ;
   background-repeat: no-repeat;
  background-attachment: fixed;
@@ -452,7 +453,6 @@ header .navbar ul li a:hover {
 /* skills section starts */
 .skills2 {
   min-height: 90vh;
-  background-image: url("/Video/space.png") !important;
     background-size:cover ;
   background-repeat: no-repeat;
  background-attachment: fixed;
@@ -461,10 +461,10 @@ header .navbar ul li a:hover {
   color: #fff;
 }
 .skills2 .heading span {
-  color: rgb(255, 230, 0);
+  /* color: rgb(255, 230, 0); */
 }
 .skills2 .container {
-  background: rgba(0, 0, 22, 0.4);
+  background: rgba(0, 0, 0, 0.652);
   color: #fff;
   border-radius: 1rem;
   padding: 2rem;
@@ -487,8 +487,9 @@ header .navbar ul li a:hover {
   transition: 0.2s;
 }
 .skills2 .container .bar:hover {
-  box-shadow: 0 8px 10px rgba(0, 2, 68, 0.8) !important;
+  box-shadow: 0 8px 10px rgba(1, 9, 255, 0.8) !important;
   background-color: rgba(0, 0, 0, 0.9) !important;
+  cursor: pointer;
 }
 .skills2 .container .bar .info {
   display: flex;
@@ -579,7 +580,7 @@ header .navbar ul li a:hover {
   /* background: #010124; */
   /* background: linear-gradient(to bottom, #000031, #00002c); */
   color: white !important;
-  background-image: url("/Video/space.png") !important;
+ 
     background-size:cover ;
   background-repeat: no-repeat;
  background-attachment: fixed;
@@ -589,7 +590,7 @@ header .navbar ul li a:hover {
   padding: 1rem;
 }
 .work .heading span {
-  color: rgb(255, 230, 0);
+  /* color: rgb(255, 230, 0); */
 }
 .work .box-container {
   display: flex;
@@ -788,7 +789,7 @@ font-size: 12px !important;
 /* work section ends */
 
 #gitSection{
-  background-image: url("/Video/space.png") !important;
+ 
     background-size:cover ;
   background-repeat: no-repeat;
  background-attachment: fixed;
@@ -800,7 +801,7 @@ font-size: 12px !important;
 /* contact section starts */
 .contact2 {
   /* background: #19191aa9; */
-  background-image: url("/Video/space.png") !important;
+ 
     background-size:cover ;
   background-repeat: no-repeat;
  background-attachment: fixed;
@@ -969,7 +970,7 @@ form .button-area {
   padding-top: 0;
   /* background: rgb(0, 1, 43); */
   background: #000000a5;
-  background-image: url("/Video/space.png") !important;
+ 
     background-size:cover ;
   background-repeat: no-repeat;
  background-attachment: fixed;
