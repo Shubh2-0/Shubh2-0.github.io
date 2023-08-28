@@ -9,7 +9,7 @@
   },
   {
     "name": "Spring Boot",
-    "icon": "springboot.png"
+    "icon": "Spring Boot.png"
   },
   {
     "name": "Maven",
@@ -28,7 +28,7 @@
     "icon": "dsa.png"
   },
   {
-    "name": "Restful - API",
+    "name": "RESTful - APIs",
     "icon": "restful.png"
   },
   {
@@ -41,10 +41,10 @@
   },
   {
     "name": "MongoDB",
-    "icon": "MongoDB.png"
+    "icon": "mongoDB.png"
   },
   {
-    "name": "django",
+    "name": "Django",
     "icon": "django.png"
   },
    {
