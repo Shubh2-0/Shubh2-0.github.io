@@ -4,6 +4,10 @@
     "icon": "java.png"
   },
   {
+    "name": "Apache Kafka",
+    "icon": "kafka.png"
+  },
+  {
     "name": "Spring Boot",
     "icon": "springboot.png"
   },
@@ -34,6 +38,18 @@
   {
     "name": "JDBC",
     "icon": "jdbc.png"
+  },
+  {
+    "name": "MongoDB",
+    "icon": "MongoDB.png"
+  },
+  {
+    "name": "django",
+    "icon": "django.png"
+  },
+   {
+    "name": "Python",
+    "icon": "python.png"
   },
   {
     "name": "Swagger",
