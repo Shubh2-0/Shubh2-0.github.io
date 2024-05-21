@@ -1124,8 +1124,8 @@ form .button-area {
     justify-content: center;
   }
   #calendwer{
-      display: none;
-  visibility: hidden;
+      /* display: none; */
+  /* visibility: hidden; */
     background-color :white;
     padding: 30px 10px;
     border-radius: 40px;
