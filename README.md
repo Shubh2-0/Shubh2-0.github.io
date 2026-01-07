@@ -126,25 +126,68 @@ python -m http.server 8000
 
 ## 📬 Connect With Me
 
-<p align="center">
-  <a href="https://www.linkedin.com/in/bhatishubham/" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
-  </a>
-  <a href="mailto:shubhambhati226@gmail.com">
-    <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
-  </a>
-  <a href="https://github.com/Shubh2-0" target="_blank">
-    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
-  </a>
-  <a href="https://wa.me/+916232133187" target="_blank">
-    <img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp"/>
-  </a>
-</p>
+<div align="center">
 
-<p align="center">
-  📍 Ujjain, Madhya Pradesh, India<br>
-  📞 +91 6232133187
-</p>
+  <a href="https://www.linkedin.com/in/bhatishubham/" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0077B5" height="35" alt="LinkedIn"/>
+  </a>
+  &nbsp;
+  <a href="mailto:shubhambhati226@gmail.com">
+    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white&labelColor=D14836" height="35" alt="Gmail"/>
+  </a>
+  &nbsp;
+  <a href="https://github.com/Shubh2-0" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white&labelColor=100000" height="35" alt="GitHub"/>
+  </a>
+  &nbsp;
+  <a href="https://wa.me/+916232133187" target="_blank">
+    <img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white&labelColor=25D366" height="35" alt="WhatsApp"/>
+  </a>
+
+  <br><br>
+
+  <table>
+    <tr>
+      <td align="center">
+        <a href="https://www.linkedin.com/in/bhatishubham/" target="_blank">
+          <img src="https://skillicons.dev/icons?i=linkedin" width="50" height="50" alt="LinkedIn" />
+        </a>
+      </td>
+      <td align="center">
+        <a href="mailto:shubhambhati226@gmail.com">
+          <img src="https://skillicons.dev/icons?i=gmail" width="50" height="50" alt="Gmail" />
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://github.com/Shubh2-0" target="_blank">
+          <img src="https://skillicons.dev/icons?i=github" width="50" height="50" alt="GitHub" />
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://twitter.com/shubhambhati" target="_blank">
+          <img src="https://skillicons.dev/icons?i=twitter" width="50" height="50" alt="Twitter" />
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://discord.com/users/shubhambhati" target="_blank">
+          <img src="https://skillicons.dev/icons?i=discord" width="50" height="50" alt="Discord" />
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td align="center"><b>LinkedIn</b></td>
+      <td align="center"><b>Gmail</b></td>
+      <td align="center"><b>GitHub</b></td>
+      <td align="center"><b>Twitter</b></td>
+      <td align="center"><b>Discord</b></td>
+    </tr>
+  </table>
+
+  <br>
+
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=22&pause=1000&color=667EEA&center=true&vCenter=true&random=false&width=435&lines=%F0%9F%93%8D+Ujjain%2C+Madhya+Pradesh%2C+India;%F0%9F%93%9E+%2B91+6232133187;%F0%9F%93%A7+shubhambhati226%40gmail.com" alt="Contact Info" />
+
+</div>
 
 ---
 
