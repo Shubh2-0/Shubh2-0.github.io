@@ -2,7 +2,7 @@
 
 <div align="center">
 
-  ![Portfolio Preview](Assets/images/portfolio-preview.png)
+  ![Portfolio Preview](Assets/images/website%20-%20preview.png)
 
   <p>
     <a href="https://shubh2-0.github.io/" target="_blank">
