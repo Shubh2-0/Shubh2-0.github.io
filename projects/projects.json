@@ -158,7 +158,7 @@
   {
     "name": "YouTube Clone",
     "desc": "YouTube clone enabling users to search, view, and enjoy videos in full-screen mode. Offers seamless video browsing experience.",
-    "image": "Youtube.png",
+    "image": "youtube.png",
     "stacks": "JavaScript, HTML, CSS, API Integration",
     "featured": false,
     "category": "frontend",
@@ -170,7 +170,7 @@
   {
     "name": "Outlook India Clone",
     "desc": "News website clone covering current affairs, politics, lifestyle, entertainment, and more. Responsive design with modern UI.",
-    "image": "Outlook.png",
+    "image": "outlook.png",
     "stacks": "JavaScript, HTML, CSS, Responsive Design",
     "featured": true,
     "category": "frontend",
