@@ -1,345 +1,602 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
+  <!-- Primary Meta Tags -->
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="keywords"
-    content="Shubham Bhati, portfolio, Shubham Bhati, personal portfolio life codes, portfolio design, portfolio website, personal portfolio" />
-  <meta name="description" content="Welcome to Shubham's Portfolio. Java Backend Developer" />
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="./Assets/css/style.css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow">
 
+  <!-- SEO Meta Tags -->
+  <title>Shubham Bhati | Backend Engineer - Java, Spring Boot, Microservices Expert</title>
+  <meta name="title" content="Shubham Bhati | Backend Engineer - Java, Spring Boot, Microservices Expert">
+  <meta name="description" content="Shubham Bhati is a Backend Engineer with 2+ years of experience in Java, Spring Boot, Microservices, REST APIs, and AI Integration. Building scalable enterprise systems processing 15K+ daily transactions.">
+  <meta name="keywords" content="Shubham Bhati, Backend Engineer, Java Developer, Spring Boot Developer, Microservices Architect, REST API Developer, Software Engineer India, Java Spring Boot, Backend Developer Portfolio, Hire Java Developer, AWS Developer, AI Integration Developer">
+  <meta name="author" content="Shubham Bhati">
+  <meta name="creator" content="Shubham Bhati">
+  <meta name="publisher" content="Shubham Bhati">
+  <link rel="canonical" href="https://shubh2-0.github.io/">
 
+  <!-- Geographic Meta Tags -->
+  <meta name="geo.region" content="IN-MP">
+  <meta name="geo.placename" content="Ujjain, Madhya Pradesh, India">
+  <meta name="geo.position" content="23.1765;75.7885">
+  <meta name="ICBM" content="23.1765, 75.7885">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://shubh2-0.github.io/">
+  <meta property="og:title" content="Shubham Bhati | Backend Engineer - Java & Spring Boot Expert">
+  <meta property="og:description" content="Backend Engineer with 2+ years building scalable microservices, REST APIs, and AI-powered solutions. Java, Spring Boot, AWS, Docker.">
+  <meta property="og:image" content="https://shubh2-0.github.io/Assets/images/profile.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Shubham Bhati - Backend Engineer">
+  <meta property="og:site_name" content="Shubham Bhati Portfolio">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://shubh2-0.github.io/">
+  <meta name="twitter:title" content="Shubham Bhati | Backend Engineer - Java & Spring Boot Expert">
+  <meta name="twitter:description" content="Backend Engineer with 2+ years building scalable microservices, REST APIs, and AI-powered solutions.">
+  <meta name="twitter:image" content="https://shubh2-0.github.io/Assets/images/profile.png">
+  <meta name="twitter:image:alt" content="Shubham Bhati - Backend Engineer">
+  <meta name="twitter:creator" content="@shubhambhati">
+
+  <!-- LinkedIn -->
+  <meta property="linkedin:owner" content="bhatishubham">
 
   <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="./Assets/images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="./Assets/images/favicon.svg">
+  <link rel="apple-touch-icon" href="./Assets/images/favicon.svg">
 
-  <link id='favicon' rel="shortcut icon"
-    href="https://th.bing.com/th/id/R.cda3b7d73ea9d27ebc57e69796622b87?rik=RBze9cBJjorqcA&riu=http%3a%2f%2fwww.icons101.com%2ficon_png%2fsize_512%2fid_32956%2fSb.png&ehk=8RXWPvUn08MryrnrIUwVTerw1MK%2fLsSOn6T2Qy7ED4E%3d&risl=&pid=ImgRaw&r=0"
-    type="image/x-png">
-  <title>Portfolio | Shubham Bhati</title>
-  <script src="https://unpkg.com/eva-icons"></script>
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#667eea">
+  <meta name="msapplication-TileColor" content="#667eea">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <!-- Preconnect for Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="https://api.github.com">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  <link rel="stylesheet" href="./Assets/css/style.css">
+
+  <!-- Structured Data - JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Shubham Bhati",
+    "url": "https://shubh2-0.github.io/",
+    "image": "https://shubh2-0.github.io/Assets/images/profile.png",
+    "jobTitle": "Backend Engineer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "AlignBits LLC"
+    },
+    "description": "Backend Engineer with 2+ years of experience in Java, Spring Boot, Microservices, and AI Integration",
+    "email": "shubhambhati226@gmail.com",
+    "telephone": "+91-6232133187",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Ujjain",
+      "addressRegion": "Madhya Pradesh",
+      "addressCountry": "India"
+    },
+    "alumniOf": {
+      "@type": "Organization",
+      "name": "Masai School"
+    },
+    "knowsAbout": ["Java", "Spring Boot", "Microservices", "REST API", "MySQL", "PostgreSQL", "MongoDB", "Docker", "AWS", "AI Integration", "OpenAI", "System Design"],
+    "sameAs": [
+      "https://www.linkedin.com/in/bhatishubham/",
+      "https://github.com/Shubh2-0"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Shubham Bhati Portfolio",
+    "url": "https://shubh2-0.github.io/",
+    "description": "Portfolio of Shubham Bhati - Backend Engineer specializing in Java and Spring Boot",
+    "author": {
+      "@type": "Person",
+      "name": "Shubham Bhati"
+    }
+  }
+  </script>
 </head>
 
 <body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#" class="logo">SB<span>.</span></a>
 
+      <div class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#certifications" class="nav-link">Certifications</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="nav-close" id="nav-close"><i class="fas fa-times"></i></button>
+      </div>
 
-
-  <!-- navbar starts -->
-  <header>
-    <a href="/" class="logo"><i class="fab fa-dev"></i> Shubham Bhati</a>
-
-    <div id="menu" style="color: white;" class="fas fa-bars"></div>
-    <nav id="nav-menu" class="navbar">
-      <ul>
-        <li><a class="active nav-link home" href="#home">Home</a></li>
-        <li><a class="nav-link about" href="#about">About Me</a></li>
-        <li><a class="nav-link skills" href="#skills">Tech Stack</a></li>
-        <li><a class="nav-link projects" href="#projects">Projects</a></li>
-        <li><a class="nav-link contact" href="#contact">Contact</a></li>
-        <!-- https://drive.google.com/file/d/1Nn2dEMxg_ZvXJR10Kd7J1P-fu54Umrjz/view?usp=sharing -->
-        <li><button id="resume-button-1">
-            <a id="resume-link-1" href="Assets/Shubham_Bhati_Resume.pdf" download
-              onclick="window.open('Assets/Shubham_Bhati_Resume.pdf')" class="btn nav-link resume"><span>Resume </span>
-              <i class="fas fa-chevron-right"></i>
-            </a>
-          </button></li>
-      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" title="Toggle Theme">
+          <i class="fas fa-sun"></i>
+        </button>
+        <a href="Assets/Shubham_Bhati_Resume.pdf" target="_blank" class="btn btn-small">
+          <i class="fas fa-file-alt"></i> Resume
+        </a>
+        <button class="nav-toggle" id="nav-toggle"><i class="fas fa-bars"></i></button>
+      </div>
     </nav>
   </header>
 
-
-  <section class="home2" id="home">
-
-
-    <div class="content">
-      <h2>Hi There,<br /> I'm Shubham <span>Bhati</span></h2>
-      <p>i am into <span class="typing-text"></span></p>
-      <a href="#about" class="btn"><span>About Me</span>
-        <i class="fas fa-arrow-circle-down"></i>
-      </a>
-      <div class="socials">
-        <ul class="social-icons">
-          <li><a class="linkedin" aria-label="LinkedIn" href="https://www.linkedin.com/in/bhatishubham"
-              target="_blank"><i class="fab fa-linkedin"></i></a></li>
-          <li><a class="github" aria-label="GitHub" href="https://github.com/Shubh2-0" target="_blank"><i
-                class="fab fa-github"></i></a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="image">
-      <img draggable="false" class="tilt" id="new23"
-        src="https://cdn.dribbble.com/users/1162077/screenshots/3848914/programmer.gif" alt=""
-        style="border-radius: 20%;">
-    </div>
-  </section>
-  <!-- hero section ends -->
-
-
-  <!-- about section starts -->
-  <section class="about about2 section" id="about">
-    <h2 class="heading"><i class="fas fa-user-alt"></i> About <span>Me</span></h2>
-
-    <div class="row">
-
-      <div class="image">
-        <img draggable="false" class="tilt home-img" src="./Assets/images/profile.jpg" alt="">
-      </div>
-      <div class="content">
-        <h3 id="user-detail-name">I'm Shubham Bhati <i class="fab fa-black-tie"></i></h3>
-        <span class="tag">Java Backend Developer<i
-            class="fas fa-mobile-altJava Backend DeveloperJava Backend Developer"></i></span>
-
-        <p id="user-detail-intro">Aspiring Java Backend developer skilled in Spring Boot & Hibernate frameworks with a
-          good grasp on core java concepts. Self-motivated with a strong problem-solving mindset and curious learner.
-          Keen interest in building user-centric products. Looking forward to working in a challenging role with a
-          growth-oriented organization. </p>
-
-        <!--         <div class="box-container">
-            <div class="box">
-              <p><span> age: </span> 22</p>
-              <p><span> phone : </span> +91 6232133187</p>
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <p class="hero-greeting">Hello, I'm</p>
+            <h1 class="hero-name">Shubham Bhati</h1>
+            <div class="hero-role">
+              <span id="typing-text"></span><span class="cursor">|</span>
             </div>
-            <div class="box">
-              <p><span> email : </span> shubhambhati226@gmail.com</p>
-              <p><span> place : </span> Ujjain, Madhya Pradesh, India</p>
+            <p class="hero-tagline">
+              I build <strong>robust backend systems</strong> that scale. Crafting microservices,
+              REST APIs, and AI-powered solutions with Java & Spring Boot.
+            </p>
+            <div class="hero-cta">
+              <a href="#contact" class="btn btn-primary">Let's Talk</a>
+              <a href="projects.html" class="btn btn-outline">View Work</a>
             </div>
-        </div> -->
-        <!--  -->
-        <div class="resumebtn">
-          <button id="resume-button-2">
+            <div class="hero-social">
+              <a href="https://www.linkedin.com/in/bhatishubham" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://github.com/Shubh2-0" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+              <a href="mailto:shubhambhati226@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+          </div>
+          <div class="hero-image">
+            <div class="image-wrapper">
+              <img src="./Assets/images/profile.png" alt="Shubham Bhati - Backend Engineer">
+            </div>
+            <div class="hero-badge">
+              <i class="devicon-java-plain"></i>
+              <i class="devicon-spring-plain"></i>
+              <i class="devicon-docker-plain"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
 
-            <a id="resume-link-2" href="Assets/Shubham_Bhati_Resume.pdf" download
-              onclick="window.open('Assets/Shubham_Bhati_Resume.pdf')" class="btn"><span>Resume</span>
-              <i class="fas fa-chevron-right"></i>
-            </a>
-          </button>
+    <!-- About -->
+    <section class="about section" id="about">
+      <div class="container">
+        <h2 class="section-title">About</h2>
 
+        <div class="about-grid">
+          <div class="about-text">
+            <p class="about-intro">
+              Backend Engineer passionate about building <strong>high-performance systems</strong> that scale.
+              My stack: <strong>Java, Spring Boot, Microservices, Docker, AWS</strong> — crafting robust APIs
+              and event-driven architectures.
+            </p>
+            <p>
+              Exploring the intersection of <strong>Backend + AI</strong> — integrating <strong>OpenAI, Gemini,
+              and LLMs</strong> into production systems. I love turning complex problems into elegant,
+              maintainable code that handles millions of requests.
+            </p>
+          </div>
+
+          <div class="about-stats">
+            <div class="stat-item">
+              <span class="stat-number">20+</span>
+              <span class="stat-label">GitHub Projects</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">10+</span>
+              <span class="stat-label">Technologies</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">5+</span>
+              <span class="stat-label">AI Integrations</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Passion for Code</span>
+            </div>
+          </div>
         </div>
 
-      </div>
-    </div>
-  </section>
-  <!-- about section ends -->
-
-  <!-- skills section starts -->
-  <section class="skills2" id="skills">
-
-    <h2 class="heading"><i class="fas fa-laptop-code"></i>Tech<span> Stack</span></h2>
-
-    <div class="container">
-      <div class="row" id="skillsContainer">
-
-      </div>
-    </div>
-
-  </section>
-  <!-- skills section ends -->
-
-
-
-  <!-- work project section starts -->
-  <section class="work" id="projects">
-
-    <h2 class="heading"><i class="fas fa-laptop-code"></i> Projects <span>Made</span></h2>
-    <div class="box-container"> </div>
-
-
-  </section>
-  <!-- work project section ends -->
-  <section id="gitSection" style="text-align: center;">
-
-    <div id="heading-git">
-
-      <h1 id="ddd">My Github <span style="color: yellow">Contribution</span><span id="git-image"></span> </h1>
-
-    </div>
-
-
-    <div id="contri">
-
-      <div>
-        <img id="github-streak-stats" alt="7oSkaaa's Github Stats"
-          src="https://github-readme-streak-stats.herokuapp.com/?user=shubh2-0&count_private=true&show_icons=true&custom_title=Github&theme=algolia&hide_border=true&bg_color=0,000000,130F40&layout=compact&border_radius=10" />
-
-      </div>
-
-
-      <div>
-        <img id="github-stats-card" alt="status github, commits, etc..."
-
-
-          src="https://github-readme-stats.vercel.app/api?username=Shubh2-0&show_icons=true&count_private=true&theme=algolia&bg_color=0,000000,130F40&layout=compact&border_radius=10&hide_border=true">
-      </div>
-      <!--  -->
-
-    </div>
-
-    <div id="contri2">
-      <img id="github-top-langs" alt="most used languages"
-        src="https://github-readme-stats.vercel.app/api/top-langs/?username=Shubh2-0&count_private=true&theme=algolia&bg_color=0,000000,130F40&layout=compact&border_radius=8&hide_border=true&langs_count=20&hide=hack,swift,kotlin,objective-c" />
-    </div>
-
-    <div class="calendar react-activity-calendar tilt" id="calendwer">
-      <!-- Loading stuff -->
-      <!-- Loading the data just for you. -->
-  
-  
-  </div>
-
-  </section>
-
-  <!-- contact section starts -->
-  <section class="contact2" id="contact2">
-
-    <h2 class="heading"><i class="fas fa-headset"></i> Get in <span>Touch</span></h2>
-
-    <div class="container">
-      <div class="content">
-        <div class="image-box">
-          <img draggable="false" src="./Assets/images/contact1.png" alt="">
+        <div class="about-info-row">
+          <div class="info-chip">
+            <i class="fas fa-map-marker-alt"></i> Ujjain, India
+          </div>
+          <div class="info-chip">
+            <i class="fas fa-envelope"></i> shubhambhati226@gmail.com
+          </div>
+          <div class="info-chip">
+            <i class="fas fa-phone"></i> +91 6232133187
+          </div>
+          <a href="Assets/Shubham_Bhati_Resume.pdf" target="_blank" class="btn btn-primary btn-sm">
+            <i class="fas fa-download"></i> Resume
+          </a>
         </div>
-        <form id="contact-form">
+      </div>
+    </section>
 
-          <div class="form-group">
-            <div class="field">
-              <input type="text" name="name" placeholder="Name" required>
-              <i class='fas fa-user'></i>
+    <!-- Experience -->
+    <section class="experience section" id="experience">
+      <div class="container">
+        <h2 class="section-title">Work Experience</h2>
+        <p class="section-subtitle">2+ years of professional experience in backend development, microservices architecture, and enterprise software solutions</p>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>Software Developer</h3>
+                <span class="timeline-company">AlignBits LLC</span>
+              </div>
+              <span class="timeline-date"><i class="fas fa-calendar-alt"></i> Oct 2024 - Present</span>
+              <p class="timeline-desc">Leading backend development for enterprise applications, specializing in Java Spring Boot microservices and AI-powered automation solutions.</p>
+              <ul class="timeline-list">
+                <li>Architecting event-driven microservices using Spring Boot, processing 10K+ daily transactions with 99.9% reliability</li>
+                <li>Integrating OpenAI and Google Gemini APIs to build intelligent automation systems for business workflows</li>
+                <li>Developing RESTful APIs with Spring Security, JWT authentication, and role-based access control</li>
+                <li>Implementing CI/CD pipelines with Docker containerization for seamless deployment</li>
+              </ul>
+              <div class="timeline-tech">
+                <span>Java</span><span>Spring Boot</span><span>OpenAI</span><span>Docker</span><span>AWS</span><span>PostgreSQL</span>
+              </div>
             </div>
-            <div class="field">
-              <input type="email" name="email" placeholder="Email" required autocapitalize="off">
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>Associate Software Engineer</h3>
+                <span class="timeline-company">IHX Private Limited</span>
+              </div>
+              <span class="timeline-date"><i class="fas fa-calendar-alt"></i> Aug 2023 - Oct 2024</span>
+              <p class="timeline-desc">Contributed to healthcare technology solutions, building FHIR-compliant platforms for seamless health data exchange across hospital systems.</p>
+              <ul class="timeline-list">
+                <li>Developed FHIR-compliant healthcare APIs enabling interoperability between 50+ hospital systems</li>
+                <li>Built scalable microservices architecture handling 15K+ daily transactions with 99.9% uptime</li>
+                <li>Implemented secure REST APIs using Spring Security, OAuth 2.0, and JWT token-based authentication</li>
+                <li>Optimized database queries and implemented caching strategies reducing response time by 40%</li>
+              </ul>
+              <div class="timeline-tech">
+                <span>Java</span><span>Spring Boot</span><span>FHIR</span><span>MySQL</span><span>Redis</span><span>Microservices</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="skills section" id="skills">
+      <div class="container">
+        <h2 class="section-title">Technical Skills</h2>
+
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h3><i class="fas fa-code"></i> Programming Languages</h3>
+            <div class="skill-tags">
+              <span><i class="devicon-java-plain colored"></i> Java</span>
+              <span><i class="devicon-javascript-plain colored"></i> JavaScript</span>
+              <span><i class="devicon-python-plain colored"></i> Python</span>
+              <span><i class="devicon-mysql-plain colored"></i> SQL</span>
+              <span><i class="devicon-bash-plain"></i> Bash</span>
+              <span><i class="devicon-html5-plain colored"></i> HTML5</span>
+              <span><i class="devicon-css3-plain colored"></i> CSS3</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3><i class="fas fa-layer-group"></i> Frameworks & Libraries</h3>
+            <div class="skill-tags">
+              <span><i class="devicon-spring-plain colored"></i> Spring Boot</span>
+              <span><i class="devicon-spring-plain colored"></i> Spring MVC</span>
+              <span><i class="devicon-spring-plain colored"></i> Spring Security</span>
+              <span><i class="devicon-hibernate-plain colored"></i> Hibernate ORM</span>
+              <span><i class="devicon-junit-plain colored"></i> JUnit 5</span>
+              <span><i class="fas fa-vial"></i> Mockito</span>
+              <span><i class="fas fa-window-maximize"></i> Vaadin</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3><i class="fas fa-server"></i> Backend & Architecture</h3>
+            <div class="skill-tags">
+              <span><i class="fas fa-plug"></i> REST APIs</span>
+              <span><i class="fas fa-cubes"></i> Microservices</span>
+              <span><i class="devicon-amazonwebservices-plain-wordmark colored"></i> AWS SQS</span>
+              <span><i class="fas fa-envelope-open-text"></i> RabbitMQ</span>
+              <span><i class="devicon-apachekafka-original"></i> Apache Kafka</span>
+              <span><i class="fas fa-key"></i> JWT Auth</span>
+              <span><i class="fas fa-shield-alt"></i> OAuth 2.0</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3><i class="fas fa-database"></i> Databases</h3>
+            <div class="skill-tags">
+              <span><i class="devicon-mysql-plain colored"></i> MySQL</span>
+              <span><i class="devicon-postgresql-plain colored"></i> PostgreSQL</span>
+              <span><i class="devicon-mongodb-plain colored"></i> MongoDB</span>
+              <span><i class="devicon-redis-plain colored"></i> Redis</span>
+              <span><i class="fas fa-database"></i> JPA</span>
+              <span><i class="fas fa-table"></i> JDBC</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3><i class="fas fa-robot"></i> AI & Automation</h3>
+            <div class="skill-tags">
+              <span><i class="fas fa-brain"></i> OpenAI API</span>
+              <span><i class="fas fa-gem"></i> Gemini API</span>
+              <span><i class="fas fa-magic"></i> Prompt Engineering</span>
+              <span><i class="fas fa-cogs"></i> AI Automation</span>
+              <span><i class="fas fa-comments"></i> Chatbot Development</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3><i class="fas fa-tools"></i> DevOps & Tools</h3>
+            <div class="skill-tags">
+              <span><i class="devicon-docker-plain colored"></i> Docker</span>
+              <span><i class="devicon-git-plain colored"></i> Git</span>
+              <span><i class="devicon-github-original"></i> GitHub</span>
+              <span><i class="fas fa-infinity"></i> CI/CD</span>
+              <span><i class="devicon-maven-plain colored"></i> Maven</span>
+              <span><i class="devicon-gradle-plain colored"></i> Gradle</span>
+              <span><i class="devicon-linux-plain"></i> Linux</span>
+              <span><i class="fas fa-paper-plane"></i> Postman</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3><i class="fas fa-laptop-code"></i> IDEs & Editors</h3>
+            <div class="skill-tags">
+              <span><i class="devicon-intellij-plain colored"></i> IntelliJ IDEA</span>
+              <span><i class="devicon-vscode-plain colored"></i> VS Code</span>
+              <span><i class="devicon-eclipse-plain colored"></i> Eclipse</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3><i class="fas fa-lightbulb"></i> Concepts & Methodologies</h3>
+            <div class="skill-tags">
+              <span><i class="fas fa-sitemap"></i> System Design</span>
+              <span><i class="fas fa-project-diagram"></i> Design Patterns</span>
+              <span><i class="fas fa-tasks"></i> Agile/Scrum</span>
+              <span><i class="fas fa-code-branch"></i> SOLID Principles</span>
+              <span><i class="fas fa-check-double"></i> TDD</span>
+              <span><i class="fas fa-file-medical-alt"></i> FHIR Standards</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="certifications section" id="certifications">
+      <div class="container">
+        <h2 class="section-title">Certifications</h2>
+        <p class="section-subtitle">Validated skills and professional achievements</p>
+
+        <div class="certs-grid">
+          <div class="cert-card">
+            <div class="cert-icon"><i class="fas fa-robot"></i></div>
+            <div class="cert-content">
+              <h3>AI Engineer Certification</h3>
+              <p class="cert-issuer">OneRoadmap</p>
+              <span class="cert-date">Jun 2025</span>
+            </div>
+            <a href="https://oneroadmap.io/skills/ai/certificate/CERT-C72667EC" target="_blank" class="cert-link"><i class="fas fa-external-link-alt"></i></a>
+          </div>
+
+          <div class="cert-card">
+            <div class="cert-icon"><i class="devicon-java-plain"></i></div>
+            <div class="cert-content">
+              <h3>Java Certification</h3>
+              <p class="cert-issuer">OneRoadmap</p>
+              <span class="cert-date">Jun 2025</span>
+            </div>
+            <a href="https://oneroadmap.io/skills/java/certificate/CERT-FC02577E" target="_blank" class="cert-link"><i class="fas fa-external-link-alt"></i></a>
+          </div>
+
+          <div class="cert-card featured-cert">
+            <div class="cert-badge">Top 5%</div>
+            <div class="cert-icon"><i class="devicon-java-plain"></i></div>
+            <div class="cert-content">
+              <h3>Java Test Certification</h3>
+              <p class="cert-issuer">Pro5.ai</p>
+              <span class="cert-date">May 2024</span>
+            </div>
+            <a href="https://drive.google.com/file/d/1sqRDWmxXzUaHq3_dCacxEmbZRUwK8ZEh/view?usp=sharing" target="_blank" class="cert-link"><i class="fas fa-external-link-alt"></i></a>
+          </div>
+
+          <div class="cert-card">
+            <div class="cert-icon"><i class="fas fa-brain"></i></div>
+            <div class="cert-content">
+              <h3>Problem Solving (Intermediate)</h3>
+              <p class="cert-issuer">HackerRank</p>
+              <span class="cert-date">Jul 2023</span>
+            </div>
+            <a href="https://www.hackerrank.com/certificates/b9a30219cd2c" target="_blank" class="cert-link"><i class="fas fa-external-link-alt"></i></a>
+          </div>
+
+          <div class="cert-card">
+            <div class="cert-icon"><i class="fas fa-database"></i></div>
+            <div class="cert-content">
+              <h3>SQL (Intermediate)</h3>
+              <p class="cert-issuer">HackerRank</p>
+              <span class="cert-date">Jul 2023</span>
+            </div>
+            <a href="https://www.hackerrank.com/certificates/6181a2b18e6f" target="_blank" class="cert-link"><i class="fas fa-external-link-alt"></i></a>
+          </div>
+
+          <div class="cert-card">
+            <div class="cert-icon"><i class="fas fa-code"></i></div>
+            <div class="cert-content">
+              <h3>Full Stack Web Development</h3>
+              <p class="cert-issuer">Masai School</p>
+              <span class="cert-date">Aug 2023</span>
+            </div>
+            <a href="https://drive.google.com/file/d/1PZrZ_0q8S-KUNK6riAE81rUxiYRRRYVY/view?usp=drive_link" target="_blank" class="cert-link"><i class="fas fa-external-link-alt"></i></a>
+          </div>
+
+          <div class="cert-card">
+            <div class="cert-icon"><i class="fas fa-magic"></i></div>
+            <div class="cert-content">
+              <h3>Certified Prompt Engineer</h3>
+              <p class="cert-issuer">Masai School</p>
+              <span class="cert-date">Aug 2023</span>
+            </div>
+            <a href="https://drive.google.com/file/d/1vrlRCYZ6JlF9G9Q6V7OAKacN4MCD7KFm/view?usp=drive_link" target="_blank" class="cert-link"><i class="fas fa-external-link-alt"></i></a>
+          </div>
+
+          <div class="cert-card">
+            <div class="cert-icon"><i class="devicon-javascript-plain"></i></div>
+            <div class="cert-content">
+              <h3>JavaScript (Intermediate)</h3>
+              <p class="cert-issuer">HackerRank</p>
+              <span class="cert-date">Jan 2023</span>
+            </div>
+            <a href="https://www.hackerrank.com/certificates/943d727ba6f0" target="_blank" class="cert-link"><i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </div>
+
+        <div class="certs-more">
+          <a href="https://www.linkedin.com/in/bhatishubham/details/certifications/" target="_blank" class="btn btn-outline">
+            <i class="fab fa-linkedin"></i> View All 25+ Certifications
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="featured section" id="featured">
+      <div class="container">
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">Showcasing my best backend engineering work</p>
+        <div class="featured-grid" id="featured-container"></div>
+      </div>
+    </section>
+
+
+    <!-- Contact -->
+    <section class="contact section" id="contact">
+      <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">Have a project or opportunity? I'd love to hear from you.</p>
+
+        <div class="contact-wrapper">
+          <div class="contact-info">
+            <div class="contact-card">
               <i class="fas fa-envelope"></i>
-
+              <div>
+                <h4>Email</h4>
+                <a href="mailto:shubhambhati226@gmail.com">shubhambhati226@gmail.com</a>
+              </div>
             </div>
-            <div class="field">
-              <input type="number" name="phone" placeholder="Phone">
-              <i class='fas fa-phone-alt'></i>
+            <div class="contact-card">
+              <i class="fas fa-phone"></i>
+              <div>
+                <h4>Phone</h4>
+                <a href="tel:+916232133187">+91 6232133187</a>
+              </div>
+            </div>
+            <div class="contact-card">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <h4>Location</h4>
+                <p>Ujjain, Madhya Pradesh, India</p>
+              </div>
             </div>
 
-            <div class="message">
-              <textarea placeholder="Message" name="message" required></textarea>
-              <i class="fas fa-comment-dots"></i>
+            <div class="contact-social">
+              <a href="https://www.linkedin.com/in/bhatishubham" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://github.com/Shubh2-0" target="_blank"><i class="fab fa-github"></i></a>
             </div>
-
           </div>
-          <div class="button-area">
-            <button type="submit" id="send">
-              Submit <i class="fa fa-paper-plane"></i></button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-  <!-- contact section ends -->
 
-
-  <!-- footer section starts -->
-  <section class="footer" id="contact">
-
-    <div class="box-container">
-
-      <div class="box">
-        <h3>Shubham's Portfolio</h3>
-        <p>Thank you for visiting my portfolio website. Connect with me over socials. <br /> <br /> Keep Rising 🚀</p>
-      </div>
-
-      <div class="box">
-        <h3>quick links</h3>
-        <a href="#home"><i class="fas fa-chevron-circle-right"></i> home</a>
-        <a href="#about"><i class="fas fa-chevron-circle-right"></i> about</a>
-        <a href="#skills"><i class="fas fa-chevron-circle-right"></i> skills</a>
-
-        <a href="#projects"><i class="fas fa-chevron-circle-right"></i> work</a>
-
-      </div>
-      <!--  -->
-      <div id="contactatlast" class="box">
-        <h3>contact info</h3>
-        <p id="contact-phone"> <i class="fas fa-phone"></i>+91 6232133187</p>
-        <p id="contact-email"> <i class="fas fa-envelope"></i>shubhambhati226@gmail.com</p>
-        <p> <i class="fas fa-map-marked-alt"></i>Ujjain, Madhya Pradesh, India</p>
-        <div class="share">
-
-          <a id="contact-linkedin" href="https://www.linkedin.com/in/bhatishubham" class="fab fa-linkedin"
-            aria-label="LinkedIn" target="_blank"></a>
-          <a id="contact-github" href="https://github.com/Shubh2-0" class="fab fa-github" aria-label="GitHub"
-            target="_blank"></a>
-
+          <form class="contact-form" id="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your email" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="Subject">
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+          </form>
         </div>
       </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Shubham Bhati. Built with passion.</p>
     </div>
+  </footer>
 
-    <h1 class="credit">Designed </i> by <a href="https://www.linkedin.com/in/bhatishubham" target="_blank"> 👨‍💻 Shubham
-        Bhati</a></h1>
-    <!-- <i class="fa fa-heart pulse"></i> -->
-  </section>
-  <!-- footer section ends -->
+  <!-- Scroll Top -->
+  <a href="#home" class="scroll-top" id="scroll-top"><i class="fas fa-arrow-up"></i></a>
 
-
-  <!-- scroll top btn -->
-  <a href="#home" aria-label="ScrollTop" class="fas fa-angle-up" id="scroll-top"></a>
-  <!-- scroll back to top -->
-
-
-  <!-- ==== ALL MAJOR JAVASCRIPT CDNS STARTS ==== -->
-  <!-- jquery cdn -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-  <!-- typed.js cdn -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.5/typed.min.js"
-    integrity="sha512-1KbKusm/hAtkX5FScVR5G36wodIMnVd/aP04af06iyQTkD17szAMGNmxfNH+tEuFp3Og/P5G32L1qEC47CZbUQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-
-
-
-  <!-- scroll reveal anim -->
-  <script src="https://unpkg.com/scrollreveal"></script>
-
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-
-  <!-- ==== ALL MAJOR JAVASCRIPT CDNS ENDS ==== -->
-
+  <!-- Scripts -->
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="./Assets/js/script.js"></script>
-
-
-
-
-
-
-
-
-
 </body>
 
 </html>
-
-<!-- Prepare a container for your calendar. -->
-<script
-  src="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.min.js"
->
-</script>
-
-<!-- Optionally, include the theme (if you don't want to struggle to write the CSS) -->
-<link
-  rel="stylesheet"
-  href="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.css"
-/>
-
-<script>
-    new GitHubCalendar(".calendar", "Shubh2-0");
-</script>
-
-
-<script src="https://smtpjs.com/v3/smtp.js"></script>
-
-
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

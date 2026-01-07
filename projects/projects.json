@@ -1,47 +1,206 @@
 [
-
   {
-    "name": "Movie Search Web Application",
-    "desc": "This is a Web Application where user can search for any Movie in the search page and get the details of it like IMDB rating, Release Year, Genre.",
-    "image": "movie",
-     "stacks":"js,html,css,git,netlify,vscode",
+    "name": "ChatBotSpringAI",
+    "desc": "AI-powered chatbot built with Spring Boot and OpenAI API. Features RESTful endpoints for intelligent conversations, demonstrating AI integration with enterprise Java applications.",
+    "image": "ChatBotSpringAI.png",
+    "stacks": "Java, Spring Boot, OpenAI, REST API, Maven",
+    "featured": true,
+    "category": "backend",
+    "links": {
+      "view": "https://github.com/Shubh2-0/ChatBotSpringAI",
+      "code": "https://github.com/Shubh2-0/ChatBotSpringAI"
+    }
+  },
+  {
+    "name": "WorkFolio",
+    "desc": "Full-stack portfolio management system with Spring Boot backend, Spring Security authentication, Thymeleaf templates, and MySQL database. Implements DAO design pattern.",
+    "image": "WorkFolio.png",
+    "stacks": "Java, Spring Boot, Spring Security, Thymeleaf, MySQL, Bootstrap",
+    "featured": true,
+    "category": "backend",
+    "links": {
+      "view": "https://github.com/Shubh2-0/WorkFolio",
+      "code": "https://github.com/Shubh2-0/WorkFolio"
+    }
+  },
+  {
+    "name": "Chatterbox",
+    "desc": "Real-time chat application using Spring Boot WebSocket for instant messaging. Features live communication with modern frontend integration.",
+    "image": "Chatterbox.png",
+    "stacks": "Java, Spring Boot, WebSocket, JavaScript, HTML/CSS",
+    "featured": false,
+    "category": "backend",
+    "links": {
+      "view": "https://github.com/Shubh2-0/Chatterbox",
+      "code": "https://github.com/Shubh2-0/Chatterbox"
+    }
+  },
+  {
+    "name": "Spring Security Projects",
+    "desc": "Comprehensive Spring Security implementation showcasing JWT authentication, role-based authorization, CORS handling, and custom authentication providers.",
+    "image": "Spring Security Repository.png",
+    "stacks": "Java, Spring Boot, Spring Security, JWT, REST API",
+    "featured": false,
+    "category": "backend",
+    "links": {
+      "view": "https://github.com/Shubh2-0/Spring_Security",
+      "code": "https://github.com/Shubh2-0/Spring_Security"
+    }
+  },
+  {
+    "name": "ShipmentXpress",
+    "desc": "Logistics and shipment management system built with Java, Hibernate ORM, and MySQL. Demonstrates enterprise-level database operations and entity mapping.",
+    "image": "ShipmentXpress.png",
+    "stacks": "Java, Hibernate, MySQL, Maven, Lombok",
+    "featured": false,
+    "category": "backend",
+    "links": {
+      "view": "https://github.com/Shubh2-0/ShipmentXpress",
+      "code": "https://github.com/Shubh2-0/ShipmentXpress"
+    }
+  },
+  {
+    "name": "Shopzilla E-Commerce Platform",
+    "desc": "Complete online shopping platform for buyers and sellers. Features product management, inventory tracking, secure transactions, and user-friendly interface.",
+    "image": "Shopzilla.png",
+    "stacks": "Java, MySQL, JDBC, Swing, Maven",
+    "featured": true,
+    "category": "backend",
+    "links": {
+      "view": "https://drive.google.com/file/d/1tqy_GtrtqsgwKkOZUHJw2idoBV6HBAnW/view",
+      "code": "https://github.com/Shubh2-0/Shopzilla-Online-Shopping-Platform"
+    }
+  },
+  {
+    "name": "CryptoVerve Bank",
+    "desc": "Banking system simulation with account management, transactions, deposits, withdrawals, and balance inquiries. Built with Java Swing GUI.",
+    "image": "CryptoVerve.png",
+    "stacks": "Java, Swing, OOP, Java 8 Lambdas",
+    "featured": false,
+    "category": "backend",
+    "links": {
+      "view": "https://github.com/Shubh2-0/CryptoVerve-Bank",
+      "code": "https://github.com/Shubh2-0/CryptoVerve-Bank"
+    }
+  },
+  {
+    "name": "User Management System",
+    "desc": "User management backend system for handling user registration, authentication, and profile management.",
+    "image": "engagebay.png",
+    "stacks": "Java, Spring Boot",
+    "featured": false,
+    "category": "backend",
+    "links": {
+      "view": "https://github.com/Shubh2-0/UserManagementSystem",
+      "code": "https://github.com/Shubh2-0/UserManagementSystem"
+    }
+  },
+  {
+    "name": "Tic Tac Toe - JavaFX",
+    "desc": "Classic Tic Tac Toe game built with JavaFX. Features modern GUI, game logic, and interactive gameplay experience.",
+    "image": "TIC_TAC_TOE_Game_With_JAVAFX.png",
+    "stacks": "Java, JavaFX, GUI",
+    "featured": false,
+    "category": "desktop",
+    "links": {
+      "view": "https://github.com/Shubh2-0/TIC_TAC_TOE_Game_With_JAVAFX",
+      "code": "https://github.com/Shubh2-0/TIC_TAC_TOE_Game_With_JAVAFX"
+    }
+  },
+  {
+    "name": "GestureGlide",
+    "desc": "Computer vision project using Python and CVZone for gesture recognition. Play Rock-Paper-Scissors using hand gestures detected via camera.",
+    "image": "GestureGlide.png",
+    "stacks": "Python, OpenCV, CVZone, Computer Vision",
+    "featured": false,
+    "category": "ai",
+    "links": {
+      "view": "https://github.com/Shubh2-0/GestureGlide",
+      "code": "https://github.com/Shubh2-0/GestureGlide"
+    }
+  },
+  {
+    "name": "SkyScope Weather App",
+    "desc": "Weather application that fetches real-time weather data using Weather API. Displays current conditions, forecasts, and weather metrics.",
+    "image": "SkyScope.png",
+    "stacks": "Python, Weather API, Tkinter",
+    "featured": false,
+    "category": "python",
+    "links": {
+      "view": "https://github.com/Shubh2-0/SkyScope",
+      "code": "https://github.com/Shubh2-0/SkyScope"
+    }
+  },
+  {
+    "name": "SnapResize",
+    "desc": "Image processing application using OpenCV and Tkinter. Resize, crop, and manipulate images with an intuitive GUI interface.",
+    "image": "SnapResize.png",
+    "stacks": "Python, OpenCV, Tkinter",
+    "featured": false,
+    "category": "python",
+    "links": {
+      "view": "https://github.com/Shubh2-0/SnapResize",
+      "code": "https://github.com/Shubh2-0/SnapResize"
+    }
+  },
+  {
+    "name": "EchoCharm",
+    "desc": "Text-to-speech application using Python pyttsx3 library. Convert text input to natural-sounding speech output.",
+    "image": "EchoCharm.png",
+    "stacks": "Python, pyttsx3, Text-to-Speech",
+    "featured": false,
+    "category": "python",
+    "links": {
+      "view": "https://github.com/Shubh2-0/EchoCharm",
+      "code": "https://github.com/Shubh2-0/EchoCharm"
+    }
+  },
+  {
+    "name": "YouTube Clone",
+    "desc": "YouTube clone enabling users to search, view, and enjoy videos in full-screen mode. Offers seamless video browsing experience.",
+    "image": "Youtube.png",
+    "stacks": "JavaScript, HTML, CSS, API Integration",
+    "featured": false,
+    "category": "frontend",
+    "links": {
+      "view": "https://genuine-sable-69c1a0.netlify.app/",
+      "code": "https://github.com/Shubh2-0/Youtube-Clone"
+    }
+  },
+  {
+    "name": "Outlook India Clone",
+    "desc": "News website clone covering current affairs, politics, lifestyle, entertainment, and more. Responsive design with modern UI.",
+    "image": "Outlook.png",
+    "stacks": "JavaScript, HTML, CSS, Responsive Design",
+    "featured": true,
+    "category": "frontend",
+    "links": {
+      "view": "https://poetic-alfajores-3390b6.netlify.app/",
+      "code": "https://github.com/Shubh2-0/Startup.outlookindia-Clone"
+    }
+  },
+  {
+    "name": "Movie Search App",
+    "desc": "Web application to search for any movie and get details like IMDB rating, release year, genre, and more using OMDB API.",
+    "image": "Movie_Search_Application.png",
+    "stacks": "JavaScript, HTML, CSS, OMDB API",
+    "featured": false,
+    "category": "frontend",
     "links": {
       "view": "https://glittery-crostata-94ff7d.netlify.app/",
       "code": "https://github.com/Shubh2-0/Movie_Search_Application"
     }
   },
   {
-    "name": "Outlook India",
-    "desc": "Outlook India covers the latest India news, analysis, business news and long-form stories on culture, money market and personal finance. Read India's best online magazine.",
-    "image": "outlook",
-    "stacks":"js,html,css,git,netlify,vscode",
+    "name": "Any Color Extension",
+    "desc": "Browser extension to pick any color from web pages. Features color picker, hex code display, and clipboard copy functionality.",
+    "image": "Any-Color-Extension.png",
+    "stacks": "JavaScript, HTML, CSS, Browser Extension",
+    "featured": false,
+    "category": "frontend",
     "links": {
-      "view": "https://poetic-alfajores-3390b6.netlify.app/",
-      "code": "https://github.com/Shubh2-0/Startup.outlookindia-Clone"
-    }
-  },
-    {
-      "name": "Youtube - Clone",
-    "desc": "A YouTube clone project empowering users to search, view, and enjoy videos in full-screen mode, offering a seamless and immersive video browsing experience.",
-    "image": "youtube",
-     "stacks":"js,html,css,git,netlify,vscode",
-    "links": {
-      "view": "https://genuine-sable-69c1a0.netlify.app/",
-      "code": "https://github.com/Shubh2-0/Youtube-Clone"
-    }
-     
-  },
-   {
-    "name": "Shopzilla-Online-Shopping-Platform",
-    "desc": " Shopzilla Online Shopping Platform provides a comprehensive solution for both buyers and sellers, offering a range of features and functionalities to ensure a delightful and secure shopping experience.",
-    "image": "Shopzilla",
-     "stacks":"java,mysql,maven,git,eclipse",
-    "links": {
-      "view": "https://drive.google.com/file/d/1tqy_GtrtqsgwKkOZUHJw2idoBV6HBAnW/view",
-      "code": "https://github.com/Shubh2-0/Shopzilla-Online-Shopping-Platform.git"
+      "view": "https://github.com/Shubh2-0/Any-Color-Extension",
+      "code": "https://github.com/Shubh2-0/Any-Color-Extension"
     }
   }
-
 ]
-  
-

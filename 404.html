@@ -1,122 +1,161 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Assets/css/404.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Favicon -->
-   <link id='favicon' rel="shortcut icon" href="https://th.bing.com/th/id/R.cda3b7d73ea9d27ebc57e69796622b87?rik=RBze9cBJjorqcA&riu=http%3a%2f%2fwww.icons101.com%2ficon_png%2fsize_512%2fid_32956%2fSb.png&ehk=8RXWPvUn08MryrnrIUwVTerw1MK%2fLsSOn6T2Qy7ED4E%3d&risl=&pid=ImgRaw&r=0" type="image/x-png">
-    <title>Got Lost! Page Not Found</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>404 - Page Not Found | Shubham Bhati</title>
+  <meta name="description" content="Oops! The page you're looking for doesn't exist.">
+
+  <meta name="theme-color" content="#667eea">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="./Assets/images/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="./Assets/css/style.css">
+
+  <style>
+    .error-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      background: var(--bg);
+    }
+
+    .error-content {
+      max-width: 600px;
+    }
+
+    .error-code {
+      font-size: clamp(100px, 20vw, 180px);
+      font-weight: 800;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 1rem;
+      animation: glitch 2s infinite;
+    }
+
+    @keyframes glitch {
+      0%, 90%, 100% { transform: translate(0); }
+      92% { transform: translate(-2px, 2px); }
+      94% { transform: translate(2px, -2px); }
+      96% { transform: translate(-2px, -2px); }
+      98% { transform: translate(2px, 2px); }
+    }
+
+    .error-title {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+
+    .error-message {
+      color: var(--text-light);
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+
+    .error-illustration {
+      font-size: 4rem;
+      margin-bottom: 2rem;
+      animation: float 3s ease-in-out infinite;
+      color: var(--primary);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .error-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .error-links {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .error-links p {
+      color: var(--text-light);
+      margin-bottom: 1rem;
+    }
+
+    .error-links-list {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .error-links-list a {
+      color: var(--primary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .error-links-list a:hover {
+      color: var(--secondary);
+    }
+  </style>
 </head>
 
+<body>
+  <main class="error-page">
+    <div class="error-content">
+      <div class="error-illustration">
+        <i class="fas fa-satellite-dish"></i>
+      </div>
+      <div class="error-code">404</div>
+      <h1 class="error-title">Lost in the Backend</h1>
+      <p class="error-message">
+        Looks like this endpoint doesn't exist. The page you're looking for might have been moved, deleted, or never existed in the first place.
+      </p>
 
-<body oncontextmenu="return false">
+      <div class="error-actions">
+        <a href="index.html" class="btn btn-primary">
+          <i class="fas fa-home"></i> Back to Home
+        </a>
+        <a href="projects.html" class="btn btn-outline">
+          <i class="fas fa-folder-open"></i> View Projects
+        </a>
+      </div>
 
-<!-- navbar starts -->
-<header>
-        <a href="/" class="logo"><i class="fab fa-dev"></i> Shubham Bhati</a>
-
-        <div id="menu" class="fas fa-bars"></div>
-        <nav class="navbar">
-            <ul>
-            <li><a href="/#home">Home</a></li>
-            <li><a href="/#about">About</a></li>
-            <li><a href="/#skills">Skills</a></li>
-            <li><a href="/#work">Work</a></li>
-            <li><a href="/#contact">Contact</a></li>
-            </ul>
-        </nav>
-</header>
-<!-- navbar ends -->
-
-<!-- 404 section start -->
-<section class="page_404">
-        <div class="container">
-          <div class="wrapper">
-            <h1 class="text-center ">404</h1>
-          </div>
-          
-          <div class="msg">
-          <h3>Look like you're lost</h3>
-          <p>the page you are looking for not avaible!</p>
-           
-          <div class="backbtn">
-            <a href="/" class="btn">
-                <i class="fas fa-arrow-left"></i>
-                <span>Back to Home</span>
-          </a>
-          </div>
-
-          </div>
+      <div class="error-links">
+        <p>Or try these quick links:</p>
+        <div class="error-links-list">
+          <a href="index.html#about"><i class="fas fa-user"></i> About</a>
+          <a href="index.html#skills"><i class="fas fa-tools"></i> Skills</a>
+          <a href="index.html#contact"><i class="fas fa-envelope"></i> Contact</a>
+          <a href="https://github.com/Shubh2-0" target="_blank"><i class="fab fa-github"></i> GitHub</a>
         </div>
-</section>
-<!-- 404 section end -->
-
-<!-- footer section starts -->
-<section class="footer">
-
-  <div class="box-container">
-
-      <div class="box">
-          <h3>Shubham's Portfolio</h3>
-          <p>Thank you for visiting my personal portfolio website. Connect with me over socials. <br/> <br/> Keep Rising 🚀</p>
       </div>
+    </div>
+  </main>
 
-      <div class="box">
-          <h3>quick links</h3>
-          <a href="/#home"><i class="fas fa-chevron-circle-right"></i> home</a>
-          <a href="/#about"><i class="fas fa-chevron-circle-right"></i> about</a>
-          <a href="/#skills"><i class="fas fa-chevron-circle-right"></i> skills</a>
-          <a href="/#education"><i class="fas fa-chevron-circle-right"></i> education</a>
-          <a href="/#work"><i class="fas fa-chevron-circle-right"></i> work</a>
-          <a href="/#experience"><i class="fas fa-chevron-circle-right"></i> experience</a>
-      </div>
-
-      <div class="box">
-          <h3>contact info</h3>
-          <p> <i class="fas fa-phone"></i>+91 6232133187</p>
-          <p> <i class="fas fa-envelope"></i>shubhambhati226@gmail.com</p>
-          <p> <i class="fas fa-map-marked-alt"></i>Ujjain, Madhya Pradesh, India</p>
-          <div class="share">
-
-     
-              <a id="contact-linkedin" href="https://www.linkedin.com/in/shubham-bhati-787319213/" class="fab fa-linkedin" aria-label="LinkedIn" target="_blank"></a>
-              <a id="contact-github" href="https://github.com/Shubh2-0" class="fab fa-github" aria-label="GitHub" target="_blank"></a>
-          </div>
-      </div>
-  </div>
-
-  <h1 class="credit">Designed with <i class="fa fa-heart pulse"></i> by <a href="https://www.linkedin.com/in/shubham-bhati-787319213/"> Shubham Bhati</a></h1>
-
-</section>
-<!-- footer section ends -->
-
-<!-- ==== ALL MAJOR JAVASCRIPT CDNS STARTS ==== -->
-
-<!-- jquery cdn -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<!-- ==== ALL MAJOR JAVASCRIPT CDNS ENDS ==== -->
-
-<script src="/Assets/js/404.js"></script>
-
-
+  <script>
+    // Apply saved theme
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.body.setAttribute('data-theme', savedTheme);
+  </script>
 </body>
+
 </html>
-
-<script>
-    GitHubCalendar(".calendar", "your-username");
-
-    // or enable responsive functionality:
-    GitHubCalendar(".calendar", "your-username", { responsive: true });
-
-    // Use a proxy
-    GitHubCalendar(".calendar", "your-username", {
-       proxy (username) {
-         return fetch(`https://your-proxy.com/github?user=${username}`)
-       }
-    }).then(r => r.text())
-</script>
