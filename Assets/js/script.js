@@ -299,7 +299,8 @@ if (contactForm) {
     const email = this.querySelector('input[name="email"]').value.trim();
     const subject = this.querySelector('input[name="subject"]').value.trim() || 'Portfolio Contact';
     const message = this.querySelector('textarea[name="message"]').value.trim();
-    const honey = this.querySelector('input[name="_honey"]').value;
+    const honeyField = this.querySelector('input[name="_honey"]');
+    const honey = honeyField ? honeyField.value : '';
 
     // Honeypot check (spam protection)
     if (honey) return;
@@ -337,15 +338,17 @@ if (contactForm) {
       });
 
       const data = await response.json();
+      console.log('FormSubmit response:', data);
 
-      if (data.success === 'true' || data.success === true) {
+      if (data.success === 'true' || data.success === true || response.ok) {
         showNotification('Message sent successfully! I\'ll respond soon.', 'success');
         contactForm.reset();
       } else {
-        showNotification('Failed to send message. Please try again.', 'error');
+        showNotification('Failed to send. Please try again or email directly.', 'error');
       }
     } catch (error) {
-      showNotification('Something went wrong. Please try again.', 'error');
+      console.error('Form submission error:', error);
+      showNotification('Connection error. Please try again.', 'error');
     } finally {
       submitBtn.innerHTML = originalText;
       submitBtn.disabled = false;
@@ -354,7 +357,7 @@ if (contactForm) {
 }
 
 // Notification function
-function showNotification(message, type) {
+function showNotification(msg, type) {
   // Remove existing notification
   const existing = document.querySelector('.form-notification');
   if (existing) existing.remove();
@@ -363,13 +366,23 @@ function showNotification(message, type) {
   notification.className = `form-notification ${type}`;
   notification.innerHTML = `
     <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
-    <span>${message}</span>
+    <span>${msg}</span>
   `;
 
-  contactForm.insertAdjacentElement('beforebegin', notification);
+  const form = document.getElementById('contact-form');
+  if (form) {
+    form.insertAdjacentElement('beforebegin', notification);
+  }
+
+  // Scroll to notification
+  notification.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
   // Auto remove after 5 seconds
-  setTimeout(() => notification.remove(), 5000);
+  setTimeout(() => {
+    if (notification.parentNode) {
+      notification.remove();
+    }
+  }, 5000);
 }
 
 // ===== CONSOLE MESSAGE =====
