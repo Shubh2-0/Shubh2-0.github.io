@@ -284,80 +284,9 @@ function setupFilterButtons() {
 // Initialize projects
 fetchProjects();
 
-// ===== CONTACT FORM =====
-const contactForm = document.getElementById('contact-form');
-
-if (contactForm) {
-  contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const name = this.querySelector('input[name="name"]').value;
-    const email = this.querySelector('input[name="email"]').value;
-    const subject = this.querySelector('input[name="subject"]').value || 'Portfolio Contact';
-    const message = this.querySelector('textarea[name="message"]').value;
-
-    if (!name || !email || !message) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Missing Fields',
-        text: 'Please fill in all required fields.',
-        background: '#161b22',
-        color: '#e6edf3',
-        confirmButtonColor: '#667eea'
-      });
-      return;
-    }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Invalid Email',
-        text: 'Please enter a valid email address.',
-        background: '#161b22',
-        color: '#e6edf3',
-        confirmButtonColor: '#667eea'
-      });
-      return;
-    }
-
-    const bodyContent = `
-      <strong>Name:</strong> ${name}<br>
-      <strong>Email:</strong> ${email}<br>
-      <strong>Subject:</strong> ${subject}<br>
-      <strong>Message:</strong><br>${message}
-    `;
-
-    Email.send({
-      SecureToken: "a5d79846-ab78-4f9c-a0a8-bf499c8aead5",
-      To: 'shubhambhati226@gmail.com',
-      From: 'shubhambhati226@gmail.com',
-      Subject: `Portfolio Contact: ${subject} - from ${name}`,
-      Body: bodyContent
-    }).then(response => {
-      if (response === 'OK') {
-        Swal.fire({
-          icon: 'success',
-          title: 'Message Sent!',
-          text: 'Thank you for reaching out. I\'ll respond soon!',
-          background: '#161b22',
-          color: '#e6edf3',
-          confirmButtonColor: '#667eea'
-        });
-        contactForm.reset();
-      } else {
-        Swal.fire({
-          icon: 'error',
-          title: 'Failed to Send',
-          text: 'Something went wrong. Please try again.',
-          background: '#161b22',
-          color: '#e6edf3',
-          confirmButtonColor: '#667eea'
-        });
-      }
-    });
-  });
-}
+// ===== CONTACT FORM (Using FormSubmit.co - no JS needed) =====
+// FormSubmit handles everything server-side
+// Form submissions go directly to: https://formsubmit.co/shubhambhati226@gmail.com
 
 // ===== CONSOLE MESSAGE =====
 console.log('%c Shubham Bhati', 'color: #667eea; font-size: 24px; font-weight: bold;');
