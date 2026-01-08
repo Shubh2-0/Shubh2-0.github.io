@@ -284,9 +284,93 @@ function setupFilterButtons() {
 // Initialize projects
 fetchProjects();
 
-// ===== CONTACT FORM (Using FormSubmit.co - no JS needed) =====
-// FormSubmit handles everything server-side
-// Form submissions go directly to: https://formsubmit.co/shubhambhati226@gmail.com
+// ===== CONTACT FORM (Using FormSubmit.co with AJAX) =====
+const contactForm = document.getElementById('contact-form');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const submitBtn = this.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+
+    // Get form values
+    const name = this.querySelector('input[name="name"]').value.trim();
+    const email = this.querySelector('input[name="email"]').value.trim();
+    const subject = this.querySelector('input[name="subject"]').value.trim() || 'Portfolio Contact';
+    const message = this.querySelector('textarea[name="message"]').value.trim();
+    const honey = this.querySelector('input[name="_honey"]').value;
+
+    // Honeypot check (spam protection)
+    if (honey) return;
+
+    // Validation
+    if (!name || !email || !message) {
+      showNotification('Please fill in all required fields.', 'error');
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      showNotification('Please enter a valid email address.', 'error');
+      return;
+    }
+
+    // Show loading state
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    submitBtn.disabled = true;
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/shubhambhati226@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          subject: subject,
+          message: message,
+          _subject: `Portfolio Contact: ${subject} - from ${name}`
+        })
+      });
+
+      const data = await response.json();
+
+      if (data.success === 'true' || data.success === true) {
+        showNotification('Message sent successfully! I\'ll respond soon.', 'success');
+        contactForm.reset();
+      } else {
+        showNotification('Failed to send message. Please try again.', 'error');
+      }
+    } catch (error) {
+      showNotification('Something went wrong. Please try again.', 'error');
+    } finally {
+      submitBtn.innerHTML = originalText;
+      submitBtn.disabled = false;
+    }
+  });
+}
+
+// Notification function
+function showNotification(message, type) {
+  // Remove existing notification
+  const existing = document.querySelector('.form-notification');
+  if (existing) existing.remove();
+
+  const notification = document.createElement('div');
+  notification.className = `form-notification ${type}`;
+  notification.innerHTML = `
+    <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
+    <span>${message}</span>
+  `;
+
+  contactForm.insertAdjacentElement('beforebegin', notification);
+
+  // Auto remove after 5 seconds
+  setTimeout(() => notification.remove(), 5000);
+}
 
 // ===== CONSOLE MESSAGE =====
 console.log('%c Shubham Bhati', 'color: #667eea; font-size: 24px; font-weight: bold;');
