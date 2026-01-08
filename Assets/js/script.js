@@ -356,32 +356,39 @@ if (contactForm) {
   });
 }
 
-// Notification function
+// Popup notification function
 function showNotification(msg, type) {
-  // Remove existing notification
-  const existing = document.querySelector('.form-notification');
+  // Remove existing popup
+  const existing = document.querySelector('.popup-overlay');
   if (existing) existing.remove();
 
-  const notification = document.createElement('div');
-  notification.className = `form-notification ${type}`;
-  notification.innerHTML = `
-    <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
-    <span>${msg}</span>
+  const overlay = document.createElement('div');
+  overlay.className = 'popup-overlay';
+
+  const icon = type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle';
+  const title = type === 'success' ? 'Success!' : 'Oops!';
+
+  overlay.innerHTML = `
+    <div class="popup-box ${type}">
+      <div class="popup-icon">
+        <i class="fas ${icon}"></i>
+      </div>
+      <h3 class="popup-title">${title}</h3>
+      <p class="popup-msg">${msg}</p>
+      <button class="popup-btn" onclick="this.closest('.popup-overlay').remove()">OK</button>
+    </div>
   `;
 
-  const form = document.getElementById('contact-form');
-  if (form) {
-    form.insertAdjacentElement('beforebegin', notification);
-  }
+  document.body.appendChild(overlay);
 
-  // Scroll to notification
-  notification.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  // Close on overlay click
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) overlay.remove();
+  });
 
-  // Auto remove after 5 seconds
+  // Auto close after 5 seconds
   setTimeout(() => {
-    if (notification.parentNode) {
-      notification.remove();
-    }
+    if (overlay.parentNode) overlay.remove();
   }, 5000);
 }
 
