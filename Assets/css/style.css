@@ -1119,10 +1119,8 @@ img { max-width: 100%; display: block; }
 
 .project-image {
   width: 100%;
-  height: auto;
-  aspect-ratio: 16/9;
-  object-fit: contain;
-  background: var(--bg-alt);
+  height: 200px;
+  object-fit: cover;
   transition: transform 0.4s;
 }
 
