@@ -733,27 +733,55 @@ img { max-width: 100%; display: block; }
   font-size: 1rem;
 }
 
-/* Devicon colors */
-.devicon-java-plain.colored { color: #007396; }
-.devicon-javascript-plain.colored { color: #F7DF1E; }
-.devicon-python-plain.colored { color: #3776AB; }
-.devicon-spring-plain.colored { color: #6DB33F; }
-.devicon-hibernate-plain.colored { color: #59666C; }
-.devicon-mysql-plain.colored { color: #4479A1; }
-.devicon-postgresql-plain.colored { color: #336791; }
-.devicon-mongodb-plain.colored { color: #47A248; }
-.devicon-docker-plain.colored { color: #2496ED; }
-.devicon-git-plain.colored { color: #F05032; }
-.devicon-html5-plain.colored { color: #E34F26; }
-.devicon-css3-plain.colored { color: #1572B6; }
-.devicon-redis-plain.colored { color: #DC382D; }
-.devicon-intellij-plain.colored { color: #000000; }
-.devicon-vscode-plain.colored { color: #007ACC; }
-.devicon-eclipse-plain.colored { color: #2C2255; }
-.devicon-maven-plain.colored { color: #C71A36; }
-.devicon-gradle-plain.colored { color: #02303A; }
-.devicon-junit-plain.colored { color: #25A162; }
-.devicon-amazonwebservices-plain-wordmark.colored { color: #FF9900; }
+/* Devicon colors with !important to override parent */
+.devicon-java-plain.colored { color: #E76F00 !important; }
+.devicon-javascript-plain.colored { color: #F7DF1E !important; }
+.devicon-python-plain.colored { color: #3776AB !important; }
+.devicon-spring-plain.colored { color: #6DB33F !important; }
+.devicon-hibernate-plain.colored { color: #59666C !important; }
+.devicon-mysql-plain.colored { color: #4479A1 !important; }
+.devicon-postgresql-plain.colored { color: #336791 !important; }
+.devicon-mongodb-plain.colored { color: #47A248 !important; }
+.devicon-docker-plain.colored { color: #2496ED !important; }
+.devicon-git-plain.colored { color: #F05032 !important; }
+.devicon-html5-plain.colored { color: #E34F26 !important; }
+.devicon-css3-plain.colored { color: #1572B6 !important; }
+.devicon-redis-plain.colored { color: #DC382D !important; }
+.devicon-intellij-plain.colored { color: #FC418D !important; }
+.devicon-vscode-plain.colored { color: #007ACC !important; }
+.devicon-eclipse-plain.colored { color: #F7941E !important; }
+.devicon-maven-plain.colored { color: #C71A36 !important; }
+.devicon-gradle-plain.colored { color: #02303A !important; }
+.devicon-junit-plain.colored { color: #25A162 !important; }
+.devicon-amazonwebservices-plain-wordmark.colored { color: #FF9900 !important; }
+.devicon-bash-plain { color: #4EAA25 !important; }
+.devicon-apachekafka-original { color: #231F20 !important; }
+.devicon-github-original { color: #f0f0f0 !important; }
+.devicon-linux-plain { color: #FCC624 !important; }
+
+/* Font Awesome skill icons colors */
+.skill-tags .fa-plug { color: #10B981 !important; }
+.skill-tags .fa-cubes { color: #8B5CF6 !important; }
+.skill-tags .fa-envelope-open-text { color: #FF6600 !important; }
+.skill-tags .fa-key { color: #F59E0B !important; }
+.skill-tags .fa-shield-alt { color: #3B82F6 !important; }
+.skill-tags .fa-database { color: #6366F1 !important; }
+.skill-tags .fa-table { color: #14B8A6 !important; }
+.skill-tags .fa-brain { color: #10B981 !important; }
+.skill-tags .fa-gem { color: #8B5CF6 !important; }
+.skill-tags .fa-magic { color: #EC4899 !important; }
+.skill-tags .fa-cogs { color: #6B7280 !important; }
+.skill-tags .fa-comments { color: #3B82F6 !important; }
+.skill-tags .fa-infinity { color: #F97316 !important; }
+.skill-tags .fa-paper-plane { color: #FF6C37 !important; }
+.skill-tags .fa-vial { color: #22C55E !important; }
+.skill-tags .fa-window-maximize { color: #00B4F0 !important; }
+.skill-tags .fa-sitemap { color: #8B5CF6 !important; }
+.skill-tags .fa-project-diagram { color: #F59E0B !important; }
+.skill-tags .fa-tasks { color: #3B82F6 !important; }
+.skill-tags .fa-code-branch { color: #10B981 !important; }
+.skill-tags .fa-check-double { color: #22C55E !important; }
+.skill-tags .fa-file-medical-alt { color: #EF4444 !important; }
 
 /* ===== EXPERIENCE ===== */
 .experience {
