@@ -502,11 +502,48 @@ img { max-width: 100%; display: block; }
 }
 
 .hero-social a:hover {
-  background: var(--gradient);
-  border-color: transparent;
-  color: white;
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+/* Social Icons Brand Colors */
+.hero-social a[title="LinkedIn"],
+.contact-social a[title="LinkedIn"] {
+  background: #0A66C2;
+  border-color: #0A66C2;
+  color: white;
+}
+
+.hero-social a[title="LinkedIn"]:hover,
+.contact-social a[title="LinkedIn"]:hover {
+  background: #004182;
+  border-color: #004182;
+  box-shadow: 0 8px 20px rgba(10, 102, 194, 0.4);
+}
+
+.hero-social a[title="GitHub"],
+.contact-social a[title="GitHub"] {
+  background: #171515;
+  border-color: #171515;
+  color: white;
+}
+
+.hero-social a[title="GitHub"]:hover,
+.contact-social a[title="GitHub"]:hover {
+  background: #000;
+  border-color: #000;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.hero-social a[title="Email"] {
+  background: #EA4335;
+  border-color: #EA4335;
+  color: white;
+}
+
+.hero-social a[title="Email"]:hover {
+  background: #c5221f;
+  border-color: #c5221f;
+  box-shadow: 0 8px 20px rgba(234, 67, 53, 0.4);
 }
 
 /* Hero Image */
