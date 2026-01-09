@@ -733,6 +733,12 @@ img { max-width: 100%; display: block; }
   font-size: 1rem;
 }
 
+.skill-tags span img {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+}
+
 /* Devicon colors with !important to override parent */
 .devicon-java-plain.colored { color: #E76F00 !important; }
 .devicon-javascript-plain.colored { color: #F7DF1E !important; }
