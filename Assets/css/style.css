@@ -1331,6 +1331,19 @@ img { max-width: 100%; display: block; }
   transform: translateY(-3px);
 }
 
+.contact-social .coffee-btn {
+  background: #FFDD00;
+  border-color: #FFDD00;
+  color: #000;
+}
+
+.contact-social .coffee-btn:hover {
+  background: #FFE44D;
+  border-color: #FFE44D;
+  color: #000;
+  box-shadow: 0 8px 20px rgba(255, 221, 0, 0.4);
+}
+
 .contact-form {
   background: var(--bg-card);
   border: 1px solid var(--border);
