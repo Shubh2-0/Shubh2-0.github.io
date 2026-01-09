@@ -1,5 +1,28 @@
 // ===== PROFESSIONAL DEVELOPER PORTFOLIO - JAVASCRIPT =====
 
+// ===== PRELOADER =====
+window.addEventListener('load', () => {
+  const preloader = document.getElementById('preloader');
+  if (preloader) {
+    setTimeout(() => {
+      preloader.classList.add('fade-out');
+      setTimeout(() => {
+        preloader.style.display = 'none';
+      }, 500);
+    }, 1000);
+  }
+});
+
+// ===== AOS INITIALIZATION =====
+if (typeof AOS !== 'undefined') {
+  AOS.init({
+    duration: 800,
+    easing: 'ease-out',
+    once: true,
+    offset: 100
+  });
+}
+
 // ===== THEME TOGGLE =====
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
