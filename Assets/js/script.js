@@ -266,11 +266,15 @@ function createProjectCard(project, isFeatured) {
     <article class="project-card" data-category="${project.category}">
       <div class="project-image-wrapper">
         <img src="${imageUrl}" alt="${project.name}" class="project-image" loading="lazy">
+        <button class="project-eye-btn" title="View Screenshot" onclick="openImageModal('${imageUrl}', '${project.name}')">
+          <i class="fas fa-eye"></i>
+        </button>
         <div class="project-overlay">
-          <a href="${project.links.view}" target="_blank" rel="noopener noreferrer" class="project-icon" title="View Project">
+          ${project.links.view !== project.links.code ? `
+          <a href="${project.links.view}" target="_blank" rel="noopener noreferrer" class="project-icon" title="Visit Live Site">
             <i class="fas fa-external-link-alt"></i>
-          </a>
-          <a href="${project.links.code}" target="_blank" rel="noopener noreferrer" class="project-icon" title="View Code">
+          </a>` : ''}
+          <a href="${project.links.code}" target="_blank" rel="noopener noreferrer" class="project-icon" title="${project.links.view !== project.links.code ? 'Project Details' : 'View Code'}">
             <i class="fab fa-github"></i>
           </a>
         </div>
@@ -413,6 +417,37 @@ function showNotification(msg, type) {
   setTimeout(() => {
     if (overlay.parentNode) overlay.remove();
   }, 5000);
+}
+
+// ===== IMAGE LIGHTBOX MODAL =====
+function openImageModal(imageUrl, projectName) {
+  const existing = document.querySelector('.image-modal-overlay');
+  if (existing) existing.remove();
+
+  const overlay = document.createElement('div');
+  overlay.className = 'image-modal-overlay';
+  overlay.innerHTML = `
+    <div class="image-modal">
+      <button class="image-modal-close" onclick="this.closest('.image-modal-overlay').remove()">
+        <i class="fas fa-times"></i>
+      </button>
+      <img src="${imageUrl}" alt="${projectName}">
+      <p class="image-modal-title">${projectName}</p>
+    </div>
+  `;
+
+  document.body.appendChild(overlay);
+
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) overlay.remove();
+  });
+
+  document.addEventListener('keydown', function escClose(e) {
+    if (e.key === 'Escape') {
+      overlay.remove();
+      document.removeEventListener('keydown', escClose);
+    }
+  });
 }
 
 // ===== ANIMATED COUNTERS =====

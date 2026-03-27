@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="robots" content="index, follow">
+
+  <title>Maa Kaali Creations — Live E-Commerce Platform | Shubham Bhati</title>
+  <meta name="description" content="A live e-commerce platform for premium sarees serving 1000+ customers with Razorpay payments, AI-powered blog, and cloud deployment.">
+  <meta name="author" content="Shubham Bhati">
+  <link rel="canonical" href="https://shubh2-0.github.io/projects/maa-kaali-creations.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Maa Kaali Creations — Live E-Commerce Platform">
+  <meta property="og:description" content="A live e-commerce platform serving 1000+ customers with payments, AI blog, and cloud deployment.">
+  <meta property="og:image" content="https://shubh2-0.github.io/Assets/images/projects/MaaKaaliCreations.jpg">
+
+  <meta name="theme-color" content="#667eea">
+  <link rel="icon" type="image/svg+xml" href="../Assets/images/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../Assets/css/style.css">
+
+  <style>
+    /* Project Detail Page Styles */
+    .project-hero {
+      padding: 140px 0 60px;
+      background: var(--bg-alt);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .project-hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .project-hero .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--primary);
+      font-weight: 500;
+      margin-bottom: 24px;
+      transition: all 0.3s;
+    }
+
+    .project-hero .back-link:hover {
+      gap: 12px;
+    }
+
+    .project-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #10b981;
+      margin-bottom: 16px;
+    }
+
+    .project-badge i {
+      font-size: 0.5rem;
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+
+    .project-hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 16px;
+    }
+
+    .project-hero-desc {
+      font-size: 1.15rem;
+      color: var(--text-light);
+      line-height: 1.8;
+      max-width: 700px;
+      margin-bottom: 28px;
+    }
+
+    .project-hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* Stats Row */
+    .project-stats {
+      padding: 40px 0;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 24px;
+    }
+
+    .stat-card {
+      text-align: center;
+      padding: 24px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      transition: all 0.3s;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--primary);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .stat-card .stat-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--gradient-light);
+      border-radius: 12px;
+      margin: 0 auto 12px;
+      font-size: 1.2rem;
+      color: var(--primary);
+    }
+
+    .stat-card .stat-num {
+      font-size: 1.75rem;
+      font-weight: 800;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .stat-card .stat-text {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 500;
+    }
+
+    /* Screenshots Gallery */
+    .project-gallery {
+      padding: 60px 0;
+      background: var(--bg-alt);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 32px;
+    }
+
+    .gallery-item {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      transition: all 0.3s;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      object-position: top;
+      transition: transform 0.4s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.03);
+    }
+
+    .gallery-item .gallery-label {
+      padding: 14px 18px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .gallery-label i {
+      color: var(--primary);
+    }
+
+    /* Features Section */
+    .project-features {
+      padding: 60px 0;
+      background: var(--bg);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 32px;
+    }
+
+    .feature-card {
+      display: flex;
+      gap: 16px;
+      padding: 24px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      transition: all 0.3s;
+    }
+
+    .feature-card:hover {
+      border-color: var(--primary);
+      transform: translateX(5px);
+    }
+
+    .feature-card .feature-icon {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--gradient);
+      border-radius: 10px;
+      color: white;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .feature-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+
+    .feature-card p {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* Integrations */
+    .project-integrations {
+      padding: 60px 0;
+      background: var(--bg-alt);
+    }
+
+    .integrations-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 32px;
+    }
+
+    .integration-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 22px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+      transition: all 0.3s;
+    }
+
+    .integration-chip:hover {
+      border-color: var(--primary);
+      background: var(--gradient-light);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .integration-chip i {
+      font-size: 1.1rem;
+      color: var(--primary);
+    }
+
+    /* CTA Section */
+    .project-cta {
+      padding: 60px 0;
+      background: var(--bg);
+      text-align: center;
+    }
+
+    .cta-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 48px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .cta-box h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    .cta-box p {
+      color: var(--text-light);
+      margin-bottom: 28px;
+      font-size: 1rem;
+    }
+
+    .cta-box .btn {
+      font-size: 1rem;
+      padding: 14px 32px;
+    }
+
+    /* My Role Section */
+    .project-role {
+      padding: 60px 0;
+      background: var(--bg);
+    }
+
+    .role-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 32px;
+    }
+
+    .role-card {
+      padding: 28px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    .role-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--primary);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .role-card i {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 14px;
+    }
+
+    .role-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .role-card p {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .project-hero {
+        padding: 120px 0 40px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-item img {
+        height: 350px;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-box {
+        padding: 32px 24px;
+      }
+
+      .project-hero-actions {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .stats-row {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .gallery-item img {
+        height: 300px;
+      }
+
+      .role-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="../index.html" class="logo">SB<span>.</span></a>
+
+      <div class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="../index.html#about" class="nav-link">About</a></li>
+          <li><a href="../index.html#experience" class="nav-link">Experience</a></li>
+          <li><a href="../projects.html" class="nav-link active">Projects</a></li>
+          <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="nav-close" id="nav-close"><i class="fas fa-times"></i></button>
+      </div>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" title="Toggle Theme">
+          <i class="fas fa-sun"></i>
+        </button>
+        <a href="../Assets/Shubham_Bhati_Resume.pdf" target="_blank" class="btn btn-small">
+          <i class="fas fa-file-alt"></i> Resume
+        </a>
+        <button class="nav-toggle" id="nav-toggle"><i class="fas fa-bars"></i></button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="project-hero">
+      <div class="container">
+        <div class="project-hero-content">
+          <a href="../projects.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+          <span class="project-badge"><i class="fas fa-circle"></i> Live in Production</span>
+          <h1>Maa Kaali Creations</h1>
+          <p class="project-hero-desc">
+            A full-featured e-commerce platform for a premium saree business. Live at
+            <strong>maakaalicreations.in</strong> — serving real customers with secure payments,
+            AI-powered content, and a complete admin dashboard for business operations.
+          </p>
+          <div class="project-hero-actions">
+            <a href="https://maakaalicreations.in" target="_blank" class="btn btn-primary">
+              <i class="fas fa-external-link-alt"></i> Visit Live Site
+            </a>
+            <a href="../index.html#contact" class="btn btn-outline">
+              <i class="fas fa-envelope"></i> Discuss This Project
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="project-stats">
+      <div class="container">
+        <div class="stats-row">
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-users"></i></div>
+            <span class="stat-num">1000+</span>
+            <span class="stat-text">Happy Customers</span>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-shopping-bag"></i></div>
+            <span class="stat-num">500+</span>
+            <span class="stat-text">Products Listed</span>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-credit-card"></i></div>
+            <span class="stat-num">Razorpay</span>
+            <span class="stat-text">Payment Gateway</span>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-globe"></i></div>
+            <span class="stat-num">24/7</span>
+            <span class="stat-text">Live & Running</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section class="project-gallery">
+      <div class="container">
+        <h2 class="section-title">Screenshots</h2>
+        <p class="section-subtitle">Real screenshots from the live production site</p>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="../Assets/images/projects/MaaKaaliCreations.jpg" alt="Maa Kaali Creations Homepage" loading="lazy">
+            <div class="gallery-label"><i class="fas fa-home"></i> Homepage & Hero Section</div>
+          </div>
+          <div class="gallery-item">
+            <img src="../Assets/images/projects/mkc-collection.jpg" alt="Featured Collection" loading="lazy">
+            <div class="gallery-label"><i class="fas fa-store"></i> Featured Collection & Shop</div>
+          </div>
+          <div class="gallery-item">
+            <img src="../Assets/images/projects/mkc-product.jpg" alt="Product Detail Page" loading="lazy">
+            <div class="gallery-label"><i class="fas fa-tshirt"></i> Product Detail Page</div>
+          </div>
+          <div class="gallery-item">
+            <img src="../Assets/images/projects/mkc-blog.jpg" alt="AI-Powered Blog" loading="lazy">
+            <div class="gallery-label"><i class="fas fa-robot"></i> AI-Powered Blog Section</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- My Role -->
+    <section class="project-role">
+      <div class="container">
+        <h2 class="section-title">My Role</h2>
+        <p class="section-subtitle">What I owned and delivered in this project</p>
+
+        <div class="role-grid">
+          <div class="role-card">
+            <i class="fas fa-lightbulb"></i>
+            <h3>Product Vision</h3>
+            <p>Planned the entire platform — what features to build, user flows, and business requirements</p>
+          </div>
+          <div class="role-card">
+            <i class="fas fa-tasks"></i>
+            <h3>Feature Planning</h3>
+            <p>Defined all features: payments, cart, wishlist, admin panel, blog, loyalty program, and more</p>
+          </div>
+          <div class="role-card">
+            <i class="fas fa-rocket"></i>
+            <h3>Deployment & DevOps</h3>
+            <p>Deployed and managed production on Vercel & Koyeb with CI/CD automation via GitHub Actions</p>
+          </div>
+          <div class="role-card">
+            <i class="fas fa-bug"></i>
+            <h3>Debugging & Maintenance</h3>
+            <p>Monitor logs, debug production issues, fix bugs, and ensure site stability for live customers</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="project-features">
+      <div class="container">
+        <h2 class="section-title">Key Features</h2>
+        <p class="section-subtitle">Everything that makes this platform production-ready</p>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-credit-card"></i></div>
+            <div>
+              <h3>Razorpay Payments</h3>
+              <p>Secure payment gateway with UPI, cards, net banking, wallets, and Cash on Delivery support</p>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-robot"></i></div>
+            <div>
+              <h3>AI Blog Generation</h3>
+              <p>Automated blog content using AI — generates SEO-optimized articles from product data</p>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-user-shield"></i></div>
+            <div>
+              <h3>OTP Authentication</h3>
+              <p>Phone-based OTP login for customers — secure, fast, and mobile-first approach</p>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-columns"></i></div>
+            <div>
+              <h3>Admin Dashboard</h3>
+              <p>Complete admin panel for managing products, orders, customers, emails, and site settings</p>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-heart"></i></div>
+            <div>
+              <h3>Wishlist & Cart</h3>
+              <p>Persistent wishlist and shopping cart with size/color variants and stock tracking</p>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <h3>Email System</h3>
+              <p>20+ transactional email templates — order confirmation, shipping updates, newsletters</p>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fab fa-instagram"></i></div>
+            <div>
+              <h3>Instagram Integration</h3>
+              <p>Live Instagram feed synced on the website — reels and posts displayed automatically</p>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <h3>Pincode Delivery Check</h3>
+              <p>Real-time delivery availability check by pincode across all Indian locations</p>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-tags"></i></div>
+            <div>
+              <h3>Coupons & Discounts</h3>
+              <p>Coupon code system with percentage/flat discounts, expiry dates, and usage limits</p>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-coins"></i></div>
+            <div>
+              <h3>Loyalty Program</h3>
+              <p>Points-based rewards system — earn on purchases, redeem on future orders</p>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-language"></i></div>
+            <div>
+              <h3>Multi-Language</h3>
+              <p>Full Hindi and English language support for the complete website experience</p>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-search"></i></div>
+            <div>
+              <h3>SEO Optimized</h3>
+              <p>Structured data, sitemaps, meta tags, and RSS feeds for search engine visibility</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Integrations -->
+    <section class="project-integrations">
+      <div class="container">
+        <h2 class="section-title">Integrations & Deployment</h2>
+        <p class="section-subtitle">Third-party services powering the platform</p>
+
+        <div class="integrations-grid">
+          <div class="integration-chip"><i class="fas fa-credit-card"></i> Razorpay</div>
+          <div class="integration-chip"><i class="fas fa-cloud"></i> Vercel</div>
+          <div class="integration-chip"><i class="fas fa-server"></i> Koyeb</div>
+          <div class="integration-chip"><i class="fas fa-image"></i> Cloudinary</div>
+          <div class="integration-chip"><i class="fas fa-fire"></i> Firebase Auth</div>
+          <div class="integration-chip"><i class="fas fa-envelope"></i> Brevo SMTP</div>
+          <div class="integration-chip"><i class="fab fa-instagram"></i> Instagram API</div>
+          <div class="integration-chip"><i class="fas fa-robot"></i> Google Gemini AI</div>
+          <div class="integration-chip"><i class="fab fa-github"></i> GitHub Actions</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="project-cta">
+      <div class="container">
+        <div class="cta-box">
+          <h2>See It Live</h2>
+          <p>This platform is actively serving customers. Visit the live site to explore the full experience.</p>
+          <a href="https://maakaalicreations.in" target="_blank" class="btn btn-primary">
+            <i class="fas fa-external-link-alt"></i> Visit maakaalicreations.in
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Shubham Bhati. Built with passion.</p>
+    </div>
+  </footer>
+
+  <a href="#" class="scroll-top" id="scroll-top"><i class="fas fa-arrow-up"></i></a>
+
+  <script>
+    // Theme
+    const themeToggle = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.body.setAttribute('data-theme', savedTheme);
+    const icon = themeToggle.querySelector('i');
+    icon.className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+
+    themeToggle.addEventListener('click', () => {
+      const current = document.body.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.body.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      icon.className = next === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+    });
+
+    // Mobile nav
+    const navToggle = document.getElementById('nav-toggle');
+    const navClose = document.getElementById('nav-close');
+    const navMenu = document.getElementById('nav-menu');
+
+    if (navToggle) navToggle.addEventListener('click', () => navMenu.classList.add('show-menu'));
+    if (navClose) navClose.addEventListener('click', () => navMenu.classList.remove('show-menu'));
+
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => navMenu.classList.remove('show-menu'));
+    });
+
+    // Scroll header
+    const header = document.getElementById('header');
+    const scrollTop = document.getElementById('scroll-top');
+
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scroll-header', window.scrollY > 100);
+      scrollTop.classList.toggle('show', window.scrollY > 400);
+    });
+  </script>
+</body>
+
+</html>

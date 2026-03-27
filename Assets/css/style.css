@@ -443,6 +443,7 @@ img { max-width: 100%; display: block; }
   font-size: 0.8rem;
   font-weight: 600;
   color: #10b981;
+  margin-top: 16px;
   margin-bottom: 16px;
   letter-spacing: 0.5px;
 }
@@ -511,6 +512,7 @@ img { max-width: 100%; display: block; }
 .hero-social {
   display: flex;
   gap: 12px;
+  margin-bottom: 20px;
 }
 
 .hero-social a {
@@ -1380,10 +1382,39 @@ img { max-width: 100%; display: block; }
   overflow: hidden;
 }
 
+/* Eye button - top left */
+.project-eye-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.85);
+  border: none;
+  border-radius: 50%;
+  color: #333;
+  font-size: 0.85rem;
+  cursor: pointer;
+  z-index: 2;
+  transition: all 0.3s;
+  opacity: 0.7;
+}
+
+.project-eye-btn:hover {
+  opacity: 1;
+  background: white;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
 .project-image {
   width: 100%;
-  height: 200px;
+  height: 280px;
   object-fit: cover;
+  object-position: top;
   transition: transform 0.4s;
 }
 
@@ -1414,9 +1445,11 @@ img { max-width: 100%; display: block; }
   align-items: center;
   justify-content: center;
   background: var(--bg-card);
+  border: none;
   border-radius: 50%;
   color: var(--primary);
   font-size: 1.1rem;
+  cursor: pointer;
   transition: all 0.3s;
 }
 
@@ -1839,6 +1872,124 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 12px 30px rgba(102, 126, 234, 0.5);
 }
 
+/* ===== RECOMMENDATIONS ===== */
+.recommendations {
+  background: var(--bg);
+}
+
+.recommendations-cta {
+  display: flex;
+  justify-content: center;
+}
+
+.rec-highlight {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  max-width: 550px;
+  width: 100%;
+  transition: all 0.3s;
+}
+
+.rec-highlight:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-lg);
+}
+
+.rec-count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.rec-count .stat-number {
+  font-size: 2.5rem;
+}
+
+.rec-count span:last-child {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  text-align: left;
+  line-height: 1.3;
+}
+
+.rec-highlight p {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+/* ===== IMAGE LIGHTBOX MODAL ===== */
+.image-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease;
+  padding: 24px;
+}
+
+.image-modal {
+  position: relative;
+  max-width: 900px;
+  max-height: 90vh;
+  width: 100%;
+  animation: popIn 0.3s ease;
+}
+
+.image-modal img {
+  width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+.image-modal-close {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+  z-index: 1;
+}
+
+.image-modal-close:hover {
+  transform: scale(1.1);
+}
+
+.image-modal-title {
+  text-align: center;
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-top: 14px;
+  opacity: 0.8;
+}
+
 /* ===== HERO AVAILABILITY TAGS ===== */
 .hero-availability {
   display: flex;
@@ -2072,8 +2223,17 @@ img { max-width: 100%; display: block; }
     display: none;
   }
 
+  /* Hide floating resume on mobile - nav already has it */
+  .floating-resume {
+    display: none;
+  }
+
   .section {
     padding: 80px 0;
+  }
+
+  .hero-scroll {
+    display: none;
   }
 
   .hero-cta {
@@ -2097,6 +2257,23 @@ img { max-width: 100%; display: block; }
 
   .learning-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  /* GitHub graph fix on mobile */
+  .github-graph {
+    padding: 12px;
+    overflow-x: auto;
+  }
+
+  .github-activity {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .github-profile-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 24px;
   }
 
   .about-quick-info {

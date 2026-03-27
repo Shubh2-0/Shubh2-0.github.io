@@ -1,5 +1,17 @@
 [
   {
+    "name": "Maa Kaali Creations",
+    "desc": "Live e-commerce platform for a premium saree business serving 1000+ customers. Features Razorpay payment gateway, OTP authentication, AI-powered blog generation, admin dashboard, and cloud deployment on Vercel & Koyeb.",
+    "image": "MaaKaaliCreations.jpg",
+    "stacks": "E-Commerce, Razorpay, Cloudinary, Vercel, Koyeb, AI Blog Generation",
+    "featured": true,
+    "category": "backend",
+    "links": {
+      "view": "https://maakaalicreations.in",
+      "code": "projects/maa-kaali-creations.html"
+    }
+  },
+  {
     "name": "ChatBotSpringAI",
     "desc": "AI-powered chatbot built with Spring Boot and OpenAI API. Features RESTful endpoints for intelligent conversations, demonstrating AI integration with enterprise Java applications.",
     "image": "ChatBotSpringAI.png",
