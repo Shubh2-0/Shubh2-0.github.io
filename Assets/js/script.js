@@ -54,8 +54,8 @@ function updateThemeIcon(theme) {
 const roles = [
   'Backend Engineer',
   'Java Developer',
-  'Spring Boot Expert',
-  'Microservices Architect',
+  'Spring Boot Developer',
+  'Microservices Developer',
   'API Developer'
 ];
 
@@ -181,7 +181,7 @@ document.addEventListener('visibilitychange', function() {
   if (document.visibilityState === "visible") {
     document.title = "Shubham Bhati | Backend Engineer";
   } else {
-    document.title = "Come Back!";
+    document.title = "Shubham Bhati | Backend Engineer";
   }
 });
 
@@ -414,6 +414,44 @@ function showNotification(msg, type) {
     if (overlay.parentNode) overlay.remove();
   }, 5000);
 }
+
+// ===== ANIMATED COUNTERS =====
+function animateCounters() {
+  const statNumbers = document.querySelectorAll('.stat-number');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const text = el.textContent.trim();
+        const suffix = text.replace(/[0-9]/g, '');
+        const target = parseInt(text);
+
+        if (isNaN(target)) return;
+
+        let current = 0;
+        const increment = Math.ceil(target / 40);
+        const duration = 1500;
+        const stepTime = duration / (target / increment);
+
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
+          }
+          el.textContent = current + suffix;
+        }, stepTime);
+
+        observer.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  statNumbers.forEach(stat => observer.observe(stat));
+}
+
+animateCounters();
 
 // ===== CONSOLE MESSAGE =====
 console.log('%c Shubham Bhati', 'color: #667eea; font-size: 24px; font-weight: bold;');

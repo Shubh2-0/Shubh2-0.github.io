@@ -431,6 +431,32 @@ img { max-width: 100%; display: block; }
   max-width: 520px;
 }
 
+/* Open to Work Badge */
+.open-to-work-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #10b981;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+.open-to-work-badge i {
+  font-size: 0.5rem;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
 .hero-greeting {
   font-size: 1rem;
   color: var(--text-light);
@@ -532,6 +558,20 @@ img { max-width: 100%; display: block; }
   background: #000;
   border-color: #000;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.hero-social a[title="HackerRank"],
+.contact-social a[title="HackerRank"] {
+  background: #2EC866;
+  border-color: #2EC866;
+  color: white;
+}
+
+.hero-social a[title="HackerRank"]:hover,
+.contact-social a[title="HackerRank"]:hover {
+  background: #1fa94e;
+  border-color: #1fa94e;
+  box-shadow: 0 8px 20px rgba(46, 200, 102, 0.4);
 }
 
 .hero-social a[title="Email"] {
@@ -1799,6 +1839,159 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 12px 30px rgba(102, 126, 234, 0.5);
 }
 
+/* ===== HERO AVAILABILITY TAGS ===== */
+.hero-availability {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.hero-availability span {
+  padding: 6px 14px;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-light);
+  transition: all 0.3s;
+}
+
+.hero-availability span:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: var(--gradient-light);
+}
+
+/* ===== TIMELINE META (Date + Location) ===== */
+.timeline-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 1rem;
+}
+
+.timeline-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.timeline-location i {
+  color: var(--primary);
+}
+
+/* ===== GITHUB GRAPH ===== */
+.github-graph {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  overflow-x: auto;
+  text-align: center;
+}
+
+.github-graph img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* ===== WHATSAPP CARD ===== */
+.whatsapp-card > i {
+  background: #25D366 !important;
+}
+
+.whatsapp-card a:hover {
+  color: #25D366 !important;
+}
+
+/* ===== CURRENTLY LEARNING ===== */
+.learning {
+  background: var(--bg-alt);
+}
+
+.learning-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.learning-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  text-align: center;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.learning-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+
+.learning-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary);
+}
+
+.learning-card:hover::before {
+  transform: scaleX(1);
+}
+
+.learning-icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  background: var(--gradient-light);
+  border-radius: 14px;
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+
+.learning-icon img {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+}
+
+.learning-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.learning-card p {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* ===== ANIMATED COUNTERS ===== */
+.stat-number {
+  transition: all 0.3s;
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
   .hero-grid {
@@ -1886,6 +2079,24 @@ img { max-width: 100%; display: block; }
   .hero-cta {
     flex-direction: column;
     align-items: center;
+  }
+
+  .hero-availability {
+    justify-content: center;
+  }
+
+  .open-to-work-badge {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .timeline-meta {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .learning-grid {
+    grid-template-columns: 1fr 1fr;
   }
 
   .about-quick-info {
@@ -2028,6 +2239,15 @@ img { max-width: 100%; display: block; }
   .project-tech span {
     font-size: 0.7rem;
     padding: 3px 8px;
+  }
+
+  .learning-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-availability span {
+    padding: 4px 10px;
+    font-size: 0.75rem;
   }
 
   .contact-form {
