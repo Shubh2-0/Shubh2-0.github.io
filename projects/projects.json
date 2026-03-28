@@ -1,8 +1,8 @@
 [
   {
     "name": "Maa Kaali Creations",
-    "desc": "Live e-commerce platform for a premium saree business serving 1000+ customers. Features Razorpay payment gateway, OTP authentication, AI-powered blog generation, admin dashboard, and cloud deployment on Vercel & Koyeb.",
-    "image": "MaaKaaliCreations.jpg",
+    "desc": "Live e-commerce platform for a premium saree business serving real customers. Features Razorpay payment gateway, OTP authentication, AI-powered blog generation, admin dashboard, and cloud deployment on Vercel & Koyeb.",
+    "image": "mkc-homepage-mobile.jpg",
     "stacks": "E-Commerce, Razorpay, Cloudinary, Vercel, Koyeb, AI Blog Generation",
     "featured": true,
     "category": "backend",
