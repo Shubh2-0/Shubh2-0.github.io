@@ -1,5 +1,17 @@
 [
   {
+    "name": "PayFlow — Digital Wallet & Payment System",
+    "desc": "Production-grade digital wallet backend with microservices architecture. Features pessimistic locking, idempotent transactions, deadlock prevention, and event-driven notifications via RabbitMQ. 3 microservices, 60+ test cases.",
+    "image": "PayFlow.png",
+    "stacks": "Java 17, Spring Boot 3, Spring Security, JWT, Hibernate, MySQL, RabbitMQ, Docker, JUnit 5",
+    "featured": true,
+    "category": "backend",
+    "links": {
+      "view": "https://github.com/Shubh2-0/PayFlow",
+      "code": "https://github.com/Shubh2-0/PayFlow"
+    }
+  },
+  {
     "name": "Maa Kaali Creations",
     "desc": "Live e-commerce platform for a premium saree business serving real customers. Features Razorpay payment gateway, OTP authentication, AI-powered blog generation, admin dashboard, and cloud deployment on Vercel & Koyeb.",
     "image": "mkc-homepage-mobile.jpg",
@@ -36,18 +48,6 @@
     }
   },
   {
-    "name": "Chatterbox",
-    "desc": "Real-time chat application using Spring Boot WebSocket for instant messaging. Features live communication with modern frontend integration.",
-    "image": "Chatterbox.png",
-    "stacks": "Java, Spring Boot, WebSocket, JavaScript, HTML/CSS",
-    "featured": false,
-    "category": "backend",
-    "links": {
-      "view": "https://github.com/Shubh2-0/Chatterbox",
-      "code": "https://github.com/Shubh2-0/Chatterbox"
-    }
-  },
-  {
     "name": "Spring Security Projects",
     "desc": "Comprehensive Spring Security implementation showcasing JWT authentication, role-based authorization, CORS handling, and custom authentication providers.",
     "image": "Spring Security Repository.png",
@@ -76,7 +76,7 @@
     "desc": "Complete online shopping platform for buyers and sellers. Features product management, inventory tracking, secure transactions, and user-friendly interface.",
     "image": "Shopzilla.png",
     "stacks": "Java, MySQL, JDBC, Swing, Maven",
-    "featured": true,
+    "featured": false,
     "category": "backend",
     "links": {
       "view": "https://drive.google.com/file/d/1tqy_GtrtqsgwKkOZUHJw2idoBV6HBAnW/view",
@@ -105,114 +105,6 @@
     "links": {
       "view": "https://github.com/Shubh2-0/UserManagementSystem",
       "code": "https://github.com/Shubh2-0/UserManagementSystem"
-    }
-  },
-  {
-    "name": "Tic Tac Toe - JavaFX",
-    "desc": "Classic Tic Tac Toe game built with JavaFX. Features modern GUI, game logic, and interactive gameplay experience.",
-    "image": "TIC_TAC_TOE_Game_With_JAVAFX.png",
-    "stacks": "Java, JavaFX, GUI",
-    "featured": false,
-    "category": "desktop",
-    "links": {
-      "view": "https://github.com/Shubh2-0/TIC_TAC_TOE_Game_With_JAVAFX",
-      "code": "https://github.com/Shubh2-0/TIC_TAC_TOE_Game_With_JAVAFX"
-    }
-  },
-  {
-    "name": "GestureGlide",
-    "desc": "Computer vision project using Python and CVZone for gesture recognition. Play Rock-Paper-Scissors using hand gestures detected via camera.",
-    "image": "GestureGlide.png",
-    "stacks": "Python, OpenCV, CVZone, Computer Vision",
-    "featured": false,
-    "category": "ai",
-    "links": {
-      "view": "https://github.com/Shubh2-0/GestureGlide",
-      "code": "https://github.com/Shubh2-0/GestureGlide"
-    }
-  },
-  {
-    "name": "SkyScope Weather App",
-    "desc": "Weather application that fetches real-time weather data using Weather API. Displays current conditions, forecasts, and weather metrics.",
-    "image": "SkyScope.png",
-    "stacks": "Python, Weather API, Tkinter",
-    "featured": false,
-    "category": "python",
-    "links": {
-      "view": "https://github.com/Shubh2-0/SkyScope",
-      "code": "https://github.com/Shubh2-0/SkyScope"
-    }
-  },
-  {
-    "name": "SnapResize",
-    "desc": "Image processing application using OpenCV and Tkinter. Resize, crop, and manipulate images with an intuitive GUI interface.",
-    "image": "SnapResize.png",
-    "stacks": "Python, OpenCV, Tkinter",
-    "featured": false,
-    "category": "python",
-    "links": {
-      "view": "https://github.com/Shubh2-0/SnapResize",
-      "code": "https://github.com/Shubh2-0/SnapResize"
-    }
-  },
-  {
-    "name": "EchoCharm",
-    "desc": "Text-to-speech application using Python pyttsx3 library. Convert text input to natural-sounding speech output.",
-    "image": "EchoCharm.png",
-    "stacks": "Python, pyttsx3, Text-to-Speech",
-    "featured": false,
-    "category": "python",
-    "links": {
-      "view": "https://github.com/Shubh2-0/EchoCharm",
-      "code": "https://github.com/Shubh2-0/EchoCharm"
-    }
-  },
-  {
-    "name": "YouTube Clone",
-    "desc": "YouTube clone enabling users to search, view, and enjoy videos in full-screen mode. Offers seamless video browsing experience.",
-    "image": "youtube.png",
-    "stacks": "JavaScript, HTML, CSS, API Integration",
-    "featured": false,
-    "category": "frontend",
-    "links": {
-      "view": "https://genuine-sable-69c1a0.netlify.app/",
-      "code": "https://github.com/Shubh2-0/Youtube-Clone"
-    }
-  },
-  {
-    "name": "Outlook India Clone",
-    "desc": "News website clone covering current affairs, politics, lifestyle, entertainment, and more. Responsive design with modern UI.",
-    "image": "outlook.png",
-    "stacks": "JavaScript, HTML, CSS, Responsive Design",
-    "featured": true,
-    "category": "frontend",
-    "links": {
-      "view": "https://poetic-alfajores-3390b6.netlify.app/",
-      "code": "https://github.com/Shubh2-0/Startup.outlookindia-Clone"
-    }
-  },
-  {
-    "name": "Movie Search App",
-    "desc": "Web application to search for any movie and get details like IMDB rating, release year, genre, and more using OMDB API.",
-    "image": "Movie_Search_Application.png",
-    "stacks": "JavaScript, HTML, CSS, OMDB API",
-    "featured": false,
-    "category": "frontend",
-    "links": {
-      "view": "https://glittery-crostata-94ff7d.netlify.app/",
-      "code": "https://github.com/Shubh2-0/Movie_Search_Application"
-    }
-  },
-  {
-    "name": "Any Color Extension",
-    "desc": "Browser extension to pick any color from web pages. Features color picker, hex code display, and clipboard copy functionality.",
-    "image": "Any-Color-Extension.png",
-    "stacks": "JavaScript, HTML, CSS, Browser Extension",
-    "featured": false,
-    "category": "frontend",
-    "links": {
-      "view": "https://github.com/Shubh2-0/Any-Color-Extension",
-      "code": "https://github.com/Shubh2-0/Any-Color-Extension"
     }
   }
 ]
