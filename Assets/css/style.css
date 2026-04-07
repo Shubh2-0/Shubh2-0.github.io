@@ -66,29 +66,92 @@
 /* ===== FLOATING RESUME BUTTON ===== */
 .floating-resume {
   position: fixed;
-  right: 24px;
-  bottom: 100px;
+  right: 28px;
+  bottom: 110px;
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 12px 20px;
+  gap: 10px;
+  padding: 14px 24px;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   border-radius: 50px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5), 0 0 0 0 rgba(102, 126, 234, 0.7);
   z-index: 999;
   transition: all 0.3s ease;
+  animation: floating-resume-pulse 2s infinite;
+  text-decoration: none;
 }
 
 .floating-resume:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 35px rgba(102, 126, 234, 0.5);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+  animation: none;
 }
 
 .floating-resume i {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
+  animation: floating-resume-bounce 2s infinite;
+}
+
+.floating-resume:hover i {
+  animation: none;
+}
+
+@keyframes floating-resume-pulse {
+  0% {
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5), 0 0 0 0 rgba(102, 126, 234, 0.7);
+  }
+  50% {
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5), 0 0 0 15px rgba(102, 126, 234, 0);
+  }
+  100% {
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5), 0 0 0 0 rgba(102, 126, 234, 0);
+  }
+}
+
+@keyframes floating-resume-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+/* ===== STICKY SIDE RESUME BUTTON (Left side, always visible) ===== */
+.sticky-resume-side {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: left top;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 12px 28px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+  z-index: 998;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.sticky-resume-side:hover {
+  padding-left: 38px;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+}
+
+.sticky-resume-side i {
+  font-size: 1rem;
 }
 
 /* ===== ANIMATED HERO BACKGROUND ===== */
@@ -2223,8 +2286,19 @@ img { max-width: 100%; display: block; }
     display: none;
   }
 
-  /* Hide floating resume on mobile - nav already has it */
+  /* Hide floating resume and side resume on mobile - show compact version */
   .floating-resume {
+    bottom: 80px;
+    right: 16px;
+    padding: 10px 16px;
+    font-size: 0.8rem;
+  }
+
+  .floating-resume span {
+    display: none;
+  }
+
+  .sticky-resume-side {
     display: none;
   }
 
