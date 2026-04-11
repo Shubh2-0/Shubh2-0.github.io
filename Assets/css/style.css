@@ -2244,7 +2244,10 @@ img { max-width: 100%; display: block; }
 
 @media (max-width: 768px) {
   .hero {
+    min-height: auto;
+    align-items: flex-start;
     padding-top: 120px;
+    padding-bottom: 60px;
   }
 
   .nav-menu {
