@@ -2243,6 +2243,10 @@ img { max-width: 100%; display: block; }
 }
 
 @media (max-width: 768px) {
+  .hero {
+    padding-top: 120px;
+  }
+
   .nav-menu {
     position: fixed;
     top: 0;
