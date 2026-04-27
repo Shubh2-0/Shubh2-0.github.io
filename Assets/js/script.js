@@ -265,7 +265,7 @@ function createProjectCard(project, isFeatured) {
   return `
     <article class="project-card" data-category="${project.category}">
       <div class="project-image-wrapper">
-        <img src="${imageUrl}" alt="${project.name}" class="project-image" loading="lazy">
+        <img src="${imageUrl}" alt="${project.name}" class="project-image" loading="lazy" onerror="this.onerror=null;this.style.display='none';this.parentElement.classList.add('no-image');">
         <button class="project-eye-btn" title="View Screenshot" onclick="openImageModal('${imageUrl}', '${project.name}')">
           <i class="fas fa-eye"></i>
         </button>
@@ -349,7 +349,7 @@ if (contactForm) {
     submitBtn.disabled = true;
 
     try {
-      const response = await fetch('https://formsubmit.co/ajax/shubhambhati226@gmail.com', {
+      const response = await fetch('https://formsubmit.co/ajax/4581e3e31117255a9e7f5410af6cbd05', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

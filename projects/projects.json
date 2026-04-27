@@ -1,19 +1,19 @@
 [
   {
     "name": "PayFlow — Digital Wallet & Payment System",
-    "desc": "Production-grade digital wallet backend with microservices architecture. Features pessimistic locking, idempotent transactions, deadlock prevention, and event-driven notifications via RabbitMQ. 3 microservices, 60+ test cases.",
+    "desc": "Production-grade digital wallet backend with microservices architecture. Features pessimistic locking, idempotent transactions, deadlock prevention and event-driven notifications via RabbitMQ. 3 microservices, 60+ test cases.",
     "image": "PayFlow.png",
     "stacks": "Java 17, Spring Boot 3, Spring Security, JWT, Hibernate, MySQL, RabbitMQ, Docker, JUnit 5",
     "featured": true,
     "category": "backend",
     "links": {
-      "view": "https://github.com/Shubh2-0/PayFlow",
+      "view": "projects/payflow.html",
       "code": "https://github.com/Shubh2-0/PayFlow"
     }
   },
   {
     "name": "Maa Kaali Creations",
-    "desc": "Live e-commerce platform for a premium saree business serving real customers. Features Razorpay payment gateway, OTP authentication, AI-powered blog generation, admin dashboard, and cloud deployment on Vercel & Koyeb.",
+    "desc": "Live e-commerce platform for a premium saree business serving real customers. Features Razorpay payment gateway, OTP authentication, AI-powered blog generation, admin dashboard and cloud deployment on Vercel & Koyeb.",
     "image": "mkc-homepage-mobile.jpg",
     "stacks": "E-Commerce, Razorpay, Cloudinary, Vercel, Koyeb, AI Blog Generation",
     "featured": true,
@@ -21,6 +21,54 @@
     "links": {
       "view": "https://maakaalicreations.in",
       "code": "projects/maa-kaali-creations.html"
+    }
+  },
+  {
+    "name": "Maa Kaali AI Assistant",
+    "desc": "Multilingual AI shopping assistant for maakaalicreations.in serving real customers. Features 633+ real products, voice input, dark mode and conversational product discovery powered by Qwen AI. Sister project to the main e-commerce platform.",
+    "image": "maa-kaali-ai-assistant.png",
+    "stacks": "React, Qwen AI, osmAPI, JavaScript",
+    "featured": false,
+    "category": "ai",
+    "links": {
+      "view": "https://github.com/Shubh2-0/maa-kaali-ai-assistant",
+      "code": "https://github.com/Shubh2-0/maa-kaali-ai-assistant"
+    }
+  },
+  {
+    "name": "AI Cold Email Engine",
+    "desc": "High-frequency Python execution engine orchestrating scalable SMTP automation pipelines. Designed for outbound email campaigns with template management and delivery tracking.",
+    "image": "AI-Cold-Email-Engine.png",
+    "stacks": "Python, SMTP, AI, Automation",
+    "featured": false,
+    "category": "ai",
+    "links": {
+      "view": "https://github.com/Shubh2-0/AI-Cold-Email-Engine",
+      "code": "https://github.com/Shubh2-0/AI-Cold-Email-Engine"
+    }
+  },
+  {
+    "name": "LinkedIn Automation Pipeline",
+    "desc": "Autonomous Python and AI pipeline for headless execution and scheduled media processing. Handles content workflows with task scheduling and media transformation.",
+    "image": "LinkedIn-Automation-Pipeline.png",
+    "stacks": "Python, AI, Automation, Scheduling",
+    "featured": false,
+    "category": "python",
+    "links": {
+      "view": "https://github.com/Shubh2-0/LinkedIn-Automation-Pipeline",
+      "code": "https://github.com/Shubh2-0/LinkedIn-Automation-Pipeline"
+    }
+  },
+  {
+    "name": "Gold Price Alert",
+    "desc": "Automated gold price monitoring and email alert system. Tracks live gold prices and notifies when profit target is hit. Supports Google Apps Script, GitHub Actions and local deployment.",
+    "image": "Gold-Price-Alert.png",
+    "stacks": "Python, GitHub Actions, Google Apps Script, SMTP",
+    "featured": false,
+    "category": "python",
+    "links": {
+      "view": "https://github.com/Shubh2-0/Gold-Price-Alert",
+      "code": "https://github.com/Shubh2-0/Gold-Price-Alert"
     }
   },
   {
@@ -37,7 +85,7 @@
   },
   {
     "name": "WorkFolio",
-    "desc": "Full-stack portfolio management system with Spring Boot backend, Spring Security authentication, Thymeleaf templates, and MySQL database. Implements DAO design pattern.",
+    "desc": "Full-stack portfolio management system with Spring Boot backend, Spring Security authentication, Thymeleaf templates and MySQL database. Implements DAO design pattern.",
     "image": "WorkFolio.png",
     "stacks": "Java, Spring Boot, Spring Security, Thymeleaf, MySQL, Bootstrap",
     "featured": true,
@@ -61,7 +109,7 @@
   },
   {
     "name": "Spring Security Projects",
-    "desc": "Comprehensive Spring Security implementation showcasing JWT authentication, role-based authorization, CORS handling, and custom authentication providers.",
+    "desc": "Comprehensive Spring Security implementation showcasing JWT authentication, role-based authorization, CORS handling and custom authentication providers.",
     "image": "Spring Security Repository.png",
     "stacks": "Java, Spring Boot, Spring Security, JWT, REST API",
     "featured": false,
@@ -73,7 +121,7 @@
   },
   {
     "name": "ShipmentXpress",
-    "desc": "Logistics and shipment management system built with Java, Hibernate ORM, and MySQL. Demonstrates enterprise-level database operations and entity mapping.",
+    "desc": "Logistics and shipment management system built with Java, Hibernate ORM and MySQL. Demonstrates enterprise-level database operations and entity mapping.",
     "image": "ShipmentXpress.png",
     "stacks": "Java, Hibernate, MySQL, Maven, Lombok",
     "featured": false,
@@ -85,7 +133,7 @@
   },
   {
     "name": "Shopzilla E-Commerce Platform",
-    "desc": "Complete online shopping platform for buyers and sellers. Features product management, inventory tracking, secure transactions, and user-friendly interface.",
+    "desc": "Complete online shopping platform for buyers and sellers. Features product management, inventory tracking, secure transactions and user-friendly interface.",
     "image": "Shopzilla.png",
     "stacks": "Java, MySQL, JDBC, Swing, Maven",
     "featured": false,
@@ -97,7 +145,7 @@
   },
   {
     "name": "CryptoVerve Bank",
-    "desc": "Banking system simulation with account management, transactions, deposits, withdrawals, and balance inquiries. Built with Java Swing GUI.",
+    "desc": "Banking system simulation with account management, transactions, deposits, withdrawals and balance inquiries. Built with Java Swing GUI.",
     "image": "CryptoVerve.png",
     "stacks": "Java, Swing, OOP, Java 8 Lambdas",
     "featured": false,
@@ -109,7 +157,7 @@
   },
   {
     "name": "User Management System",
-    "desc": "User management backend system for handling user registration, authentication, and profile management.",
+    "desc": "User management backend system for handling user registration, authentication and profile management.",
     "image": "engagebay.png",
     "stacks": "Java, Spring Boot",
     "featured": false,
@@ -133,7 +181,7 @@
   },
   {
     "name": "Tic Tac Toe - JavaFX",
-    "desc": "Classic Tic Tac Toe game built with JavaFX. Features modern GUI, game logic, and interactive gameplay experience.",
+    "desc": "Classic Tic Tac Toe game built with JavaFX. Features modern GUI, game logic and interactive gameplay experience.",
     "image": "TIC_TAC_TOE_Game_With_JAVAFX.png",
     "stacks": "Java, JavaFX, GUI",
     "featured": false,
@@ -145,7 +193,7 @@
   },
   {
     "name": "SkyScope Weather App",
-    "desc": "Weather application that fetches real-time weather data using Weather API. Displays current conditions, forecasts, and weather metrics.",
+    "desc": "Weather application that fetches real-time weather data using Weather API. Displays current conditions, forecasts and weather metrics.",
     "image": "SkyScope.png",
     "stacks": "Python, Weather API, Tkinter",
     "featured": false,
@@ -157,7 +205,7 @@
   },
   {
     "name": "SnapResize",
-    "desc": "Image processing application using OpenCV and Tkinter. Resize, crop, and manipulate images with an intuitive GUI interface.",
+    "desc": "Image processing application using OpenCV and Tkinter. Resize, crop and manipulate images with an intuitive GUI interface.",
     "image": "SnapResize.png",
     "stacks": "Python, OpenCV, Tkinter",
     "featured": false,
@@ -181,7 +229,7 @@
   },
   {
     "name": "YouTube Clone",
-    "desc": "YouTube clone enabling users to search, view, and enjoy videos in full-screen mode. Offers seamless video browsing experience.",
+    "desc": "YouTube clone enabling users to search, view and enjoy videos in full-screen mode. Offers seamless video browsing experience.",
     "image": "youtube.png",
     "stacks": "JavaScript, HTML, CSS, API Integration",
     "featured": false,
@@ -193,7 +241,7 @@
   },
   {
     "name": "Outlook India Clone",
-    "desc": "News website clone covering current affairs, politics, lifestyle, entertainment, and more. Responsive design with modern UI.",
+    "desc": "News website clone covering current affairs, politics, lifestyle, entertainment and more. Responsive design with modern UI.",
     "image": "outlook.png",
     "stacks": "JavaScript, HTML, CSS, Responsive Design",
     "featured": false,
@@ -217,7 +265,7 @@
   },
   {
     "name": "Movie Search App",
-    "desc": "Web application to search for any movie and get details like IMDB rating, release year, genre, and more using OMDB API.",
+    "desc": "Web application to search for any movie and get details like IMDB rating, release year, genre and more using OMDB API.",
     "image": "Movie_Search_Application.png",
     "stacks": "JavaScript, HTML, CSS, OMDB API",
     "featured": false,
@@ -229,7 +277,7 @@
   },
   {
     "name": "Any Color Extension",
-    "desc": "Browser extension to pick any color from web pages. Features color picker, hex code display, and clipboard copy functionality.",
+    "desc": "Browser extension to pick any color from web pages. Features color picker, hex code display and clipboard copy functionality.",
     "image": "Any-Color-Extension.png",
     "stacks": "JavaScript, HTML, CSS, Browser Extension",
     "featured": false,

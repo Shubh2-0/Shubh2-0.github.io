@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="robots" content="index, follow">
+
+  <title>PayFlow — Distributed Digital Wallet & Payment System | Shubham Bhati</title>
+  <meta name="description" content="Production-grade digital wallet built with Java 17, Spring Boot 3 microservices, RabbitMQ event-driven architecture, pessimistic locking and idempotent transactions.">
+  <meta name="author" content="Shubham Bhati">
+  <link rel="canonical" href="https://shubh2-0.github.io/projects/payflow.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="PayFlow — Distributed Digital Wallet & Payment System">
+  <meta property="og:description" content="Production-grade digital wallet with microservices, RabbitMQ event-driven architecture and concurrency-safe transaction handling.">
+  <meta property="og:image" content="https://shubh2-0.github.io/Assets/images/projects/PayFlow.png">
+
+  <meta name="theme-color" content="#667eea">
+  <link rel="icon" type="image/svg+xml" href="../Assets/images/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../Assets/css/style.css">
+
+  <style>
+    /* Project Detail Page Styles */
+    .project-hero {
+      padding: 140px 0 60px;
+      background: var(--bg-alt);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .project-hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .project-hero .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--primary);
+      font-weight: 500;
+      margin-bottom: 24px;
+      transition: all 0.3s;
+    }
+
+    .project-hero .back-link:hover {
+      gap: 12px;
+    }
+
+    .project-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: rgba(102, 126, 234, 0.15);
+      border: 1px solid rgba(102, 126, 234, 0.3);
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 16px;
+    }
+
+    .project-badge i {
+      font-size: 0.5rem;
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+
+    .project-hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 16px;
+    }
+
+    .project-hero-desc {
+      font-size: 1.15rem;
+      color: var(--text-light);
+      line-height: 1.8;
+      max-width: 700px;
+      margin-bottom: 28px;
+    }
+
+    .project-hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* Stats Row */
+    .project-stats {
+      padding: 40px 0;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 24px;
+    }
+
+    .stat-card {
+      text-align: center;
+      padding: 24px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      transition: all 0.3s;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--primary);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .stat-card .stat-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--gradient-light);
+      border-radius: 12px;
+      margin: 0 auto 12px;
+      font-size: 1.2rem;
+      color: var(--primary);
+    }
+
+    .stat-card .stat-num {
+      font-size: 1.75rem;
+      font-weight: 800;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .stat-card .stat-text {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 500;
+    }
+
+    /* Microservices Breakdown */
+    .project-services {
+      padding: 60px 0;
+      background: var(--bg-alt);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 32px;
+    }
+
+    .service-card {
+      padding: 32px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+
+    .service-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .service-card .service-icon {
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--gradient);
+      border-radius: 14px;
+      color: white;
+      font-size: 1.4rem;
+      margin-bottom: 18px;
+    }
+
+    .service-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .service-card p {
+      font-size: 0.92rem;
+      color: var(--text-light);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .service-card .service-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .service-card .service-tech span {
+      font-size: 0.72rem;
+      padding: 4px 10px;
+      background: var(--bg-alt);
+      border-radius: 12px;
+      color: var(--text);
+      font-family: var(--mono);
+      font-weight: 500;
+    }
+
+    /* My Role */
+    .project-role {
+      padding: 60px 0;
+      background: var(--bg);
+    }
+
+    .role-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 32px;
+    }
+
+    .role-card {
+      padding: 28px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    .role-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--primary);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .role-card i {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 14px;
+    }
+
+    .role-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .role-card p {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* Features */
+    .project-features {
+      padding: 60px 0;
+      background: var(--bg-alt);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 32px;
+    }
+
+    .feature-card {
+      display: flex;
+      gap: 16px;
+      padding: 24px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      transition: all 0.3s;
+    }
+
+    .feature-card:hover {
+      border-color: var(--primary);
+      transform: translateX(5px);
+    }
+
+    .feature-card .feature-icon {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--gradient);
+      border-radius: 10px;
+      color: white;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .feature-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+
+    .feature-card p {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* Tech Stack chips */
+    .project-stack {
+      padding: 60px 0;
+      background: var(--bg);
+    }
+
+    .stack-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 32px;
+    }
+
+    .stack-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 22px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+      transition: all 0.3s;
+    }
+
+    .stack-chip:hover {
+      border-color: var(--primary);
+      background: var(--gradient-light);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .stack-chip i,
+    .stack-chip img {
+      font-size: 1.1rem;
+      color: var(--primary);
+      width: 20px;
+      height: 20px;
+    }
+
+    /* Architecture Highlights */
+    .project-architecture {
+      padding: 60px 0;
+      background: var(--bg-alt);
+    }
+
+    .architecture-flow {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 32px;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .flow-node {
+      padding: 24px;
+      background: var(--bg-card);
+      border: 2px solid var(--border);
+      border-radius: 14px;
+      text-align: center;
+      position: relative;
+      transition: all 0.3s;
+    }
+
+    .flow-node:hover {
+      border-color: var(--primary);
+      transform: scale(1.03);
+    }
+
+    .flow-node .flow-num {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 28px;
+      height: 28px;
+      background: var(--gradient);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .flow-node i {
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .flow-node h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+
+    .flow-node p {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    /* CTA Section */
+    .project-cta {
+      padding: 60px 0;
+      background: var(--bg);
+      text-align: center;
+    }
+
+    .cta-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 48px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .cta-box h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    .cta-box p {
+      color: var(--text-light);
+      margin-bottom: 28px;
+      font-size: 1rem;
+    }
+
+    .cta-box .btn {
+      font-size: 1rem;
+      padding: 14px 32px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .project-hero {
+        padding: 120px 0 40px;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-box {
+        padding: 32px 24px;
+      }
+
+      .project-hero-actions {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .stats-row {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .role-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="../index.html" class="logo">SB<span>.</span></a>
+
+      <div class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="../index.html#about" class="nav-link">About</a></li>
+          <li><a href="../index.html#experience" class="nav-link">Experience</a></li>
+          <li><a href="../projects.html" class="nav-link active">Projects</a></li>
+          <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="nav-close" id="nav-close"><i class="fas fa-times"></i></button>
+      </div>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" title="Toggle Theme">
+          <i class="fas fa-sun"></i>
+        </button>
+        <a href="https://drive.google.com/file/d/1-AF_qujCTgqe9h2HOogm91fubqvTTX3S/view?usp=sharing" target="_blank" class="btn btn-small">
+          <i class="fas fa-file-alt"></i> Resume
+        </a>
+        <button class="nav-toggle" id="nav-toggle"><i class="fas fa-bars"></i></button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="project-hero">
+      <div class="container">
+        <div class="project-hero-content">
+          <a href="../projects.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+          <span class="project-badge"><i class="fas fa-circle"></i> Production-Grade Backend Showcase</span>
+          <h1>PayFlow — Distributed Digital Wallet & Payment System</h1>
+          <p class="project-hero-desc">
+            A distributed digital wallet system handling concurrent financial transactions across
+            <strong>3 independent microservices</strong>. Built with Java 17, Spring Boot 3 and an
+            event-driven architecture via RabbitMQ. Engineered to prevent race conditions, double-spending
+            and database deadlocks under heavy load.
+          </p>
+          <div class="project-hero-actions">
+            <a href="https://github.com/Shubh2-0/PayFlow" target="_blank" class="btn btn-primary">
+              <i class="fab fa-github"></i> View on GitHub
+            </a>
+            <a href="../index.html#contact" class="btn btn-outline">
+              <i class="fas fa-envelope"></i> Discuss This Project
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="project-stats">
+      <div class="container">
+        <div class="stats-row">
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-cubes"></i></div>
+            <span class="stat-num">3</span>
+            <span class="stat-text">Microservices</span>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-vial"></i></div>
+            <span class="stat-num">60+</span>
+            <span class="stat-text">Test Cases</span>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon"><i class="devicon-java-plain"></i></div>
+            <span class="stat-num">Java 17</span>
+            <span class="stat-text">Spring Boot 3</span>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fab fa-docker"></i></div>
+            <span class="stat-num">Docker</span>
+            <span class="stat-text">Compose Ready</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Microservices Breakdown -->
+    <section class="project-services">
+      <div class="container">
+        <h2 class="section-title">Microservices Architecture</h2>
+        <p class="section-subtitle">Three independently deployable services communicating via RabbitMQ events</p>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-user-shield"></i></div>
+            <h3>Auth Service</h3>
+            <p>
+              Handles user registration, login and token issuance. Implements Spring Security with
+              JWT-based stateless authentication and BCrypt-hashed credentials. Acts as the entry
+              point that other services trust via signed tokens.
+            </p>
+            <div class="service-tech">
+              <span>Spring Security</span>
+              <span>JWT</span>
+              <span>BCrypt</span>
+              <span>MySQL</span>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-wallet"></i></div>
+            <h3>Wallet Service</h3>
+            <p>
+              The financial core — manages account balances, deposits, withdrawals and peer-to-peer
+              transfers. Uses pessimistic row-level locking and idempotency keys to guarantee
+              correctness under concurrent load. Publishes transaction events to RabbitMQ.
+            </p>
+            <div class="service-tech">
+              <span>Hibernate</span>
+              <span>Pessimistic Locking</span>
+              <span>Idempotency</span>
+              <span>RabbitMQ Producer</span>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-bell"></i></div>
+            <h3>Notification Service</h3>
+            <p>
+              Asynchronous consumer of transaction events from RabbitMQ. Decouples user-facing
+              notifications from the transaction critical path so wallet operations never block on
+              email or alerting infrastructure.
+            </p>
+            <div class="service-tech">
+              <span>RabbitMQ Consumer</span>
+              <span>Spring AMQP</span>
+              <span>Event-Driven</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Architecture Highlights -->
+    <section class="project-architecture">
+      <div class="container">
+        <h2 class="section-title">Transaction Flow</h2>
+        <p class="section-subtitle">How a money transfer flows through the system end-to-end</p>
+
+        <div class="architecture-flow">
+          <div class="flow-node">
+            <span class="flow-num">1</span>
+            <i class="fas fa-sign-in-alt"></i>
+            <h4>Authenticate</h4>
+            <p>Client presents JWT issued by Auth Service. Wallet Service validates the token signature.</p>
+          </div>
+          <div class="flow-node">
+            <span class="flow-num">2</span>
+            <i class="fas fa-key"></i>
+            <h4>Idempotency Check</h4>
+            <p>Each transfer carries a unique idempotency key. Duplicate retries return the original result safely.</p>
+          </div>
+          <div class="flow-node">
+            <span class="flow-num">3</span>
+            <i class="fas fa-lock"></i>
+            <h4>Lock & Validate</h4>
+            <p>Pessimistic lock on sender + receiver rows in a deterministic order to avoid deadlocks. Balance and limits checked.</p>
+          </div>
+          <div class="flow-node">
+            <span class="flow-num">4</span>
+            <i class="fas fa-exchange-alt"></i>
+            <h4>Atomic Debit + Credit</h4>
+            <p>Both sides updated within a single database transaction. Either both succeed or neither — no partial state.</p>
+          </div>
+          <div class="flow-node">
+            <span class="flow-num">5</span>
+            <i class="fas fa-paper-plane"></i>
+            <h4>Publish Event</h4>
+            <p>Successful transaction published to RabbitMQ. Wallet Service responds to client immediately.</p>
+          </div>
+          <div class="flow-node">
+            <span class="flow-num">6</span>
+            <i class="fas fa-bell"></i>
+            <h4>Notify Async</h4>
+            <p>Notification Service consumes the event and dispatches alerts independently of the transaction path.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- My Role -->
+    <section class="project-role">
+      <div class="container">
+        <h2 class="section-title">My Role</h2>
+        <p class="section-subtitle">What I designed and built end-to-end</p>
+
+        <div class="role-grid">
+          <div class="role-card">
+            <i class="fas fa-drafting-compass"></i>
+            <h3>System Architect</h3>
+            <p>Designed the 3-service split, event flows and database schema to enforce strong financial invariants.</p>
+          </div>
+          <div class="role-card">
+            <i class="fas fa-code"></i>
+            <h3>Backend Developer</h3>
+            <p>Implemented all services in Java 17 + Spring Boot 3 with clean layering — controller, service, repository.</p>
+          </div>
+          <div class="role-card">
+            <i class="fas fa-vial"></i>
+            <h3>Test Engineer</h3>
+            <p>Wrote 60+ unit and integration tests using JUnit 5 covering concurrency, idempotency and failure paths.</p>
+          </div>
+          <div class="role-card">
+            <i class="fas fa-cube"></i>
+            <h3>DevOps</h3>
+            <p>Containerized every service with Docker and orchestrated the full stack locally via Docker Compose.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Features -->
+    <section class="project-features">
+      <div class="container">
+        <h2 class="section-title">Engineering Highlights</h2>
+        <p class="section-subtitle">The hard parts that make this production-grade rather than a tutorial</p>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-lock"></i></div>
+            <div>
+              <h3>Pessimistic Locking</h3>
+              <p>Row-level locks on wallet records during transfers prevent two concurrent transactions from reading the same balance.</p>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-redo"></i></div>
+            <div>
+              <h3>Idempotent Transactions</h3>
+              <p>Every transfer accepts a client-supplied idempotency key. Network retries and duplicate clicks never debit twice.</p>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-random"></i></div>
+            <div>
+              <h3>Deadlock Prevention</h3>
+              <p>Locks acquired in a deterministic order (lower account ID first) so two simultaneous reverse transfers cannot deadlock.</p>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-ban"></i></div>
+            <div>
+              <h3>Double-Spend Protection</h3>
+              <p>Balance check and debit happen inside the locked transaction. There is no window where stale balance can be acted on.</p>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+            <div>
+              <h3>Event-Driven Notifications</h3>
+              <p>Transaction path never blocks on alerting. RabbitMQ decouples slow notification work from the user-facing critical path.</p>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+            <div>
+              <h3>JWT + BCrypt Security</h3>
+              <p>Stateless auth via signed JWTs. Passwords hashed with BCrypt — never stored or logged in plaintext.</p>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-calendar-day"></i></div>
+            <div>
+              <h3>Daily Transfer Limits</h3>
+              <p>Per-user daily caps enforced at the service layer with rolling windows — adjustable per account tier.</p>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-vial"></i></div>
+            <div>
+              <h3>60+ Test Cases</h3>
+              <p>JUnit 5 + Mockito coverage including concurrent transfer simulations and failure-injection scenarios.</p>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fab fa-docker"></i></div>
+            <div>
+              <h3>Containerized Stack</h3>
+              <p>Every service plus MySQL and RabbitMQ runs via a single docker-compose up — reproducible across machines.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="project-stack">
+      <div class="container">
+        <h2 class="section-title">Tech Stack</h2>
+        <p class="section-subtitle">Tools and frameworks powering PayFlow</p>
+
+        <div class="stack-grid">
+          <div class="stack-chip"><i class="devicon-java-plain"></i> Java 17</div>
+          <div class="stack-chip"><i class="devicon-spring-plain"></i> Spring Boot 3</div>
+          <div class="stack-chip"><i class="fas fa-shield-alt"></i> Spring Security</div>
+          <div class="stack-chip"><i class="fas fa-database"></i> Spring Data JPA</div>
+          <div class="stack-chip"><i class="fas fa-key"></i> JWT</div>
+          <div class="stack-chip"><i class="fas fa-cog"></i> Hibernate ORM</div>
+          <div class="stack-chip"><i class="devicon-mysql-plain"></i> MySQL</div>
+          <div class="stack-chip"><i class="fas fa-exchange-alt"></i> RabbitMQ</div>
+          <div class="stack-chip"><i class="fab fa-docker"></i> Docker</div>
+          <div class="stack-chip"><i class="fas fa-layer-group"></i> Docker Compose</div>
+          <div class="stack-chip"><i class="fas fa-vial"></i> JUnit 5</div>
+          <div class="stack-chip"><i class="fas fa-bug"></i> Mockito</div>
+          <div class="stack-chip"><i class="fas fa-tools"></i> Maven</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="project-cta">
+      <div class="container">
+        <div class="cta-box">
+          <h2>Explore the Code</h2>
+          <p>Full source, test suite and Docker setup are open on GitHub. Clone, run docker-compose up and the entire stack boots locally.</p>
+          <a href="https://github.com/Shubh2-0/PayFlow" target="_blank" class="btn btn-primary">
+            <i class="fab fa-github"></i> View PayFlow on GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2022 Shubham Bhati. Built with passion.</p>
+    </div>
+  </footer>
+
+  <a href="#" class="scroll-top" id="scroll-top"><i class="fas fa-arrow-up"></i></a>
+
+  <!-- Devicon for tech icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
+  <script>
+    // Theme
+    const themeToggle = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.body.setAttribute('data-theme', savedTheme);
+    const icon = themeToggle.querySelector('i');
+    icon.className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+
+    themeToggle.addEventListener('click', () => {
+      const current = document.body.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.body.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      icon.className = next === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+    });
+
+    // Mobile nav
+    const navToggle = document.getElementById('nav-toggle');
+    const navClose = document.getElementById('nav-close');
+    const navMenu = document.getElementById('nav-menu');
+
+    if (navToggle) navToggle.addEventListener('click', () => navMenu.classList.add('show-menu'));
+    if (navClose) navClose.addEventListener('click', () => navMenu.classList.remove('show-menu'));
+
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => navMenu.classList.remove('show-menu'));
+    });
+
+    // Scroll header
+    const header = document.getElementById('header');
+    const scrollTop = document.getElementById('scroll-top');
+
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scroll-header', window.scrollY > 100);
+      scrollTop.classList.toggle('show', window.scrollY > 400);
+    });
+  </script>
+</body>
+
+</html>
