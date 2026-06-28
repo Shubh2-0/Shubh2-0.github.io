@@ -48,10 +48,10 @@
     }
   },
   {
-    "name": "LinkedIn Automation Pipeline",
-    "desc": "Autonomous Python and AI pipeline for headless execution and scheduled media processing. Handles content workflows with task scheduling and media transformation.",
+    "name": "Portfolio Distribution Engine",
+    "desc": "Automated distribution utility built to compile, sync, and publish professional developer portfolios, case studies, and PDF documentation to external endpoints.",
     "image": "LinkedIn-Automation-Pipeline.png",
-    "stacks": "Python, AI, Automation, Scheduling",
+    "stacks": "Python, OAuth, REST API, JSON, Automation",
     "featured": false,
     "category": "python",
     "links": {
