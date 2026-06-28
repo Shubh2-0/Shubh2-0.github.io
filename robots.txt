@@ -1,11 +1,11 @@
 # Robots.txt for Shubham Bhati Portfolio
-# https://shubh2-0.github.io/
+# https://shubhambhati.is-a.dev/
 
 User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://shubh2-0.github.io/sitemap.xml
+Sitemap: https://shubhambhati.is-a.dev/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 1
