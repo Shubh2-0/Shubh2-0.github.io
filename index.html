@@ -323,10 +323,10 @@
               </div>
               <p class="timeline-desc">Backend engineer at MobilePe Fintech Private Limited, designing and building low-latency payment processing flows and microservices architecture utilizing Spring Boot, Kafka and Redis.</p>
               <ul class="timeline-list">
-                <li>Implemented Apache Kafka event streaming to handle high-throughput transactional events reliably across payment microservices</li>
-                <li>Integrated Redis caching and custom request handlers to decrease database hits, optimize latency and handle high-volume traffic spike demands</li>
-                <li>Formulated database protection strategies using Bloom Filters to prevent cache penetration and improve query security</li>
-                <li>Developing scalable and secure REST APIs using Java, Spring Boot and PostgreSQL within event-driven architectures</li>
+                <li>Engineered and optimized Apache Kafka async pipelines; successfully resolved production-level consumer lag issues by tuning thread and polling concurrency</li>
+                <li>Designed Redis cache handlers and read-through caching engine structures for SOR checks to minimize primary DB load</li>
+                <li>Configured a separate, dedicated database routing architecture (Multi-Datasource Config) to isolate heavy reporting exports from core transaction pools</li>
+                <li>Designed a polymorphic transaction handler routing system supporting 20+ payment handler types (ATM, Refund and PosReversal)</li>
               </ul>
               <div class="timeline-tech">
                 <span>Java 17</span><span>Spring Boot</span><span>Apache Kafka</span><span>Redis</span><span>PostgreSQL</span><span>Microservices</span>
@@ -347,11 +347,11 @@
               </div>
               <p class="timeline-desc">Backend engineer on the Justransform Enterprise B2B Integration Platform (iPaaS), powering seamless REST, SFTP and AS2 pipelines for 10+ enterprise clients while driving legacy modernization and platform stability.</p>
               <ul class="timeline-list">
-                <li>Designed high-throughput asynchronous workflows using AWS SQS and Spring Boot, ensuring reliable message processing and zero data loss under heavy concurrent loads</li>
-                <li>Architected an LLM-powered validation pipeline via OpenAI API to automate EDI/JSON transformation script correction — reduced manual debugging effort by 30%</li>
-                <li>Led Root Cause Analysis (RCA) and resolution for 15+ critical production incidents across routing, splitting and orchestration engines, significantly improving platform stability</li>
-                <li>Modernized legacy infrastructure by migrating microservices from Java 11 to Java 17 and implemented OAuth 2.0 / JWT for secure API communication</li>
-                <li>Delivered production-ready features using CI/CD pipelines with Git and Docker in Agile environments</li>
+                <li>Designed transformation orchestration engines for logistics iPaaS pipelines handling REST, SFTP and AS2 data protocols across 10+ client pipelines</li>
+                <li>Built OpenAI-powered pipeline for automated EDI/JSON validation — reduced manual debugging by 30%</li>
+                <li>Resolved 15+ high-priority production incidents through system debugging and root-cause analysis</li>
+                <li>Leveraged AWS SQS and RabbitMQ for decoupling event-driven transaction processing at scale</li>
+                <li>Migrated microservices from Java 11 to Java 17 and integrated OAuth 2.0 JWT Spring Security</li>
               </ul>
               <div class="timeline-tech">
                 <span>Java 17</span><span>Spring Boot</span><span>AWS SQS</span><span>RabbitMQ</span><span>OpenAI</span><span>OAuth 2.0</span><span>JWT</span><span>Docker</span>
@@ -372,9 +372,9 @@
               </div>
               <p class="timeline-desc">Built scalable healthcare backend systems for claims processing, implementing transformation engines converting complex healthcare JSON into FHIR-compliant objects.</p>
               <ul class="timeline-list">
-                <li>Developed scalable healthcare backend using Java, Spring Boot, MySQL and MongoDB with FHIR-compliant transformation engines</li>
-                <li>Optimized database layer by resolving N+1 query issues and implementing composite indexes in MySQL, slashing API latency on high-frequency lookup endpoints and preventing invalid claim submissions</li>
-                <li>Developed multi-layered validation pipelines using Spring Data JPA and a custom exception-handling framework to guarantee data integrity across millions of transactional records</li>
+                <li>Built JSON-to-FHIR data transformation engines processing high-frequency healthcare claim records</li>
+                <li>Optimized database layer by resolving N+1 query issues and implementing composite indexes in MySQL, slashing API latency on high-frequency lookup endpoints</li>
+                <li>Developed multi-layered validation pipelines using Spring Data JPA and a custom exception-handling framework</li>
               </ul>
               <div class="timeline-tech">
                 <span>Java</span><span>Spring Boot</span><span>FHIR</span><span>MySQL</span><span>MongoDB</span><span>Hibernate</span>
