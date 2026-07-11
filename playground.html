@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Playground: Database Concurrency Simulator | Shubham Bhati</title>
+    <title>Playground: System Design Sandboxes | Shubham Bhati</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -70,7 +70,7 @@
 
         .hero-section {
             text-align: center;
-            margin-bottom: 48px;
+            margin-bottom: 32px;
         }
 
         .hero-section h1 {
@@ -86,11 +86,46 @@
             margin: 0 auto;
         }
 
+        /* Tabs Navigation */
+        .tabs-nav {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        .tab-btn {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 12px 24px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
         .simulator-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 32px;
-            margin-top: 32px;
         }
 
         @media (max-width: 900px) {
@@ -130,7 +165,7 @@
             margin-bottom: 10px;
         }
 
-        .select-input {
+        .select-input, .text-input {
             width: 100%;
             background-color: rgba(255,255,255,0.03);
             border: 1px solid var(--border-color);
@@ -139,12 +174,12 @@
             border-radius: 12px;
             font-family: 'Outfit', sans-serif;
             font-size: 15px;
+            box-sizing: border-box;
             outline: none;
-            cursor: pointer;
             transition: border-color 0.2s;
         }
 
-        .select-input:focus {
+        .select-input:focus, .text-input:focus {
             border-color: var(--accent-blue);
         }
 
@@ -257,6 +292,34 @@
             to { opacity: 1; }
         }
 
+        /* Bloom Filter Grid Styling */
+        .bloom-grid {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .bloom-bit {
+            background-color: #1e293b;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 12px 0;
+            text-align: center;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+        }
+
+        .bloom-bit.active {
+            background-color: var(--success-green);
+            color: white;
+            box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+            border-color: transparent;
+        }
+
         footer {
             padding: 40px 5%;
             text-align: center;
@@ -264,11 +327,6 @@
             color: var(--text-secondary);
             border-top: 1px solid var(--border-color);
             margin-top: 60px;
-        }
-
-        footer a {
-            color: var(--accent-blue);
-            text-decoration: none;
         }
     </style>
 </head>
@@ -281,66 +339,141 @@
 
     <main>
         <div class="hero-section">
-            <h1>Database Concurrency Simulator</h1>
-            <p>Experience how concurrent write requests impact relational databases in financial APIs. Simulate race conditions and evaluate database locks in real time.</p>
+            <h1>Backend Sandbox Playgrounds</h1>
+            <p>Interactive web workspaces demonstrating database concurrency control and key system design algorithms.</p>
         </div>
 
-        <div class="simulator-grid">
-            <!-- Configuration Panel -->
-            <div class="card">
-                <h2>⚙️ Configuration</h2>
-                
-                <div class="form-group">
-                    <label>Simulated Transactions</label>
-                    <div style="background-color: rgba(255,255,255,0.02); border: 1px solid var(--border-color); padding: 14px; border-radius: 10px; font-size: 14px;">
-                        <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
-                            <span><strong>Thread A (AlignBits):</strong> Deduct ₹500</span>
+        <!-- Tabs Navigation -->
+        <div class="tabs-nav">
+            <button class="tab-btn active" onclick="switchTab('concurrency')">💻 Database Concurrency</button>
+            <button class="tab-btn" onclick="switchTab('bloom')">🛡️ Bloom Filter Caching</button>
+        </div>
+
+        <!-- Tab 1: Concurrency Simulator -->
+        <div class="tab-content active" id="concurrency-tab">
+            <div class="simulator-grid">
+                <!-- Configuration Panel -->
+                <div class="card">
+                    <h2>⚙️ Configuration</h2>
+                    
+                    <div class="form-group">
+                        <label>Simulated Transactions</label>
+                        <div style="background-color: rgba(255,255,255,0.02); border: 1px solid var(--border-color); padding: 14px; border-radius: 10px; font-size: 14px;">
+                            <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                                <span><strong>Thread A (AlignBits):</strong> Deduct ₹500</span>
+                            </div>
+                            <div style="display:flex; justify-content:space-between;">
+                                <span><strong>Thread B (MobilePe):</strong> Deduct ₹500</span>
+                            </div>
                         </div>
-                        <div style="display:flex; justify-content:space-between;">
-                            <span><strong>Thread B (MobilePe):</strong> Deduct ₹500</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Locking Strategy</label>
+                        <select class="select-input" id="locking-strategy">
+                            <option value="none">None (Race Condition / Double Spend)</option>
+                            <option value="pessimistic">Pessimistic Locking (SELECT ... FOR UPDATE)</option>
+                            <option value="optimistic">Optimistic Locking (@Version Column Check)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label id="latency-label">Network Latency: 50ms</label>
+                        <input type="range" id="latency-slider" min="10" max="300" value="50" style="width:100%; accent-color: var(--accent-blue);">
+                    </div>
+
+                    <button class="btn" id="simulate-btn" onclick="startConcurrencySimulation()">Execute Concurrency Run</button>
+                </div>
+
+                <!-- Live Output Panel -->
+                <div class="card visualizer-container">
+                    <h2>📊 Execution Monitor</h2>
+
+                    <div class="wallet-display">
+                        <div>
+                            <div class="wallet-label">Wallet Balance</div>
+                            <div class="wallet-amount" id="balance-amount">₹800</div>
+                        </div>
+                        <div>
+                            <div class="wallet-label">Version Key</div>
+                            <div class="wallet-amount" id="version-amount">0</div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="console-header">
+                            <span>Console Output</span>
+                            <span id="lock-status" style="color: var(--text-secondary)">No active locks</span>
+                        </div>
+                        <div class="console" id="console-output">
+                            <div class="console-line line-info">&gt; Ready for execution. Configure parameters and run.</div>
                         </div>
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <label>Locking Strategy</label>
-                    <select class="select-input" id="locking-strategy">
-                        <option value="none">None (Race Condition / Double Spend)</option>
-                        <option value="pessimistic">Pessimistic Locking (SELECT ... FOR UPDATE)</option>
-                        <option value="optimistic">Optimistic Locking (@Version Column Check)</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label id="latency-label">Network Latency: 50ms</label>
-                    <input type="range" id="latency-slider" min="10" max="300" value="50" style="width:100%; accent-color: var(--accent-blue);">
-                </div>
-
-                <button class="btn" id="simulate-btn" onclick="startSimulation()">Execute Concurrency Run</button>
             </div>
+        </div>
 
-            <!-- Live Output Panel -->
-            <div class="card visualizer-container">
-                <h2>📊 Execution Monitor</h2>
-
-                <div class="wallet-display">
-                    <div>
-                        <div class="wallet-label">Wallet Balance</div>
-                        <div class="wallet-amount" id="balance-amount">₹800</div>
+        <!-- Tab 2: Bloom Filter Sandbox -->
+        <div class="tab-content" id="bloom-tab">
+            <div class="simulator-grid">
+                <!-- Operations Panel -->
+                <div class="card">
+                    <h2>⚙️ Caching Operations</h2>
+                    
+                    <div class="form-group">
+                        <label>Add Username to Database</label>
+                        <div style="display:flex; gap:10px;">
+                            <input type="text" class="text-input" id="add-username" placeholder="e.g. admin, user_101">
+                            <button class="btn" style="margin-top:0; padding:12px 20px; font-size:14px;" onclick="addToBloomFilter()">Add to Filter</button>
+                        </div>
                     </div>
-                    <div>
-                        <div class="wallet-label">Version Key</div>
-                        <div class="wallet-amount" id="version-amount">0</div>
+
+                    <div class="form-group">
+                        <label>Check if Username Exists (Request Flow)</label>
+                        <div style="display:flex; gap:10px;">
+                            <input type="text" class="text-input" id="check-username" placeholder="e.g. hack_user, admin">
+                            <button class="btn" style="margin-top:0; padding:12px 20px; font-size:14px; background: linear-gradient(135deg, var(--accent-purple) 0%, var(--accent-blue) 100%);" onclick="checkBloomFilter()">Test Membership</button>
+                        </div>
+                    </div>
+
+                    <div style="background-color: rgba(255,255,255,0.02); border: 1px solid var(--border-color); padding: 14px; border-radius: 10px; font-size: 13px; color: var(--text-secondary);">
+                        <p style="margin:0 0 8px 0; font-weight:600; color:var(--text-primary);">💡 How it works:</p>
+                        A Bloom Filter prevents <strong>cache penetration</strong> (queries querying keys that don't exist, hitting DB directly). It hashes the input using 2 hash functions to set bits in an array. 
+                        * If any hash bit is <strong>0</strong>, the key is <strong>100% NOT</strong> in the system (blocked before hitting database).
+                        * If all bits are <strong>1</strong>, the key is <strong>PROBABLY</strong> in the system (allowed to proceed to DB/cache).
                     </div>
                 </div>
 
-                <div>
-                    <div class="console-header">
-                        <span>Console Output</span>
-                        <span id="lock-status" style="color: var(--text-secondary)">No active locks</span>
+                <!-- Visualization Panel -->
+                <div class="card visualizer-container">
+                    <h2>🛡️ Bloom Filter Bit-Array</h2>
+
+                    <div class="bloom-grid">
+                        <div class="bloom-bit" id="bit-0">0</div>
+                        <div class="bloom-bit" id="bit-1">0</div>
+                        <div class="bloom-bit" id="bit-2">0</div>
+                        <div class="bloom-bit" id="bit-3">0</div>
+                        <div class="bloom-bit" id="bit-4">0</div>
+                        <div class="bloom-bit" id="bit-5">0</div>
+                        <div class="bloom-bit" id="bit-6">0</div>
+                        <div class="bloom-bit" id="bit-7">0</div>
+                        <div class="bloom-bit" id="bit-8">0</div>
+                        <div class="bloom-bit" id="bit-9">0</div>
+                        <div class="bloom-bit" id="bit-10">0</div>
+                        <div class="bloom-bit" id="bit-11">0</div>
+                        <div class="bloom-bit" id="bit-12">0</div>
+                        <div class="bloom-bit" id="bit-13">0</div>
+                        <div class="bloom-bit" id="bit-14">0</div>
+                        <div class="bloom-bit" id="bit-15">0</div>
                     </div>
-                    <div class="console" id="console-output">
-                        <div class="console-line line-info">&gt; Ready for execution. Configure parameters and run.</div>
+
+                    <div>
+                        <div class="console-header">
+                            <span>Filter Operations Log</span>
+                        </div>
+                        <div class="console" id="bloom-console">
+                            <div class="console-line line-info">&gt; Sandbox ready. Insert keys to begin hashing.</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -352,6 +485,21 @@
     </footer>
 
     <script>
+        // Tab switching logic
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            
+            if (tabId === 'concurrency') {
+                document.querySelector('.tab-btn:nth-child(1)').classList.add('active');
+                document.getElementById('concurrency-tab').classList.add('active');
+            } else {
+                document.querySelector('.tab-btn:nth-child(2)').classList.add('active');
+                document.getElementById('bloom-tab').classList.add('active');
+            }
+        }
+
+        // --- CONCURRENCY SIMULATOR JS ---
         const latencySlider = document.getElementById('latency-slider');
         const latencyLabel = document.getElementById('latency-label');
         const consoleOutput = document.getElementById('console-output');
@@ -368,10 +516,8 @@
         function log(message, type = 'info') {
             const line = document.createElement('div');
             line.className = `console-line line-${type}`;
-            
             const timestamp = new Date().toISOString().split('T')[1].slice(0, -1);
             line.innerHTML = `[${timestamp}] &gt; ${message}`;
-            
             consoleOutput.appendChild(line);
             consoleOutput.scrollTop = consoleOutput.scrollHeight;
         }
@@ -380,7 +526,7 @@
             return new Promise(resolve => setTimeout(resolve, ms));
         }
 
-        async function startSimulation() {
+        async function startConcurrencySimulation() {
             simulateBtn.disabled = true;
             lockingStrategy.disabled = true;
             consoleOutput.innerHTML = '';
@@ -402,7 +548,6 @@
             await sleep(200);
 
             if (strategy === 'pessimistic') {
-                // Scenario WITH Pessimistic Locking
                 log('Thread A requests: SELECT balance FROM wallet WHERE id = 1 FOR UPDATE', 'warn');
                 await sleep(100);
                 log('Thread A successfully acquired WRITE LOCK on row id = 1', 'success');
@@ -439,7 +584,6 @@
                 log('Simulation complete. Balance consistent (₹300). Race condition avoided.', 'success');
 
             } else if (strategy === 'optimistic') {
-                // Scenario WITH Optimistic Locking
                 log('Thread A reads balance: ₹800 (version = 0)', 'info');
                 log('Thread B reads balance: ₹800 (version = 0)', 'info');
                 await sleep(200);
@@ -448,14 +592,12 @@
                 log('Thread B verifies funds: ₹800 >= ₹500. Processing...', 'info');
                 await sleep(latency + 200);
 
-                // Thread A commits first
                 log('Thread A executes: UPDATE wallet SET balance = ₹300, version = 1 WHERE id = 1 AND version = 0', 'success');
                 balanceAmount.innerText = '₹300';
                 versionAmount.innerText = '1';
                 log('Thread A transaction COMMITTED successfully.', 'success');
                 await sleep(400);
 
-                // Thread B tries to commit, version mismatch!
                 log('Thread B executes: UPDATE wallet SET balance = ₹300, version = 1 WHERE id = 1 AND version = 0', 'warn');
                 log('Database update failed: Row was modified by Thread A (Current version is 1, expected 0)', 'error');
                 log('Database throws: ObjectOptimisticLockingFailureException', 'error');
@@ -466,7 +608,6 @@
                 log('Simulation complete. Optimistic lock collision handled safely. Balance is consistent (₹300).', 'success');
 
             } else {
-                // Scenario WITHOUT Locking (Race Condition)
                 log('Thread A reads balance: ₹800', 'info');
                 log('Thread B reads balance: ₹800', 'info');
                 await sleep(200);
@@ -491,6 +632,89 @@
 
             simulateBtn.disabled = false;
             lockingStrategy.disabled = false;
+        }
+
+        // --- BLOOM FILTER SANDBOX JS ---
+        const bloomConsole = document.getElementById('bloom-console');
+        const filterArray = new Array(16).fill(0);
+        const databaseKeys = new Set();
+
+        function logBloom(message, type = 'info') {
+            const line = document.createElement('div');
+            line.className = `console-line line-${type}`;
+            const timestamp = new Date().toISOString().split('T')[1].slice(0, -1);
+            line.innerHTML = `[${timestamp}] &gt; ${message}`;
+            bloomConsole.appendChild(line);
+            bloomConsole.scrollTop = bloomConsole.scrollHeight;
+        }
+
+        // Simple hash functions returning modulo 16 index keys
+        function hash1(str) {
+            let hash = 0;
+            for (let i = 0; i < str.length; i++) {
+                hash = str.charCodeAt(i) + ((hash << 5) - hash);
+            }
+            return Math.abs(hash) % 16;
+        }
+
+        function hash2(str) {
+            let hash = 17;
+            for (let i = 0; i < str.length; i++) {
+                hash = (hash * 33) ^ str.charCodeAt(i);
+            }
+            return Math.abs(hash) % 16;
+        }
+
+        function addToBloomFilter() {
+            const input = document.getElementById('add-username').value.trim().toLowerCase();
+            if (!input) return;
+
+            databaseKeys.add(input);
+
+            const h1 = hash1(input);
+            const h2 = hash2(input);
+
+            filterArray[h1] = 1;
+            filterArray[h2] = 1;
+
+            // Highlight the bits on screen
+            document.getElementById(`bit-${h1}`).classList.add('active');
+            document.getElementById(`bit-${h1}`).innerText = '1';
+            document.getElementById(`bit-${h2}`).classList.add('active');
+            document.getElementById(`bit-${h2}`).innerText = '1';
+
+            logBloom(`Added "${input}" to database. Hashed index keys: [${h1}, ${h2}]`, 'success');
+            document.getElementById('add-username').value = '';
+        }
+
+        function checkBloomFilter() {
+            const input = document.getElementById('check-username').value.trim().toLowerCase();
+            if (!input) return;
+
+            const h1 = hash1(input);
+            const h2 = hash2(input);
+
+            logBloom(`Testing membership for: "${input}" (Hashed index keys: [${h1}, ${h2}])`, 'info');
+
+            const bit1Val = filterArray[h1];
+            const bit2Val = filterArray[h2];
+
+            if (bit1Val === 0 || bit2Val === 0) {
+                // Definitive No
+                logBloom(`Bloom Filter Check: BIT [${bit1Val === 0 ? h1 : h2}] is 0. Key is 100% NOT in Database.`, 'warn');
+                logBloom(`[BLOCKED] Request rejected before hitting cache/database. Saved 1 database look-up!`, 'error');
+            } else {
+                // Probable Yes
+                logBloom(`Bloom Filter Check: Both BITS [${h1}, ${h2}] are 1. Key is PROBABLY in Database.`, 'success');
+                
+                // Verify with real database to show false positive concept
+                if (databaseKeys.has(input)) {
+                    logBloom(`Database Check: SUCCESS. "${input}" found in PostgreSQL! (Allowed to proceed)`, 'success');
+                } else {
+                    logBloom(`Database Check: MISS! "${input}" NOT found in PostgreSQL. (False Positive collision detected!)`, 'warn');
+                }
+            }
+            document.getElementById('check-username').value = '';
         }
     </script>
 </body>
