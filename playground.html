@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Playground: Concurrency Simulator | Shubham Bhati</title>
+    <title>Playground: Database Concurrency Simulator | Shubham Bhati</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -130,65 +130,22 @@
             margin-bottom: 10px;
         }
 
-        .switch-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+        .select-input {
+            width: 100%;
             background-color: rgba(255,255,255,0.03);
             border: 1px solid var(--border-color);
-            padding: 16px;
+            color: var(--text-primary);
+            padding: 14px;
             border-radius: 12px;
-        }
-
-        .switch-label-desc {
-            font-size: 12px;
-            color: var(--text-secondary);
-            margin-top: 4px;
-        }
-
-        .switch {
-            position: relative;
-            display: inline-block;
-            width: 50px;
-            height: 26px;
-        }
-
-        .switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-
-        .slider {
-            position: absolute;
+            font-family: 'Outfit', sans-serif;
+            font-size: 15px;
+            outline: none;
             cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #334155;
-            transition: .4s;
-            border-radius: 34px;
+            transition: border-color 0.2s;
         }
 
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 18px;
-            width: 18px;
-            left: 4px;
-            bottom: 4px;
-            background-color: white;
-            transition: .4s;
-            border-radius: 50%;
-        }
-
-        input:checked + .slider {
-            background-color: var(--accent-blue);
-        }
-
-        input:checked + .slider:before {
-            transform: translateX(24px);
+        .select-input:focus {
+            border-color: var(--accent-blue);
         }
 
         .btn {
@@ -232,13 +189,15 @@
             border: 1px solid var(--border-color);
             border-radius: 12px;
             padding: 24px;
+            display: flex;
+            justify-content: space-around;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
 
         .wallet-label {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--text-secondary);
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -246,7 +205,7 @@
         }
 
         .wallet-amount {
-            font-size: 36px;
+            font-size: 32px;
             font-weight: 700;
             color: var(--text-primary);
             transition: color 0.3s;
@@ -335,27 +294,21 @@
                     <label>Simulated Transactions</label>
                     <div style="background-color: rgba(255,255,255,0.02); border: 1px solid var(--border-color); padding: 14px; border-radius: 10px; font-size: 14px;">
                         <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
-                            <span><strong>Thread A:</strong> AlignBits Gateway</span>
-                            <span style="color:var(--accent-blue)">Deduct ₹500</span>
+                            <span><strong>Thread A (AlignBits):</strong> Deduct ₹500</span>
                         </div>
                         <div style="display:flex; justify-content:space-between;">
-                            <span><strong>Thread B:</strong> MobilePe Wallet</span>
-                            <span style="color:var(--accent-purple)">Deduct ₹500</span>
+                            <span><strong>Thread B (MobilePe):</strong> Deduct ₹500</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <div class="switch-container">
-                        <div>
-                            <div style="font-weight:600; font-size:15px;">Pessimistic Locking</div>
-                            <div class="switch-label-desc">Uses <code>SELECT ... FOR UPDATE</code> to block concurrent access.</div>
-                        </div>
-                        <label class="switch">
-                            <input type="checkbox" id="locking-toggle">
-                            <span class="slider"></span>
-                        </label>
-                    </div>
+                    <label>Locking Strategy</label>
+                    <select class="select-input" id="locking-strategy">
+                        <option value="none">None (Race Condition / Double Spend)</option>
+                        <option value="pessimistic">Pessimistic Locking (SELECT ... FOR UPDATE)</option>
+                        <option value="optimistic">Optimistic Locking (@Version Column Check)</option>
+                    </select>
                 </div>
 
                 <div class="form-group">
@@ -371,8 +324,14 @@
                 <h2>📊 Execution Monitor</h2>
 
                 <div class="wallet-display">
-                    <div class="wallet-label">Shared Wallet Balance</div>
-                    <div class="wallet-amount" id="balance-amount">₹800</div>
+                    <div>
+                        <div class="wallet-label">Wallet Balance</div>
+                        <div class="wallet-amount" id="balance-amount">₹800</div>
+                    </div>
+                    <div>
+                        <div class="wallet-label">Version Key</div>
+                        <div class="wallet-amount" id="version-amount">0</div>
+                    </div>
                 </div>
 
                 <div>
@@ -397,9 +356,10 @@
         const latencyLabel = document.getElementById('latency-label');
         const consoleOutput = document.getElementById('console-output');
         const balanceAmount = document.getElementById('balance-amount');
+        const versionAmount = document.getElementById('version-amount');
         const lockStatus = document.getElementById('lock-status');
         const simulateBtn = document.getElementById('simulate-btn');
-        const lockingToggle = document.getElementById('locking-toggle');
+        const lockingStrategy = document.getElementById('locking-strategy');
 
         latencySlider.addEventListener('input', (e) => {
             latencyLabel.innerText = `Network Latency: ${e.target.value}ms`;
@@ -422,14 +382,16 @@
 
         async function startSimulation() {
             simulateBtn.disabled = true;
-            lockingToggle.disabled = true;
+            lockingStrategy.disabled = true;
             consoleOutput.innerHTML = '';
             balanceAmount.innerText = '₹800';
+            versionAmount.innerText = '0';
             balanceAmount.className = 'wallet-amount';
+            versionAmount.className = 'wallet-amount';
             lockStatus.innerText = 'No active locks';
             lockStatus.style.color = 'var(--text-secondary)';
 
-            const useLocking = lockingToggle.checked;
+            const strategy = lockingStrategy.value;
             const latency = parseInt(latencySlider.value);
 
             log('Initiating parallel database transactions...', 'info');
@@ -439,7 +401,7 @@
             log(`Thread B (MobilePe) starts transaction...`, 'info');
             await sleep(200);
 
-            if (useLocking) {
+            if (strategy === 'pessimistic') {
                 // Scenario WITH Pessimistic Locking
                 log('Thread A requests: SELECT balance FROM wallet WHERE id = 1 FOR UPDATE', 'warn');
                 await sleep(100);
@@ -475,6 +437,34 @@
                 
                 balanceAmount.className = 'wallet-amount success';
                 log('Simulation complete. Balance consistent (₹300). Race condition avoided.', 'success');
+
+            } else if (strategy === 'optimistic') {
+                // Scenario WITH Optimistic Locking
+                log('Thread A reads balance: ₹800 (version = 0)', 'info');
+                log('Thread B reads balance: ₹800 (version = 0)', 'info');
+                await sleep(200);
+
+                log('Thread A verifies funds: ₹800 >= ₹500. Processing...', 'info');
+                log('Thread B verifies funds: ₹800 >= ₹500. Processing...', 'info');
+                await sleep(latency + 200);
+
+                // Thread A commits first
+                log('Thread A executes: UPDATE wallet SET balance = ₹300, version = 1 WHERE id = 1 AND version = 0', 'success');
+                balanceAmount.innerText = '₹300';
+                versionAmount.innerText = '1';
+                log('Thread A transaction COMMITTED successfully.', 'success');
+                await sleep(400);
+
+                // Thread B tries to commit, version mismatch!
+                log('Thread B executes: UPDATE wallet SET balance = ₹300, version = 1 WHERE id = 1 AND version = 0', 'warn');
+                log('Database update failed: Row was modified by Thread A (Current version is 1, expected 0)', 'error');
+                log('Database throws: ObjectOptimisticLockingFailureException', 'error');
+                log('Thread B transaction ROLLS BACK (Transaction aborted to prevent double spend).', 'error');
+                
+                balanceAmount.className = 'wallet-amount success';
+                versionAmount.className = 'wallet-amount success';
+                log('Simulation complete. Optimistic lock collision handled safely. Balance is consistent (₹300).', 'success');
+
             } else {
                 // Scenario WITHOUT Locking (Race Condition)
                 log('Thread A reads balance: ₹800', 'info');
@@ -500,7 +490,7 @@
             }
 
             simulateBtn.disabled = false;
-            lockingToggle.disabled = false;
+            lockingStrategy.disabled = false;
         }
     </script>
 </body>
