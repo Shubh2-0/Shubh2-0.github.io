@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playground: Concurrency Simulator | Shubham Bhati</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #151d30;
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --border-color: #1e293b;
+            --success-green: #10b981;
+            --error-red: #ef4444;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            padding: 24px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .back-btn {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-btn:hover {
+            color: var(--text-primary);
+        }
+
+        main {
+            flex: 1;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 24px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .hero-section h1 {
+            font-size: 36px;
+            font-weight: 700;
+            margin: 0 0 12px 0;
+        }
+
+        .hero-section p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .simulator-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-top: 32px;
+        }
+
+        @media (max-width: 900px) {
+            .simulator-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .card h2 {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 0 0 20px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+
+        .switch-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgba(255,255,255,0.03);
+            border: 1px solid var(--border-color);
+            padding: 16px;
+            border-radius: 12px;
+        }
+
+        .switch-label-desc {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 26px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #334155;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: var(--accent-blue);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(24px);
+        }
+
+        .btn {
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+            color: white;
+            border: none;
+            padding: 16px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: transform 0.2s, opacity 0.2s;
+            margin-top: auto;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            opacity: 0.95;
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn:disabled {
+            background: #334155;
+            color: var(--text-secondary);
+            cursor: not-allowed;
+            transform: none;
+            opacity: 1;
+        }
+
+        .visualizer-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .wallet-display {
+            background-color: #0b0f19;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wallet-label {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+
+        .wallet-amount {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--text-primary);
+            transition: color 0.3s;
+        }
+
+        .wallet-amount.success {
+            color: var(--success-green);
+        }
+
+        .wallet-amount.error {
+            color: var(--error-red);
+        }
+
+        .console-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .console {
+            background-color: #05070c;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            height: 250px;
+            padding: 16px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            line-height: 1.6;
+            overflow-y: auto;
+            color: #38bdf8;
+            box-sizing: border-box;
+        }
+
+        .console-line {
+            margin-bottom: 8px;
+            opacity: 0;
+            animation: fadeIn 0.3s forwards;
+        }
+
+        .line-info { color: #38bdf8; }
+        .line-warn { color: #f59e0b; }
+        .line-success { color: #34d399; }
+        .line-error { color: #f87171; }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        footer {
+            padding: 40px 5%;
+            text-align: center;
+            font-size: 14px;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
+        }
+
+        footer a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="/" class="logo">Shubham Bhati</a>
+        <a href="/" class="back-btn">← Back to Portfolio</a>
+    </header>
+
+    <main>
+        <div class="hero-section">
+            <h1>Database Concurrency Simulator</h1>
+            <p>Experience how concurrent write requests impact relational databases in financial APIs. Simulate race conditions and evaluate database locks in real time.</p>
+        </div>
+
+        <div class="simulator-grid">
+            <!-- Configuration Panel -->
+            <div class="card">
+                <h2>⚙️ Configuration</h2>
+                
+                <div class="form-group">
+                    <label>Simulated Transactions</label>
+                    <div style="background-color: rgba(255,255,255,0.02); border: 1px solid var(--border-color); padding: 14px; border-radius: 10px; font-size: 14px;">
+                        <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                            <span><strong>Thread A:</strong> AlignBits Gateway</span>
+                            <span style="color:var(--accent-blue)">Deduct ₹500</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between;">
+                            <span><strong>Thread B:</strong> MobilePe Wallet</span>
+                            <span style="color:var(--accent-purple)">Deduct ₹500</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="switch-container">
+                        <div>
+                            <div style="font-weight:600; font-size:15px;">Pessimistic Locking</div>
+                            <div class="switch-label-desc">Uses <code>SELECT ... FOR UPDATE</code> to block concurrent access.</div>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" id="locking-toggle">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label id="latency-label">Network Latency: 50ms</label>
+                    <input type="range" id="latency-slider" min="10" max="300" value="50" style="width:100%; accent-color: var(--accent-blue);">
+                </div>
+
+                <button class="btn" id="simulate-btn" onclick="startSimulation()">Execute Concurrency Run</button>
+            </div>
+
+            <!-- Live Output Panel -->
+            <div class="card visualizer-container">
+                <h2>📊 Execution Monitor</h2>
+
+                <div class="wallet-display">
+                    <div class="wallet-label">Shared Wallet Balance</div>
+                    <div class="wallet-amount" id="balance-amount">₹800</div>
+                </div>
+
+                <div>
+                    <div class="console-header">
+                        <span>Console Output</span>
+                        <span id="lock-status" style="color: var(--text-secondary)">No active locks</span>
+                    </div>
+                    <div class="console" id="console-output">
+                        <div class="console-line line-info">&gt; Ready for execution. Configure parameters and run.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Shubham Bhati. Built from scratch for digital wallet concurrency simulations.</p>
+    </footer>
+
+    <script>
+        const latencySlider = document.getElementById('latency-slider');
+        const latencyLabel = document.getElementById('latency-label');
+        const consoleOutput = document.getElementById('console-output');
+        const balanceAmount = document.getElementById('balance-amount');
+        const lockStatus = document.getElementById('lock-status');
+        const simulateBtn = document.getElementById('simulate-btn');
+        const lockingToggle = document.getElementById('locking-toggle');
+
+        latencySlider.addEventListener('input', (e) => {
+            latencyLabel.innerText = `Network Latency: ${e.target.value}ms`;
+        });
+
+        function log(message, type = 'info') {
+            const line = document.createElement('div');
+            line.className = `console-line line-${type}`;
+            
+            const timestamp = new Date().toISOString().split('T')[1].slice(0, -1);
+            line.innerHTML = `[${timestamp}] &gt; ${message}`;
+            
+            consoleOutput.appendChild(line);
+            consoleOutput.scrollTop = consoleOutput.scrollHeight;
+        }
+
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        async function startSimulation() {
+            simulateBtn.disabled = true;
+            lockingToggle.disabled = true;
+            consoleOutput.innerHTML = '';
+            balanceAmount.innerText = '₹800';
+            balanceAmount.className = 'wallet-amount';
+            lockStatus.innerText = 'No active locks';
+            lockStatus.style.color = 'var(--text-secondary)';
+
+            const useLocking = lockingToggle.checked;
+            const latency = parseInt(latencySlider.value);
+
+            log('Initiating parallel database transactions...', 'info');
+            await sleep(400);
+
+            log(`Thread A (AlignBits) starts transaction...`, 'info');
+            log(`Thread B (MobilePe) starts transaction...`, 'info');
+            await sleep(200);
+
+            if (useLocking) {
+                // Scenario WITH Pessimistic Locking
+                log('Thread A requests: SELECT balance FROM wallet WHERE id = 1 FOR UPDATE', 'warn');
+                await sleep(100);
+                log('Thread A successfully acquired WRITE LOCK on row id = 1', 'success');
+                lockStatus.innerText = 'LOCKED (Thread A)';
+                lockStatus.style.color = 'var(--success-green)';
+                
+                log(`Thread B requests: SELECT balance FROM wallet WHERE id = 1 FOR UPDATE`, 'warn');
+                log('Thread B BLOCKED by active lock. Waiting in queue...', 'warn');
+                await sleep(latency + 300);
+
+                log('Thread A reads balance: ₹800', 'info');
+                log('Thread A verifies funds: ₹800 >= ₹500', 'info');
+                await sleep(300);
+
+                log('Thread A executes: UPDATE wallet SET balance = ₹300 WHERE id = 1', 'success');
+                balanceAmount.innerText = '₹300';
+                log('Thread A commits transaction. WRITE LOCK released.', 'success');
+                lockStatus.innerText = 'No active locks';
+                lockStatus.style.color = 'var(--text-secondary)';
+                await sleep(300);
+
+                log('Thread B resumes transaction. Acquired WRITE LOCK on row id = 1', 'success');
+                lockStatus.innerText = 'LOCKED (Thread B)';
+                lockStatus.style.color = 'var(--accent-purple)';
+                await sleep(200);
+
+                log('Thread B reads balance: ₹300', 'info');
+                log('Thread B verifies funds: ₹300 < ₹500. Insufficient funds!', 'error');
+                log('Thread B transaction ROLLS BACK. WRITE LOCK released.', 'error');
+                lockStatus.innerText = 'No active locks';
+                lockStatus.style.color = 'var(--text-secondary)';
+                
+                balanceAmount.className = 'wallet-amount success';
+                log('Simulation complete. Balance consistent (₹300). Race condition avoided.', 'success');
+            } else {
+                // Scenario WITHOUT Locking (Race Condition)
+                log('Thread A reads balance: ₹800', 'info');
+                log('Thread B reads balance: ₹800', 'info');
+                await sleep(200);
+
+                log('Thread A verifies funds: ₹800 >= ₹500. Transaction approved.', 'info');
+                log('Thread B verifies funds: ₹800 >= ₹500. Transaction approved.', 'info');
+                await sleep(latency + 300);
+
+                log('Thread A executes: UPDATE wallet SET balance = ₹300 WHERE id = 1', 'warn');
+                balanceAmount.innerText = '₹300';
+                log('Thread A commits transaction.', 'success');
+                await sleep(200);
+
+                log('Thread B executes: UPDATE wallet SET balance = ₹300 WHERE id = 1', 'warn');
+                balanceAmount.innerText = '₹300';
+                log('Thread B commits transaction.', 'success');
+                await sleep(300);
+
+                balanceAmount.className = 'wallet-amount error';
+                log('Simulation complete. CRITICAL BUG: Double deduction allowed (₹1000 spent, wallet balance is ₹300 instead of negative or blocked).', 'error');
+            }
+
+            simulateBtn.disabled = false;
+            lockingToggle.disabled = false;
+        }
+    </script>
+</body>
+</html>
