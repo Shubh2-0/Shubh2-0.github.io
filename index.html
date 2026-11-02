@@ -21,10 +21,10 @@
   <link rel="canonical" href="https://shubhambhati.is-a.dev/">
 
   <!-- Geographic Meta Tags -->
-  <meta name="geo.region" content="IN-UP">
-  <meta name="geo.placename" content="Noida, Uttar Pradesh, India">
-  <meta name="geo.position" content="28.5355;77.3910">
-  <meta name="ICBM" content="28.5355, 77.3910">
+  <meta name="geo.region" content="IN-MP">
+  <meta name="geo.placename" content="Indore, Madhya Pradesh, India">
+  <meta name="geo.position" content="22.7196;75.8577">
+  <meta name="ICBM" content="22.7196, 75.8577">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
@@ -94,8 +94,8 @@
     "telephone": "+91-6232133187",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Noida",
-      "addressRegion": "Uttar Pradesh",
+      "addressLocality": "Indore",
+      "addressRegion": "Madhya Pradesh",
       "addressCountry": "India"
     },
     "alumniOf": {
@@ -300,7 +300,7 @@
 
         <div class="about-info-row" data-aos="fade-up" data-aos-delay="300">
           <div class="info-chip">
-            <i class="fas fa-map-marker-alt"></i> Noida, India
+            <i class="fas fa-map-marker-alt"></i> Indore, India
           </div>
           <div class="info-chip">
             <i class="fas fa-envelope"></i> shubhambhati226@gmail.com
@@ -331,17 +331,18 @@
               </div>
               <div class="timeline-meta">
                 <span class="timeline-date"><i class="fas fa-calendar-alt"></i> Jun 2026 - Present</span>
-                <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Noida, India</span>
+                <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Indore, India</span>
               </div>
               <p class="timeline-desc">Backend engineer at MobilePe Fintech, architecting low-latency payment processing pipelines and owning core microservices utilizing Java, Spring Boot 3.4+, Apache Kafka and Redis.</p>
               <ul class="timeline-list">
-                <li>Built and owned 3 core production microservices (onboarding-service, payment-service and notification-service) supporting user onboarding, payment processing and notifications</li>
-                <li>Engineered M2P UPI registration, double-entry wallet balance ledger, hold-then-settle float protection and pessimistic row locking on debit card kit allocations</li>
-                <li>Architected Aadhaar, PAN and VCIP KYC security pipelines using AES-256-GCM encryption, HMAC-SHA256 blind indexing and custom SSRF webhook guards</li>
-                <li>Optimized Kafka consumer concurrency, listener configuration and database connection pools to resolve production consumer lag and reduce API latency by 35%</li>
+                <li>Cut payment API latency by <strong>35%</strong> by offloading synchronous database writes from the Kafka listener thread, tuning consumer concurrency and connection pools to eliminate production backlogs</li>
+                <li>Architected and delivered 3 core production microservices (<code>onboarding-service</code>, <code>payment-service</code> and <code>notification-service</code>) alongside the legacy monolith with backward-compatible endpoints</li>
+                <li>Led migration of user records and multi-wallet balances (General, Food and NCMC) into the microservices architecture using chunked batch writes and checksum audits with <strong>zero balance desync</strong></li>
+                <li>Engineered Mobileware UPI PPI and M2P integrations with custom RSA crypto signing, 5 webhook callbacks, idempotency keys, database locking and a double-entry ledger with hold-then-settle processing</li>
+                <li>Built KYC verification pipelines (Aadhaar, PAN and Syntizen VKYC webhooks) using AES-256-GCM encryption and HMAC-SHA256 blind indexing for fast querying without exposing raw PII</li>
               </ul>
               <div class="timeline-tech">
-                <span>Java 21</span><span>Spring Boot 3.4+</span><span>Apache Kafka</span><span>Redis</span><span>M2P UPI Integration</span><span>AES-256-GCM</span><span>PostgreSQL</span><span>Microservices</span>
+                <span>Java 21</span><span>Spring Boot 3.4+</span><span>Apache Kafka</span><span>Redis</span><span>Mobileware UPI PPI</span><span>M2P</span><span>PostgreSQL</span><span>Microservices</span>
               </div>
             </div>
           </div>
@@ -683,7 +684,7 @@
               <i class="fas fa-map-marker-alt"></i>
               <div>
                 <h4>Location</h4>
-                <p>Noida, Uttar Pradesh, India</p>
+                <p>Indore, Madhya Pradesh, India</p>
               </div>
             </div>
             <div class="contact-card whatsapp-card">
@@ -735,7 +736,7 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2022 Shubham Bhati. Built with passion.</p>
+      <p>&copy; 2026 Shubham Bhati. Built with passion.</p>
     </div>
   </footer>
 
