@@ -1,7 +1,7 @@
 \documentclass[letterpaper]{article}
 \usepackage{cmap}
 \usepackage{lmodern}
-\usepackage[fontsize=10.2pt]{scrextend}
+\usepackage[fontsize=10pt]{scrextend}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
 \usepackage[usenames,dvipsnames]{color}
@@ -51,7 +51,7 @@
 }
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}, itemsep=2pt, parsep=0pt, topsep=0pt]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}[itemsep=0.8pt, parsep=0pt, topsep=1.5pt, partopsep=0pt]}
+\newcommand{\resumeItemListStart}{\begin{itemize}[itemsep=1pt, parsep=0pt, topsep=1.5pt, partopsep=0pt]}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2pt}}
 
 %-------------------------------------------
@@ -59,7 +59,7 @@
 \vspace*{-18pt}
 \begin{center}
     \textbf{\Huge Shubham Bhati} \\ \vspace{2pt}
-    \small Java Backend Engineer | Spring Boot | Microservices | Apache Kafka | Redis \\
+    \small Java Backend Developer | Software Engineer | Java Spring Boot Developer | Kafka | Redis \\
     Noida, Uttar Pradesh, India | +91-6232133187 | \href{mailto:shubhambhati226@gmail.com}{shubhambhati226@gmail.com} \\
     \href{https://linkedin.com/in/bhatishubham}{linkedin.com/in/bhatishubham} | \href{https://github.com/Shubh2-0}{github.com/Shubh2-0} | \href{https://shubhambhati.is-a.dev/}{shubhambhati.is-a.dev}
 \end{center}
@@ -67,7 +67,7 @@
 
 %-----------PROFESSIONAL SUMMARY-----------
 \section{Professional Summary}
-\small Java backend engineer with 3+ years of experience across fintech, enterprise SaaS and healthcare. Founded 3 core microservices ground-up alongside an existing payment monolith (148 commits in 12 weeks), engineered zero-downtime balance migrations across 3 wallet types (General, Food and NCMC) with automated ledger reconciliation and cut payment API latency by 35\% by fixing Kafka consumer lag. Experienced in Java, Spring Boot, Kafka, Redis, SQL databases and high-throughput distributed systems.
+\small Java backend engineer and software developer with 3+ years of experience building high-throughput backend services and Java Spring Boot microservices across fintech, enterprise SaaS and healthcare. Architected 3 production microservices alongside an existing payment monolith, engineered zero-downtime balance migrations across 3 wallet types (General, Food and NCMC) with automated ledger reconciliation and cut payment API latency by 35\% by fixing Kafka consumer lag. Experienced in Java, Spring Boot, Kafka, Redis, SQL databases and distributed event-driven systems.
 \vspace{1pt}
 
 %-----------WORK EXPERIENCE-----------
@@ -75,33 +75,33 @@
   \resumeSubHeadingListStart
     \resumeSubheading
       {MobilePe Fintech Private Limited}{Jun 2026 - Present}
-      {Java Backend Engineer}{Noida, Uttar Pradesh, India}
+      {Java Spring Boot Developer / Backend Engineer}{Noida, Uttar Pradesh, India}
       \resumeItemListStart
-        \resumeItem{Founded and owned 3 core microservices (\texttt{onboarding-service}, \texttt{payment-service} and \texttt{notification-service}) ground-up, shipping 148 production commits across 5 repositories in 12 weeks with backward-compatible monolith endpoints.}
+        \resumeItem{Architected and delivered 3 core microservices (\texttt{onboarding-service}, \texttt{payment-service} and \texttt{notification-service}) alongside the legacy monolith, implementing backward-compatible endpoints for a phased migration.}
         \resumeItem{Cut payment API latency by 35\% by offloading synchronous database writes from the Kafka listener thread, tuning consumer concurrency and scaling connection pools to eliminate production backlogs.}
-        \resumeItem{Led automated migration of legacy user records and multi-wallet balances (General, Food and NCMC) into the new microservices architecture, executing chunked batch writes and checksum audits with zero balance desync.}
-        \resumeItem{Engineered Mobileware UPI PPI and M2P integrations with custom cryptographic signature verification, 5 webhook callbacks, idempotency keys, database locking and a double-entry ledger with hold-then-settle processing.}
-        \resumeItem{Built KYC verification pipelines (Aadhaar, PAN and Syntizen video KYC webhooks) with secure PII encryption and blind indexing to enable fast query lookups without exposing sensitive data.}
-        \resumeItem{Implemented dead-letter queue (DLQ) retry handlers on Kafka consumers and hardened webhook security to protect event payloads from unauthorized exposure.}
+        \resumeItem{Led automated migration of user accounts and multi-wallet balances (General, Food and NCMC) into the new microservices architecture, executing chunked batch writes and checksum audits with zero balance desync.}
+        \resumeItem{Engineered UPI payment and digital wallet workflows with Mobileware and M2P, implementing idempotency keys, database row locking and a double-entry ledger with hold-then-settle transaction recovery.}
+        \resumeItem{Built automated KYC verification pipelines (Aadhaar, PAN and Syntizen video KYC webhooks) with encrypted data storage and secure indexing to maintain fast lookups without exposing sensitive user information.}
+        \resumeItem{Configured dead-letter queue (DLQ) retry handlers on Kafka consumers and hardened webhook security to protect notification payloads against unauthorized access and message loss.}
       \resumeItemListEnd
 
     \resumeSubheading
       {AlignBits LLC}{Sep 2024 - May 2026}
       {Software Engineer (Promoted from Jr. Software Engineer)}{Dubai, UAE (Remote)}
       \resumeItemListStart
-        \resumeItem{Cut manual debugging time by 30\% by connecting OpenAI API models to automatically detect and correct syntax and structural errors in transformation scripts.}
-        \resumeItem{Built an asynchronous orchestration engine using RabbitMQ for dynamic routing, payload transformation and split/merge workflows across enterprise B2B pipelines.}
-        \resumeItem{Implemented JWT and OAuth 2.0 authentication across 5 microservices to secure distributed REST API communications.}
-        \resumeItem{Standardized Docker containers and GitHub Actions CI/CD workflows, shortening deployment turnaround for production releases.}
+        \resumeItem{Reduced manual script debugging time by 30\% by connecting OpenAI models to automatically detect and correct transformation syntax errors across high-volume client data pipelines.}
+        \resumeItem{Designed an asynchronous orchestration engine using RabbitMQ for message routing, payload transformations and split/merge workflows across enterprise logistics pipelines.}
+        \resumeItem{Implemented stateless JWT and OAuth 2.0 authentication protocols across 5 distributed microservices to enforce role-based API access security.}
+        \resumeItem{Standardized Docker containers and automated GitHub Actions CI/CD deployment pipelines, shortening production release turnaround times.}
       \resumeItemListEnd
 
     \resumeSubheading
       {IHX Private Limited}{Jun 2023 - Aug 2024}
-      {Associate Software Engineer}{Bengaluru, India}
+      {Associate Software Engineer (Java Backend)}{Bengaluru, India}
       \resumeItemListStart
-        \resumeItem{Cut API response times by 40\% by eliminating N+1 query loops, adding composite MySQL indexes and implementing Redis caching layers.}
-        \resumeItem{Engineered backend payload transformation engines in Java 11 and MongoDB to process high-volume daily healthcare insurance claims.}
-        \resumeItem{Built validation pipelines using Spring Data JPA and centralized exception handlers to maintain strict clinical data integrity.}
+        \resumeItem{Accelerated core API response times by 40\% across endpoints by eliminating N+1 Hibernate query loops, creating composite MySQL indexes and deploying Redis caching.}
+        \resumeItem{Developed high-volume backend data transformation engines in Java 11 and MongoDB to process daily healthcare insurance claims.}
+        \resumeItem{Constructed validation pipelines with Spring Data JPA and centralized exception handling, maintaining strict clinical data integrity across claims.}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
@@ -109,12 +109,12 @@
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}, nosep]
     \item{
-     \textbf{Languages \& Core}{: Java (8/11/17/21), Object-Oriented Programming (OOP), SOLID Principles, Design Patterns, Data Structures and Algorithms, Concurrency} \\
+     \textbf{Languages \& Core}{: Java (8/11/17/21), JavaScript, Object-Oriented Programming (OOP), SOLID Principles, Design Patterns, Data Structures and Algorithms, Concurrency} \\
      \textbf{Frameworks \& Architecture}{: Spring Boot 3.x, Spring Security, Spring MVC, Spring Data JPA, Microservices Architecture, API Gateway, Event-Driven Architecture, Distributed Systems, JUnit, Mockito} \\
-     \textbf{Databases \& Caching}{: PostgreSQL, MySQL, Redis, MongoDB, Hibernate ORM, Database Locking, Query Optimization, Flyway} \\
+     \textbf{Databases \& Caching}{: PostgreSQL, MySQL, Redis, MongoDB, Hibernate ORM (Object-Relational Mapping), Database Locking, Query Optimization, Flyway} \\
      \textbf{APIs \& Messaging}{: RESTful APIs, Apache Kafka, Mobileware UPI PPI, M2P Integration, RabbitMQ, Idempotency, Retry/DLQ Handling, JWT, OAuth 2.0, OpenAPI (Swagger)} \\
      \textbf{DevOps \& Cloud}{: AWS (EC2, S3, RDS), Docker, Docker Compose, Git, CI/CD, GitHub Actions, Maven, OpenTelemetry, Distributed Tracing} \\
-     \textbf{AI \& Automation}{: OpenAI API, Gemini API, Prompt Engineering}
+     \textbf{Methodologies \& AI}{: Agile/Scrum, Production Troubleshooting, System Architecture, OpenAI API, Gemini API}
     }
  \end{itemize}
 
