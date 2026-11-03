@@ -78,7 +78,7 @@
       {Java Spring Boot Developer / Backend Engineer}{Noida, Uttar Pradesh, India}
       \resumeItemListStart
         \resumeItem{Architected and delivered 3 core microservices (\texttt{onboarding-service}, \texttt{payment-service} and \texttt{notification-service}) alongside the legacy monolith, implementing backward-compatible endpoints for a phased migration.}
-        \resumeItem{Cut payment API latency by 35\% by offloading synchronous database writes from the Kafka listener thread, tuning consumer concurrency and scaling connection pools to eliminate production backlogs.}
+        \resumeItem{Cut payment API latency by 35\% by offloading synchronous database writes from the Kafka listener thread, tuning consumer concurrency and adding Redis Bloom filters to block cache penetration.}
         \resumeItem{Led automated migration of user accounts and multi-wallet balances (General, Food and NCMC) into the new microservices architecture, executing chunked batch writes and checksum audits with zero balance desync.}
         \resumeItem{Engineered UPI payment and digital wallet workflows with Mobileware and M2P, implementing idempotency keys, database row locking and a double-entry ledger with hold-then-settle transaction recovery.}
         \resumeItem{Built automated KYC verification pipelines (Aadhaar, PAN and Syntizen video KYC webhooks) with encrypted data storage and secure indexing to maintain fast lookups without exposing sensitive user information.}
@@ -111,10 +111,10 @@
     \item{
      \textbf{Languages \& Core}{: Java (8/11/17/21), JavaScript, Object-Oriented Programming (OOP), SOLID Principles, Design Patterns, Data Structures and Algorithms, Concurrency} \\
      \textbf{Frameworks \& Architecture}{: Spring Boot 3.x, Spring Security, Spring MVC, Spring Data JPA, Microservices Architecture, API Gateway, Event-Driven Architecture, Distributed Systems, JUnit, Mockito} \\
-     \textbf{Databases \& Caching}{: PostgreSQL, MySQL, Redis, MongoDB, Hibernate ORM (Object-Relational Mapping), Database Locking, Query Optimization, Flyway} \\
+     \textbf{Databases \& Caching}{: PostgreSQL, MySQL, Redis, MongoDB, Hibernate ORM (Object-Relational Mapping), Bloom Filters, Deadlock Prevention, Query Optimization, Flyway} \\
      \textbf{APIs \& Messaging}{: RESTful APIs, Apache Kafka, Mobileware UPI PPI, M2P Integration, RabbitMQ, Idempotency, Retry/DLQ Handling, JWT, OAuth 2.0, OpenAPI (Swagger)} \\
      \textbf{DevOps \& Cloud}{: AWS (EC2, S3, RDS), Docker, Docker Compose, Git, CI/CD, GitHub Actions, Maven, OpenTelemetry, Distributed Tracing} \\
-     \textbf{Methodologies \& AI}{: Agile/Scrum, Production Troubleshooting, System Architecture, OpenAI API, Gemini API}
+     \textbf{Methodologies \& Certifications}{: Agile/Scrum, Production Troubleshooting, Pro5.ai Java Top 5\% Professional, OpenAI API, Gemini API}
     }
  \end{itemize}
 
